@@ -6,13 +6,161 @@ import xml.etree.ElementTree as ET
 import numpy as np
 from PIL import Image, ImageDraw
 
+def val_noise(shape, grid_size, weight, seed=20260608):
+    """Generates smooth value noise by upscaling a small random grid using bicubic interpolation."""
+    np.random.seed(seed)
+    small = np.random.uniform(-1.0, 1.0, size=(grid_size, grid_size)).astype(np.float32)
+    temp_img = Image.fromarray(small)
+    temp_img = temp_img.resize((shape[1], shape[0]), Image.Resampling.BICUBIC)
+    return np.array(temp_img) * weight
+
+def create_procedural_base_texture(target_size):
+    """Generates a gorgeous procedural base texture representing the geographical features of the DEM."""
+    # Coordinate grids
+    y_indices_px, x_indices_px = np.indices((target_size, target_size), dtype=np.float32)
+    x_m = x_indices_px * (8192.0 / target_size)
+    y_m = y_indices_px * (8192.0 / target_size)
+    
+    # Configuration
+    playable_size_m = 4096.0
+    offset_m = 2048.0
+    
+    # Background weight
+    dx_bg = np.maximum(0.0, np.maximum(offset_m - x_m, x_m - (8192.0 - offset_m)))
+    dy_bg = np.maximum(0.0, np.maximum(offset_m - y_m, y_m - (8192.0 - offset_m)))
+    dist_border_bg = np.sqrt(dx_bg*dx_bg + dy_bg*dy_bg)
+    t_bg = np.clip(dist_border_bg / 1024.0, 0.0, 1.0)
+    w_bg = 0.5 * (1.0 - np.cos(np.pi * t_bg))
+    
+    # North Flat Area boundary modulation
+    seed = 20260608
+    np.random.seed(seed)
+    boundary_noise_1d = val_noise((target_size, target_size), 8, 150.0, seed=seed+15)[0, :]
+    boundary_y = offset_m + 1000.0 + boundary_noise_1d[np.newaxis, :]
+    
+    # Weight of the undulating rest area
+    t_y = np.clip((y_m - boundary_y) / 400.0, 0.0, 1.0)
+    w_rest = 0.5 * (1.0 - np.cos(np.pi * t_y))
+    
+    # South Mountain barrier
+    d_south = (offset_m + playable_size_m) - y_m
+    t_m = np.clip(d_south / 400.0, 0.0, 1.0)
+    w_mountain = 0.5 * (1.0 + np.cos(np.pi * t_m))
+    
+    # Southwest peak
+    dx_sw = x_m - offset_m
+    dy_sw = y_m - (offset_m + playable_size_m)
+    d_sw = np.sqrt(dx_sw**2 + dy_sw**2)
+    t_sw = np.clip(d_sw / 300.0, 0.0, 1.0)
+    w_sw = 0.5 * (1.0 + np.cos(np.pi * t_sw))
+    
+    w_rocky = np.maximum(w_mountain, w_sw)
+    
+    # Southeast flat square
+    sq_size = 707.1
+    sq_x1 = offset_m + playable_size_m - 15.0
+    sq_x0 = sq_x1 - sq_size
+    sq_y1 = offset_m + playable_size_m - 450.0
+    sq_y0 = sq_y1 - sq_size
+    scx = (sq_x0 + sq_x1) / 2.0
+    scy = (sq_y0 + sq_y1) / 2.0
+    srx = (sq_x1 - sq_x0) / 2.0
+    sry = (sq_y1 - sq_y0) / 2.0
+    dx_sq = np.abs(x_m - scx) - srx
+    dy_sq = np.abs(y_m - scy) - sry
+    dist_outside_sq = np.sqrt(np.maximum(0.0, dx_sq)**2 + np.maximum(0.0, dy_sq)**2)
+    dist_inside_sq = np.minimum(0.0, np.maximum(dx_sq, dy_sq))
+    sdf_sq = dist_outside_sq + dist_inside_sq
+    t_sq = np.clip(sdf_sq / 100.0, 0.0, 1.0)
+    w_sq = 0.5 * (1.0 - np.cos(np.pi * t_sq))
+    
+    # Reservoir
+    rx0 = offset_m + 15.0
+    rx1 = rx0 + 500.0
+    ry0 = offset_m + 15.0
+    ry1 = ry0 + 500.0
+    rcx = (rx0 + rx1) / 2.0
+    rcy = (ry0 + ry1) / 2.0
+    rrx = (rx1 - rx0) / 2.0
+    rry = (ry1 - ry0) / 2.0
+    dx_res = np.abs(x_m - rcx) - rrx
+    dy_res = np.abs(y_m - rcy) - rry
+    dist_outside = np.sqrt(np.maximum(0.0, dx_res)**2 + np.maximum(0.0, dy_res)**2)
+    dist_inside = np.minimum(0.0, np.maximum(dx_res, dy_res))
+    sdf_res = dist_outside + dist_inside
+    t_res = np.clip(-sdf_res / 15.0, 0.0, 1.0)
+    w_res = 3 * t_res**2 - 2 * t_res**3
+    
+    # West channel
+    x_c = offset_m + 15.0 + 7.5
+    y_start_ch = offset_m + 15.0
+    y_end_ch = offset_m + playable_size_m - 400.0
+    t_ch_segment = np.clip((y_m - y_start_ch) / (y_end_ch - y_start_ch), 0.0, 1.0)
+    proj_y = y_start_ch + t_ch_segment * (y_end_ch - y_start_ch)
+    proj_x = x_c
+    dist_segment = np.sqrt((x_m - proj_x)**2 + (y_m - proj_y)**2)
+    t_ch = np.clip((dist_segment - 3.5) / 4.0, 0.0, 1.0)
+    w_ch = 0.5 * (1.0 + np.cos(np.pi * t_ch))
+    
+    # Southern pond
+    px0 = offset_m + 15.0
+    px1 = px0 + 50.0
+    py0 = offset_m + playable_size_m - 450.0
+    py1 = py0 + 50.0
+    pcx = (px0 + px1) / 2.0
+    pcy = (py0 + py1) / 2.0
+    prx = (px1 - px0) / 2.0
+    pry = (py1 - py0) / 2.0
+    dx_pond = np.abs(x_m - pcx) - prx
+    dy_pond = np.abs(y_m - pcy) - pry
+    dist_outside_pond = np.sqrt(np.maximum(0.0, dx_pond)**2 + np.maximum(0.0, dy_pond)**2)
+    dist_inside_pond = np.minimum(0.0, np.maximum(dx_pond, dy_pond))
+    sdf_pond = dist_outside_pond + dist_inside_pond
+    t_pond = np.clip(-sdf_pond / 5.0, 0.0, 1.0)
+    w_pond = 3 * t_pond**2 - 2 * t_pond**3
+    
+    w_water = np.maximum(w_res, np.maximum(w_ch, w_pond))
+    
+    # Colors
+    c_bg = np.array([45, 90, 48])           # Dark Forest Green
+    c_flat_north = np.array([215, 185, 95])  # Golden Wheat Fields
+    c_undulating = np.array([85, 165, 90])   # Lush Green Pasture
+    c_rocky = np.array([125, 120, 115])      # Slate Rocky Mountain
+    c_sq = np.array([195, 180, 165])         # Sandy Farmyard Dirt
+    c_water = np.array([25, 105, 195])       # Deep Water Blue
+    
+    # Generate field grid grain noise (subtle farming texture)
+    np.random.seed(seed + 99)
+    noise_grain = np.random.normal(0.0, 6.0, size=(target_size, target_size, 1))
+    
+    # Blend playable area colors
+    c_playable = w_rest[:, :, np.newaxis] * c_undulating + (1.0 - w_rest[:, :, np.newaxis]) * c_flat_north
+    
+    # Rocky mountains overlay
+    c_playable = w_rocky[:, :, np.newaxis] * c_rocky + (1.0 - w_rocky[:, :, np.newaxis]) * c_playable
+    
+    # Southeast square (farmyard yard)
+    c_playable = w_sq[:, :, np.newaxis] * c_playable + (1.0 - w_sq[:, :, np.newaxis]) * c_sq
+    
+    # Add subtle grain to land
+    c_playable = np.clip(c_playable + noise_grain * (1.0 - w_rocky[:, :, np.newaxis] * 0.5), 0, 255)
+    
+    # Map-wide blend: background mountains vs playable area
+    c_full = w_bg[:, :, np.newaxis] * c_bg + (1.0 - w_bg[:, :, np.newaxis]) * c_playable
+    
+    # Water overlay on top
+    c_full = w_water[:, :, np.newaxis] * c_water + (1.0 - w_water[:, :, np.newaxis]) * c_full
+    
+    base_color_img = Image.fromarray(c_full.astype(np.uint8), mode="RGB")
+    return base_color_img
+
 def main():
     print("=== DEM 3D Viewer Asset Generator ===")
     
     # Path setup
     current_dir = os.path.dirname(os.path.abspath(__file__))
     project_root = os.path.dirname(current_dir)
-    input_path = os.path.join(project_root, "dem_generator", "dem_new_12k.png")
+    input_path = os.path.join(project_root, "dem_generator", "dem_new_8k.png")
     
     if not os.path.exists(input_path):
         print(f"Error: {input_path} not found. Please run the DEM generator first.")
@@ -35,11 +183,11 @@ def main():
     img_resized = img.resize((target_size, target_size), Image.Resampling.BILINEAR)
     data_resized = np.array(img_resized, dtype=np.float32)
     
-    # Min/Max in raw values and meters
+    # Min/Max in raw values and meters (1 meter = 128 units)
     h_min_raw = data_resized.min()
     h_max_raw = data_resized.max()
-    h_min_m = h_min_raw / 100.0
-    h_max_m = h_max_raw / 100.0
+    h_min_m = h_min_raw / 128.0
+    h_max_m = h_max_raw / 128.0
     print(f"Elevation range: {h_min_m:.2f}m to {h_max_m:.2f}m (raw: {h_min_raw:.1f} to {h_max_raw:.1f})")
     
     # 2. Save 16-bit RGB encoded heightmap
@@ -97,9 +245,8 @@ def main():
     osm_data_json = json.dumps(ways_data)
     
     # Generate the base color image (1024x1024)
-    # Default background is a clean light gray
-    bg_color = (204, 204, 204) # #CCCCCC
-    base_color_img = Image.new("RGB", (target_size, target_size), bg_color)
+    # Default background is the gorgeous procedural base texture representing geography
+    base_color_img = create_procedural_base_texture(target_size)
     draw = ImageDraw.Draw(base_color_img)
     
     if ways_data:
@@ -142,11 +289,11 @@ def main():
                 continue
                 
             # Convert coords to pixel coordinates on the 1024x1024 texture.
-            # The DEM is 12288px total but only the central 8192px correspond to the OSM area.
-            # Ratio = 8192/12288 = 2/3. In the 1024px texture that central band is:
-            #   osm_px = 1024 * (8192/12288) = 682.67px, offset = (1024 - 682.67) / 2 = 170.67px
-            osm_band = target_size * (8192 / 12288)  # ~682.67px
-            osm_offset = (target_size - osm_band) / 2  # ~170.67px
+            # The DEM is 8192px total but only the central 4096px correspond to the playable area.
+            # Ratio = 4096/8192 = 0.5. In the 1024px texture that central band is:
+            #   osm_px = 1024 * (4096/8192) = 512px, offset = (1024 - 512) / 2 = 256px
+            osm_band = target_size * (4096 / 8192)  # 512px
+            osm_offset = (target_size - osm_band) / 2  # 256px
             poly_points = []
             for lat, lon in coords:
                 u = (lon - min_lon) / (max_lon - min_lon)
@@ -176,7 +323,7 @@ def main():
         # Convert base color image to float [0, 1] array
         rgb_input = np.array(base_color_img, dtype=np.float32) / 255.0
         # Apply shading directly on the custom colored image using shade_rgb
-        shaded = ls.shade_rgb(rgb_input, elevation=data_resized / 100.0, blend_mode='overlay', vert_exag=1.5, dx=8.0, dy=8.0)
+        shaded = ls.shade_rgb(rgb_input, elevation=data_resized / 128.0, blend_mode='overlay', vert_exag=1.5, dx=8.0, dy=8.0)
         
         # Convert float [0, 1] to uint8 [0, 255] and save
         texture_data = (shaded * 255).astype(np.uint8)
@@ -646,7 +793,7 @@ def main():
     <!-- Header / Info Panel -->
     <div id="header-panel" class="hud-panel">
         <div class="subtitle">Farming Simulator 25</div>
-        <h1>DEM Matopiba 3D</h1>
+        <h1>Granja Bonita x4 3D</h1>
         <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Procedural Heightmap & Layout Viewer</p>
         
         <div class="stats-grid">
@@ -660,7 +807,7 @@ def main():
             </div>
             <div class="stat-card">
                 <div class="stat-label">Área Jugable</div>
-                <div class="stat-value">8.19 × 8.19 km</div>
+                <div class="stat-value">4.10 × 4.10 km</div>
             </div>
             <div class="stat-card">
                 <div class="stat-label">Vértices 3D</div>
@@ -706,7 +853,7 @@ def main():
             <div class="group-title">Límites & Guías</div>
             
             <div class="switch-container">
-                <span style="font-size: 13px;">Límite Jugable (8km)</span>
+                <span style="font-size: 13px;">Límite Jugable (4km)</span>
                 <label class="switch">
                     <input type="checkbox" id="toggle-playable" onchange="togglePlayableBox(this.checked)">
                     <span class="switch-slider"></span>
@@ -780,7 +927,7 @@ def main():
         const MIN_HEIGHT = {h_min_m};
         const MAX_HEIGHT = {h_max_m};
         const MAP_SIZE = 8192; // 8192m width and length
-        const PLAYABLE_SIZE = 8192;
+        const PLAYABLE_SIZE = 4096;
         const PLAYABLE_OFFSET = (MAP_SIZE - PLAYABLE_SIZE) / 2;
         
         // OSM Bounds and Data (from zoning_map.osm)
@@ -967,7 +1114,7 @@ def main():
                 const g = data[i * 4 + 1];
                 // Decode 16-bit value (in cm) and convert to meters
                 const rawHeight = r + g * 256;
-                heightData[i] = rawHeight / 100.0;
+                heightData[i] = rawHeight / 128.0;
             }}
         }}
 
@@ -1265,16 +1412,32 @@ def main():
                     const zoneLabel = document.getElementById('probe-zone');
                     
                     if (inPlayable) {{
-                        const dxLake = x - 1704;
-                        const dzLake = z - 1704;
-                        const distLake = Math.max(Math.abs(dxLake), Math.abs(dzLake));
-                        
-                        if (distLake <= 90) {{
-                            zoneLabel.innerText = "Lago / Reserva (225m)";
+                        const dxRes = x - (-1783);
+                        const dzRes = z - 1783;
+                        if (Math.abs(dxRes) <= 250 && Math.abs(dzRes) <= 250) {{
+                            zoneLabel.innerText = "Embalse Noroeste (500x500x15m)";
                             zoneLabel.style.color = "#3b82f6";
-                        }} else {{
-                            zoneLabel.innerText = "Área Jugable";
+                        }} else if (Math.abs(x - (-2008)) <= 25 && Math.abs(z - (-1623)) <= 25) {{
+                            zoneLabel.innerText = "Estanque Sur (50x50x3m)";
+                            zoneLabel.style.color = "#3b82f6";
+                        }} else if (Math.abs(x - (-2025.5)) <= 7.5 && z >= -1648 && z <= 2033) {{
+                            zoneLabel.innerText = "Canal de Agua Oeste (15m)";
+                            zoneLabel.style.color = "#60a5fa";
+                        }} else if (Math.sqrt((x - (-2048))**2 + (z - (-2048))**2) <= 300) {{
+                            zoneLabel.innerText = "Pico Suroeste (Elevación 100m)";
+                            zoneLabel.style.color = "#fbbf24";
+                        }} else if (Math.abs(x - 1679) <= 354 && Math.abs(z - (-1244)) <= 354) {{
+                            zoneLabel.innerText = "Cuadrante Llano SE (50 ha)";
+                            zoneLabel.style.color = "#ec4899";
+                        }} else if (z >= -2048 && z <= -1648) {{
+                            zoneLabel.innerText = "Barrera Montañosa Sur";
+                            zoneLabel.style.color = "#f59e0b";
+                        }} else if (z >= 1048 && z <= 2048) {{
+                            zoneLabel.innerText = "Llanura Norte (Área Llana)";
                             zoneLabel.style.color = "#10b981";
+                        }} else {{
+                            zoneLabel.innerText = "Valle Ondulado (Área Jugable)";
+                            zoneLabel.style.color = "#34d399";
                         }}
                     }} else {{
                         zoneLabel.innerText = "Fondo No Jugable";
