@@ -205,6 +205,12 @@ def main():
     img_rgb.save(output_rgb_path)
     print(f"Saved RGB heightmap to: {output_rgb_path}")
     
+    # Default coordinates (can be overridden by the OSM bounds if available)
+    min_lon = 37.715173389134144
+    max_lon = 37.82446513086585
+    min_lat = 47.57967188702157
+    max_lat = 47.653344312978426
+
     # 2.5. Parse OSM way coordinates to build polygon mask for texture coloring
     osm_path = os.path.join(project_root, "osm_generator", "outputs", "zoning_map.osm")
     if not os.path.exists(osm_path):
@@ -216,6 +222,15 @@ def main():
         try:
             tree = ET.parse(osm_path)
             root = tree.getroot()
+            
+            # Try to read bounding box from the OSM file bounds tag
+            bounds = root.find("bounds")
+            if bounds is not None:
+                min_lat = float(bounds.get("minlat"))
+                max_lat = float(bounds.get("maxlat"))
+                min_lon = float(bounds.get("minlon"))
+                max_lon = float(bounds.get("maxlon"))
+                print(f"Using bounds from OSM file: lat=({min_lat}, {max_lat}), lon=({min_lon}, {max_lon})")
             
             nodes = {}
             for node in root.findall("node"):
@@ -250,10 +265,6 @@ def main():
     draw = ImageDraw.Draw(base_color_img)
     
     if ways_data:
-        min_lon = 37.715173389134144
-        max_lon = 37.82446513086585
-        min_lat = 47.57967188702157
-        max_lat = 47.653344312978426
         
         # Color definitions for tags
         # (tag_key, tag_value, hex_color)
@@ -931,10 +942,10 @@ def main():
         const PLAYABLE_OFFSET = (MAP_SIZE - PLAYABLE_SIZE) / 2;
         
         // OSM Bounds and Data (from zoning_map.osm)
-        const MIN_LON = 37.715173389134144;
-        const MAX_LON = 37.82446513086585;
-        const MIN_LAT = 47.57967188702157;
-        const MAX_LAT = 47.653344312978426;
+        const MIN_LON = {min_lon};
+        const MAX_LON = {max_lon};
+        const MIN_LAT = {min_lat};
+        const MAX_LAT = {max_lat};
         const OSM_DATA = {osm_data_json};
         
         let container, scene, camera, renderer, controls;

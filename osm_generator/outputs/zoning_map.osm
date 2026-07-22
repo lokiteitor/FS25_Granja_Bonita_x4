@@ -1,0 +1,653 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osm version="0.6" generator="osm_generator">
+  <bounds minlat="47.66940750" minlon="37.70815735" maxlat="47.70620250" maxlon="37.76281665" />
+  <node id="1" lat="47.67980191" lon="37.75318055" version="1" visible="true" />
+  <node id="2" lat="47.67980191" lon="37.76261648" version="1" visible="true" />
+  <node id="3" lat="47.67344992" lon="37.76261648" version="1" visible="true" />
+  <node id="4" lat="47.67344992" lon="37.75318055" version="1" visible="true" />
+  <way id="1" version="1" visible="true">
+    <nd ref="1" />
+    <nd ref="2" />
+    <nd ref="3" />
+    <nd ref="4" />
+    <nd ref="1" />
+    <tag k="landuse" v="farmyard" />
+  </way>
+  <node id="5" lat="47.67300076" lon="37.70815735" version="1" visible="true" />
+  <node id="6" lat="47.67300076" lon="37.76281665" version="1" visible="true" />
+  <node id="7" lat="47.66940750" lon="37.76281665" version="1" visible="true" />
+  <node id="8" lat="47.66940750" lon="37.70815735" version="1" visible="true" />
+  <way id="2" version="1" visible="true">
+    <nd ref="5" />
+    <nd ref="6" />
+    <nd ref="7" />
+    <nd ref="8" />
+    <nd ref="5" />
+    <tag k="landuse" v="farmyard" />
+    <tag k="natural" v="wood" />
+  </way>
+  <node id="9" lat="47.70606775" lon="37.70835752" version="1" visible="true" />
+  <node id="10" lat="47.70606775" lon="37.71502980" version="1" visible="true" />
+  <node id="11" lat="47.70157617" lon="37.71502980" version="1" visible="true" />
+  <node id="12" lat="47.70157617" lon="37.70835752" version="1" visible="true" />
+  <way id="3" version="1" visible="true">
+    <nd ref="9" />
+    <nd ref="10" />
+    <nd ref="11" />
+    <nd ref="12" />
+    <nd ref="9" />
+    <tag k="landuse" v="farmyard" />
+  </way>
+  <node id="13" lat="47.70606775" lon="37.70835752" version="1" visible="true" />
+  <node id="14" lat="47.70606775" lon="37.70855769" version="1" visible="true" />
+  <node id="15" lat="47.67300076" lon="37.70855769" version="1" visible="true" />
+  <node id="16" lat="47.67300076" lon="37.70835752" version="1" visible="true" />
+  <way id="4" version="1" visible="true">
+    <nd ref="13" />
+    <nd ref="14" />
+    <nd ref="15" />
+    <nd ref="16" />
+    <nd ref="13" />
+    <tag k="landuse" v="farmyard" />
+    <tag k="natural" v="wood" />
+  </way>
+  <node id="17" lat="47.67344992" lon="37.70835752" version="1" visible="true" />
+  <node id="18" lat="47.67344992" lon="37.70902475" version="1" visible="true" />
+  <node id="19" lat="47.67300076" lon="37.70902475" version="1" visible="true" />
+  <node id="20" lat="47.67300076" lon="37.70835752" version="1" visible="true" />
+  <way id="5" version="1" visible="true">
+    <nd ref="17" />
+    <nd ref="18" />
+    <nd ref="19" />
+    <nd ref="20" />
+    <nd ref="17" />
+    <tag k="landuse" v="farmyard" />
+    <tag k="natural" v="wood" />
+  </way>
+  <node id="21" lat="47.70157617" lon="37.76281665" version="1" visible="true" />
+  <node id="22" lat="47.70157617" lon="37.70815735" version="1" visible="true" />
+  <way id="6" version="1" visible="true">
+    <nd ref="21" />
+    <nd ref="22" />
+    <tag k="highway" v="primary" />
+  </way>
+  <node id="23" lat="47.67980191" lon="37.76281665" version="1" visible="true" />
+  <node id="24" lat="47.67980191" lon="37.70815735" version="1" visible="true" />
+  <way id="7" version="1" visible="true">
+    <nd ref="23" />
+    <nd ref="24" />
+    <tag k="highway" v="primary" />
+  </way>
+  <node id="25" lat="47.70157617" lon="37.72277706" version="1" visible="true" />
+  <node id="26" lat="47.70089573" lon="37.72297753" version="1" visible="true" />
+  <node id="27" lat="47.70021528" lon="37.72305437" version="1" visible="true" />
+  <node id="28" lat="47.69953484" lon="37.72306272" version="1" visible="true" />
+  <node id="29" lat="47.69885439" lon="37.72306459" version="1" visible="true" />
+  <node id="30" lat="47.69817394" lon="37.72312259" version="1" visible="true" />
+  <node id="31" lat="47.69749350" lon="37.72329377" version="1" visible="true" />
+  <node id="32" lat="47.69681305" lon="37.72362385" version="1" visible="true" />
+  <node id="33" lat="47.69613261" lon="37.72414271" version="1" visible="true" />
+  <node id="34" lat="47.69545216" lon="37.72486137" version="1" visible="true" />
+  <node id="35" lat="47.69477172" lon="37.72577091" version="1" visible="true" />
+  <node id="36" lat="47.69409127" lon="37.72684334" version="1" visible="true" />
+  <node id="37" lat="47.69341082" lon="37.72803444" version="1" visible="true" />
+  <node id="38" lat="47.69273038" lon="37.72928811" version="1" visible="true" />
+  <node id="39" lat="47.69204993" lon="37.73054203" version="1" visible="true" />
+  <node id="40" lat="47.69136949" lon="37.73173383" version="1" visible="true" />
+  <node id="41" lat="47.69068904" lon="37.73280736" version="1" visible="true" />
+  <node id="42" lat="47.69000860" lon="37.73371828" version="1" visible="true" />
+  <node id="43" lat="47.68932815" lon="37.73443846" version="1" visible="true" />
+  <node id="44" lat="47.68864770" lon="37.73495884" version="1" visible="true" />
+  <node id="45" lat="47.68796726" lon="37.73529028" version="1" visible="true" />
+  <node id="46" lat="47.68728681" lon="37.73546252" version="1" visible="true" />
+  <node id="47" lat="47.68660637" lon="37.73552119" version="1" visible="true" />
+  <node id="48" lat="47.68592592" lon="37.73552325" version="1" visible="true" />
+  <node id="49" lat="47.68524548" lon="37.73553131" version="1" visible="true" />
+  <node id="50" lat="47.68456503" lon="37.73560740" version="1" visible="true" />
+  <node id="51" lat="47.68388458" lon="37.73580674" version="1" visible="true" />
+  <node id="52" lat="47.68320414" lon="37.73617225" version="1" visible="true" />
+  <node id="53" lat="47.68252369" lon="37.73673027" version="1" visible="true" />
+  <node id="54" lat="47.68184325" lon="37.73748790" version="1" visible="true" />
+  <node id="55" lat="47.68116280" lon="37.73843234" version="1" visible="true" />
+  <node id="56" lat="47.68048235" lon="37.73953212" version="1" visible="true" />
+  <node id="57" lat="47.67980191" lon="37.74074028" version="1" visible="true" />
+  <way id="8" version="1" visible="true">
+    <nd ref="25" />
+    <nd ref="26" />
+    <nd ref="27" />
+    <nd ref="28" />
+    <nd ref="29" />
+    <nd ref="30" />
+    <nd ref="31" />
+    <nd ref="32" />
+    <nd ref="33" />
+    <nd ref="34" />
+    <nd ref="35" />
+    <nd ref="36" />
+    <nd ref="37" />
+    <nd ref="38" />
+    <nd ref="39" />
+    <nd ref="40" />
+    <nd ref="41" />
+    <nd ref="42" />
+    <nd ref="43" />
+    <nd ref="44" />
+    <nd ref="45" />
+    <nd ref="46" />
+    <nd ref="47" />
+    <nd ref="48" />
+    <nd ref="49" />
+    <nd ref="50" />
+    <nd ref="51" />
+    <nd ref="52" />
+    <nd ref="53" />
+    <nd ref="54" />
+    <nd ref="55" />
+    <nd ref="56" />
+    <nd ref="57" />
+    <tag k="highway" v="primary" />
+  </way>
+  <node id="58" lat="47.70620250" lon="37.71502980" version="1" visible="true" />
+  <node id="59" lat="47.70157617" lon="37.71502980" version="1" visible="true" />
+  <way id="9" version="1" visible="true">
+    <nd ref="58" />
+    <nd ref="59" />
+    <tag k="highway" v="primary" />
+  </way>
+  <node id="60" lat="47.70597792" lon="37.71547017" version="1" visible="true" />
+  <node id="61" lat="47.70597792" lon="37.72423020" version="1" visible="true" />
+  <node id="62" lat="47.70187262" lon="37.72423020" version="1" visible="true" />
+  <node id="63" lat="47.70187262" lon="37.71547017" version="1" visible="true" />
+  <way id="10" version="1" visible="true">
+    <nd ref="60" />
+    <nd ref="61" />
+    <nd ref="62" />
+    <nd ref="63" />
+    <nd ref="60" />
+    <tag k="landuse" v="farmyard" />
+  </way>
+  <node id="64" lat="47.70597792" lon="37.71838996" version="1" visible="true" />
+  <node id="65" lat="47.70157617" lon="37.71838996" version="1" visible="true" />
+  <way id="11" version="1" visible="true">
+    <nd ref="64" />
+    <nd ref="65" />
+    <tag k="highway" v="secondary" />
+  </way>
+  <node id="66" lat="47.70597792" lon="37.72130975" version="1" visible="true" />
+  <node id="67" lat="47.70157617" lon="37.72130975" version="1" visible="true" />
+  <way id="12" version="1" visible="true">
+    <nd ref="66" />
+    <nd ref="67" />
+    <tag k="highway" v="secondary" />
+  </way>
+  <node id="68" lat="47.70461248" lon="37.71502980" version="1" visible="true" />
+  <node id="69" lat="47.70461248" lon="37.72423020" version="1" visible="true" />
+  <way id="13" version="1" visible="true">
+    <nd ref="68" />
+    <nd ref="69" />
+    <tag k="highway" v="secondary" />
+  </way>
+  <node id="70" lat="47.70323806" lon="37.71502980" version="1" visible="true" />
+  <node id="71" lat="47.70323806" lon="37.72423020" version="1" visible="true" />
+  <way id="14" version="1" visible="true">
+    <nd ref="70" />
+    <nd ref="71" />
+    <tag k="highway" v="secondary" />
+  </way>
+  <node id="72" lat="47.70597792" lon="37.72436365" version="1" visible="true" />
+  <node id="73" lat="47.70597792" lon="37.72728370" version="1" visible="true" />
+  <node id="74" lat="47.70187262" lon="37.72728370" version="1" visible="true" />
+  <node id="75" lat="47.70187262" lon="37.72436365" version="1" visible="true" />
+  <way id="15" version="1" visible="true">
+    <nd ref="72" />
+    <nd ref="73" />
+    <nd ref="74" />
+    <nd ref="75" />
+    <nd ref="72" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="76" lat="47.70597792" lon="37.72741715" version="1" visible="true" />
+  <node id="77" lat="47.70597792" lon="37.73325726" version="1" visible="true" />
+  <node id="78" lat="47.70187262" lon="37.73325726" version="1" visible="true" />
+  <node id="79" lat="47.70187262" lon="37.72741715" version="1" visible="true" />
+  <way id="16" version="1" visible="true">
+    <nd ref="76" />
+    <nd ref="77" />
+    <nd ref="78" />
+    <nd ref="79" />
+    <nd ref="76" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="80" lat="47.70597792" lon="37.73339070" version="1" visible="true" />
+  <node id="81" lat="47.70597792" lon="37.73637468" version="1" visible="true" />
+  <node id="82" lat="47.70396920" lon="37.73637468" version="1" visible="true" />
+  <node id="83" lat="47.70396920" lon="37.73339070" version="1" visible="true" />
+  <way id="17" version="1" visible="true">
+    <nd ref="80" />
+    <nd ref="81" />
+    <nd ref="82" />
+    <nd ref="83" />
+    <nd ref="80" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="84" lat="47.70387936" lon="37.73339070" version="1" visible="true" />
+  <node id="85" lat="47.70387936" lon="37.73637468" version="1" visible="true" />
+  <node id="86" lat="47.70187064" lon="37.73637468" version="1" visible="true" />
+  <node id="87" lat="47.70187064" lon="37.73339070" version="1" visible="true" />
+  <way id="18" version="1" visible="true">
+    <nd ref="84" />
+    <nd ref="85" />
+    <nd ref="86" />
+    <nd ref="87" />
+    <nd ref="84" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="88" lat="47.70597792" lon="37.73650813" version="1" visible="true" />
+  <node id="89" lat="47.70597792" lon="37.73861803" version="1" visible="true" />
+  <node id="90" lat="47.70455759" lon="37.73861803" version="1" visible="true" />
+  <node id="91" lat="47.70455759" lon="37.73650813" version="1" visible="true" />
+  <way id="19" version="1" visible="true">
+    <nd ref="88" />
+    <nd ref="89" />
+    <nd ref="90" />
+    <nd ref="91" />
+    <nd ref="88" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="92" lat="47.70446776" lon="37.73650813" version="1" visible="true" />
+  <node id="93" lat="47.70446776" lon="37.73861803" version="1" visible="true" />
+  <node id="94" lat="47.70304743" lon="37.73861803" version="1" visible="true" />
+  <node id="95" lat="47.70304743" lon="37.73650813" version="1" visible="true" />
+  <way id="20" version="1" visible="true">
+    <nd ref="92" />
+    <nd ref="93" />
+    <nd ref="94" />
+    <nd ref="95" />
+    <nd ref="92" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="96" lat="47.70295760" lon="37.73650813" version="1" visible="true" />
+  <node id="97" lat="47.70295760" lon="37.73861803" version="1" visible="true" />
+  <node id="98" lat="47.70187262" lon="37.73861803" version="1" visible="true" />
+  <node id="99" lat="47.70187262" lon="37.73650813" version="1" visible="true" />
+  <way id="21" version="1" visible="true">
+    <nd ref="96" />
+    <nd ref="97" />
+    <nd ref="98" />
+    <nd ref="99" />
+    <nd ref="96" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="100" lat="47.70597792" lon="37.73875148" version="1" visible="true" />
+  <node id="101" lat="47.70597792" lon="37.74459159" version="1" visible="true" />
+  <node id="102" lat="47.70187262" lon="37.74459159" version="1" visible="true" />
+  <node id="103" lat="47.70187262" lon="37.73875148" version="1" visible="true" />
+  <way id="22" version="1" visible="true">
+    <nd ref="100" />
+    <nd ref="101" />
+    <nd ref="102" />
+    <nd ref="103" />
+    <nd ref="100" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="104" lat="47.70597792" lon="37.74472503" version="1" visible="true" />
+  <node id="105" lat="47.70597792" lon="37.74764509" version="1" visible="true" />
+  <node id="106" lat="47.70187262" lon="37.74764509" version="1" visible="true" />
+  <node id="107" lat="47.70187262" lon="37.74472503" version="1" visible="true" />
+  <way id="23" version="1" visible="true">
+    <nd ref="104" />
+    <nd ref="105" />
+    <nd ref="106" />
+    <nd ref="107" />
+    <nd ref="104" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="108" lat="47.70597792" lon="37.74777854" version="1" visible="true" />
+  <node id="109" lat="47.70597792" lon="37.75076251" version="1" visible="true" />
+  <node id="110" lat="47.70396920" lon="37.75076251" version="1" visible="true" />
+  <node id="111" lat="47.70396920" lon="37.74777854" version="1" visible="true" />
+  <way id="24" version="1" visible="true">
+    <nd ref="108" />
+    <nd ref="109" />
+    <nd ref="110" />
+    <nd ref="111" />
+    <nd ref="108" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="112" lat="47.70387936" lon="37.74777854" version="1" visible="true" />
+  <node id="113" lat="47.70387936" lon="37.75076251" version="1" visible="true" />
+  <node id="114" lat="47.70187064" lon="37.75076251" version="1" visible="true" />
+  <node id="115" lat="47.70187064" lon="37.74777854" version="1" visible="true" />
+  <way id="25" version="1" visible="true">
+    <nd ref="112" />
+    <nd ref="113" />
+    <nd ref="114" />
+    <nd ref="115" />
+    <nd ref="112" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="116" lat="47.70597792" lon="37.75089596" version="1" visible="true" />
+  <node id="117" lat="47.70597792" lon="37.75300586" version="1" visible="true" />
+  <node id="118" lat="47.70455759" lon="37.75300586" version="1" visible="true" />
+  <node id="119" lat="47.70455759" lon="37.75089596" version="1" visible="true" />
+  <way id="26" version="1" visible="true">
+    <nd ref="116" />
+    <nd ref="117" />
+    <nd ref="118" />
+    <nd ref="119" />
+    <nd ref="116" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="120" lat="47.70446776" lon="37.75089596" version="1" visible="true" />
+  <node id="121" lat="47.70446776" lon="37.75300586" version="1" visible="true" />
+  <node id="122" lat="47.70304743" lon="37.75300586" version="1" visible="true" />
+  <node id="123" lat="47.70304743" lon="37.75089596" version="1" visible="true" />
+  <way id="27" version="1" visible="true">
+    <nd ref="120" />
+    <nd ref="121" />
+    <nd ref="122" />
+    <nd ref="123" />
+    <nd ref="120" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="124" lat="47.70295760" lon="37.75089596" version="1" visible="true" />
+  <node id="125" lat="47.70295760" lon="37.75300586" version="1" visible="true" />
+  <node id="126" lat="47.70187262" lon="37.75300586" version="1" visible="true" />
+  <node id="127" lat="47.70187262" lon="37.75089596" version="1" visible="true" />
+  <way id="28" version="1" visible="true">
+    <nd ref="124" />
+    <nd ref="125" />
+    <nd ref="126" />
+    <nd ref="127" />
+    <nd ref="124" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="128" lat="47.70597792" lon="37.75313931" version="1" visible="true" />
+  <node id="129" lat="47.70597792" lon="37.75897942" version="1" visible="true" />
+  <node id="130" lat="47.70187262" lon="37.75897942" version="1" visible="true" />
+  <node id="131" lat="47.70187262" lon="37.75313931" version="1" visible="true" />
+  <way id="29" version="1" visible="true">
+    <nd ref="128" />
+    <nd ref="129" />
+    <nd ref="130" />
+    <nd ref="131" />
+    <nd ref="128" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="132" lat="47.70597792" lon="37.75911287" version="1" visible="true" />
+  <node id="133" lat="47.70597792" lon="37.76203292" version="1" visible="true" />
+  <node id="134" lat="47.70187262" lon="37.76203292" version="1" visible="true" />
+  <node id="135" lat="47.70187262" lon="37.75911287" version="1" visible="true" />
+  <way id="30" version="1" visible="true">
+    <nd ref="132" />
+    <nd ref="133" />
+    <nd ref="134" />
+    <nd ref="135" />
+    <nd ref="132" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="136" lat="47.70127973" lon="37.70869113" version="1" visible="true" />
+  <node id="137" lat="47.70127973" lon="37.71167511" version="1" visible="true" />
+  <node id="138" lat="47.69927101" lon="37.71167511" version="1" visible="true" />
+  <node id="139" lat="47.69927101" lon="37.70869113" version="1" visible="true" />
+  <way id="31" version="1" visible="true">
+    <nd ref="136" />
+    <nd ref="137" />
+    <nd ref="138" />
+    <nd ref="139" />
+    <nd ref="136" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="140" lat="47.70127973" lon="37.71180856" version="1" visible="true" />
+  <node id="141" lat="47.70127973" lon="37.71391846" version="1" visible="true" />
+  <node id="142" lat="47.69985940" lon="37.71391846" version="1" visible="true" />
+  <node id="143" lat="47.69985940" lon="37.71180856" version="1" visible="true" />
+  <way id="32" version="1" visible="true">
+    <nd ref="140" />
+    <nd ref="141" />
+    <nd ref="142" />
+    <nd ref="143" />
+    <nd ref="140" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="144" lat="47.69976957" lon="37.71180856" version="1" visible="true" />
+  <node id="145" lat="47.69976957" lon="37.71391846" version="1" visible="true" />
+  <node id="146" lat="47.69834925" lon="37.71391846" version="1" visible="true" />
+  <node id="147" lat="47.69834925" lon="37.71180856" version="1" visible="true" />
+  <way id="33" version="1" visible="true">
+    <nd ref="144" />
+    <nd ref="145" />
+    <nd ref="146" />
+    <nd ref="147" />
+    <nd ref="144" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="148" lat="47.70127973" lon="37.71405191" version="1" visible="true" />
+  <node id="149" lat="47.70127973" lon="37.71995661" version="1" visible="true" />
+  <node id="150" lat="47.69721934" lon="37.71995661" version="1" visible="true" />
+  <node id="151" lat="47.69721934" lon="37.71405191" version="1" visible="true" />
+  <way id="34" version="1" visible="true">
+    <nd ref="148" />
+    <nd ref="149" />
+    <nd ref="150" />
+    <nd ref="151" />
+    <nd ref="148" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="152" lat="47.70127973" lon="37.72009005" version="1" visible="true" />
+  <node id="153" lat="47.70127973" lon="37.72219996" version="1" visible="true" />
+  <node id="154" lat="47.69985940" lon="37.72219996" version="1" visible="true" />
+  <node id="155" lat="47.69985940" lon="37.72009005" version="1" visible="true" />
+  <way id="35" version="1" visible="true">
+    <nd ref="152" />
+    <nd ref="153" />
+    <nd ref="154" />
+    <nd ref="155" />
+    <nd ref="152" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="156" lat="47.69976957" lon="37.72009005" version="1" visible="true" />
+  <node id="157" lat="47.69976957" lon="37.72219996" version="1" visible="true" />
+  <node id="158" lat="47.69834925" lon="37.72219996" version="1" visible="true" />
+  <node id="159" lat="47.69834925" lon="37.72009005" version="1" visible="true" />
+  <way id="36" version="1" visible="true">
+    <nd ref="156" />
+    <nd ref="157" />
+    <nd ref="158" />
+    <nd ref="159" />
+    <nd ref="156" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="160" lat="47.70127973" lon="37.72397065" version="1" visible="true" />
+  <node id="161" lat="47.70127973" lon="37.72987535" version="1" visible="true" />
+  <node id="162" lat="47.69721934" lon="37.72987535" version="1" visible="true" />
+  <node id="163" lat="47.69721934" lon="37.72397065" version="1" visible="true" />
+  <way id="37" version="1" visible="true">
+    <nd ref="160" />
+    <nd ref="161" />
+    <nd ref="162" />
+    <nd ref="163" />
+    <nd ref="160" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="164" lat="47.70127973" lon="37.73000879" version="1" visible="true" />
+  <node id="165" lat="47.70127973" lon="37.73296114" version="1" visible="true" />
+  <node id="166" lat="47.69721934" lon="37.73296114" version="1" visible="true" />
+  <node id="167" lat="47.69721934" lon="37.73000879" version="1" visible="true" />
+  <way id="38" version="1" visible="true">
+    <nd ref="164" />
+    <nd ref="165" />
+    <nd ref="166" />
+    <nd ref="167" />
+    <nd ref="164" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="168" lat="47.70127973" lon="37.73309459" version="1" visible="true" />
+  <node id="169" lat="47.70127973" lon="37.73607856" version="1" visible="true" />
+  <node id="170" lat="47.69927101" lon="37.73607856" version="1" visible="true" />
+  <node id="171" lat="47.69927101" lon="37.73309459" version="1" visible="true" />
+  <way id="39" version="1" visible="true">
+    <nd ref="168" />
+    <nd ref="169" />
+    <nd ref="170" />
+    <nd ref="171" />
+    <nd ref="168" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="172" lat="47.69918117" lon="37.73309459" version="1" visible="true" />
+  <node id="173" lat="47.69918117" lon="37.73607856" version="1" visible="true" />
+  <node id="174" lat="47.69717245" lon="37.73607856" version="1" visible="true" />
+  <node id="175" lat="47.69717245" lon="37.73309459" version="1" visible="true" />
+  <way id="40" version="1" visible="true">
+    <nd ref="172" />
+    <nd ref="173" />
+    <nd ref="174" />
+    <nd ref="175" />
+    <nd ref="172" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="176" lat="47.70127973" lon="37.73621201" version="1" visible="true" />
+  <node id="177" lat="47.70127973" lon="37.73832192" version="1" visible="true" />
+  <node id="178" lat="47.69985940" lon="37.73832192" version="1" visible="true" />
+  <node id="179" lat="47.69985940" lon="37.73621201" version="1" visible="true" />
+  <way id="41" version="1" visible="true">
+    <nd ref="176" />
+    <nd ref="177" />
+    <nd ref="178" />
+    <nd ref="179" />
+    <nd ref="176" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="180" lat="47.69976957" lon="37.73621201" version="1" visible="true" />
+  <node id="181" lat="47.69976957" lon="37.73832192" version="1" visible="true" />
+  <node id="182" lat="47.69834925" lon="37.73832192" version="1" visible="true" />
+  <node id="183" lat="47.69834925" lon="37.73621201" version="1" visible="true" />
+  <way id="42" version="1" visible="true">
+    <nd ref="180" />
+    <nd ref="181" />
+    <nd ref="182" />
+    <nd ref="183" />
+    <nd ref="180" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="184" lat="47.69825941" lon="37.73621201" version="1" visible="true" />
+  <node id="185" lat="47.69825941" lon="37.73832192" version="1" visible="true" />
+  <node id="186" lat="47.69721934" lon="37.73832192" version="1" visible="true" />
+  <node id="187" lat="47.69721934" lon="37.73621201" version="1" visible="true" />
+  <way id="43" version="1" visible="true">
+    <nd ref="184" />
+    <nd ref="185" />
+    <nd ref="186" />
+    <nd ref="187" />
+    <nd ref="184" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="188" lat="47.70127973" lon="37.73845536" version="1" visible="true" />
+  <node id="189" lat="47.70127973" lon="37.74436006" version="1" visible="true" />
+  <node id="190" lat="47.69721934" lon="37.74436006" version="1" visible="true" />
+  <node id="191" lat="47.69721934" lon="37.73845536" version="1" visible="true" />
+  <way id="44" version="1" visible="true">
+    <nd ref="188" />
+    <nd ref="189" />
+    <nd ref="190" />
+    <nd ref="191" />
+    <nd ref="188" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="192" lat="47.70127973" lon="37.74449351" version="1" visible="true" />
+  <node id="193" lat="47.70127973" lon="37.74744586" version="1" visible="true" />
+  <node id="194" lat="47.69721934" lon="37.74744586" version="1" visible="true" />
+  <node id="195" lat="47.69721934" lon="37.74449351" version="1" visible="true" />
+  <way id="45" version="1" visible="true">
+    <nd ref="192" />
+    <nd ref="193" />
+    <nd ref="194" />
+    <nd ref="195" />
+    <nd ref="192" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="196" lat="47.70127973" lon="37.74757930" version="1" visible="true" />
+  <node id="197" lat="47.70127973" lon="37.75056328" version="1" visible="true" />
+  <node id="198" lat="47.69927101" lon="37.75056328" version="1" visible="true" />
+  <node id="199" lat="47.69927101" lon="37.74757930" version="1" visible="true" />
+  <way id="46" version="1" visible="true">
+    <nd ref="196" />
+    <nd ref="197" />
+    <nd ref="198" />
+    <nd ref="199" />
+    <nd ref="196" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="200" lat="47.69918117" lon="37.74757930" version="1" visible="true" />
+  <node id="201" lat="47.69918117" lon="37.75056328" version="1" visible="true" />
+  <node id="202" lat="47.69717245" lon="37.75056328" version="1" visible="true" />
+  <node id="203" lat="47.69717245" lon="37.74757930" version="1" visible="true" />
+  <way id="47" version="1" visible="true">
+    <nd ref="200" />
+    <nd ref="201" />
+    <nd ref="202" />
+    <nd ref="203" />
+    <nd ref="200" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="204" lat="47.70127973" lon="37.75069672" version="1" visible="true" />
+  <node id="205" lat="47.70127973" lon="37.75280663" version="1" visible="true" />
+  <node id="206" lat="47.69985940" lon="37.75280663" version="1" visible="true" />
+  <node id="207" lat="47.69985940" lon="37.75069672" version="1" visible="true" />
+  <way id="48" version="1" visible="true">
+    <nd ref="204" />
+    <nd ref="205" />
+    <nd ref="206" />
+    <nd ref="207" />
+    <nd ref="204" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="208" lat="47.69976957" lon="37.75069672" version="1" visible="true" />
+  <node id="209" lat="47.69976957" lon="37.75280663" version="1" visible="true" />
+  <node id="210" lat="47.69834925" lon="37.75280663" version="1" visible="true" />
+  <node id="211" lat="47.69834925" lon="37.75069672" version="1" visible="true" />
+  <way id="49" version="1" visible="true">
+    <nd ref="208" />
+    <nd ref="209" />
+    <nd ref="210" />
+    <nd ref="211" />
+    <nd ref="208" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="212" lat="47.69825941" lon="37.75069672" version="1" visible="true" />
+  <node id="213" lat="47.69825941" lon="37.75280663" version="1" visible="true" />
+  <node id="214" lat="47.69721934" lon="37.75280663" version="1" visible="true" />
+  <node id="215" lat="47.69721934" lon="37.75069672" version="1" visible="true" />
+  <way id="50" version="1" visible="true">
+    <nd ref="212" />
+    <nd ref="213" />
+    <nd ref="214" />
+    <nd ref="215" />
+    <nd ref="212" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="216" lat="47.70127973" lon="37.75294008" version="1" visible="true" />
+  <node id="217" lat="47.70127973" lon="37.75884477" version="1" visible="true" />
+  <node id="218" lat="47.69721934" lon="37.75884477" version="1" visible="true" />
+  <node id="219" lat="47.69721934" lon="37.75294008" version="1" visible="true" />
+  <way id="51" version="1" visible="true">
+    <nd ref="216" />
+    <nd ref="217" />
+    <nd ref="218" />
+    <nd ref="219" />
+    <nd ref="216" />
+    <tag k="landuse" v="farmland" />
+  </way>
+  <node id="220" lat="47.70127973" lon="37.75897822" version="1" visible="true" />
+  <node id="221" lat="47.70127973" lon="37.76193057" version="1" visible="true" />
+  <node id="222" lat="47.69721934" lon="37.76193057" version="1" visible="true" />
+  <node id="223" lat="47.69721934" lon="37.75897822" version="1" visible="true" />
+  <way id="52" version="1" visible="true">
+    <nd ref="220" />
+    <nd ref="221" />
+    <nd ref="222" />
+    <nd ref="223" />
+    <nd ref="220" />
+    <tag k="landuse" v="farmland" />
+  </way>
+</osm>
