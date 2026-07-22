@@ -404,6 +404,285 @@ def main():
             "local_rect": (x0, y0, x1, y1)
         })
     
+    # 2.6 Generate rectangular fields in the south region (between south highway and mountain)
+    # H_south_fields = 352.0 (y in [2972.0, 3324.0] and [3334.0, 3686.0]), x in [40.0, 3363.9]
+    # Field width for 10ha: 284.09m, 20ha: 568.18m
+    # Minimum width is 284.09m (exceeds the 250m requirement)
+    south_fields_data = [
+        # Top Row (Row 1): y in [2972.0, 3324.0]
+        ("Field S1 (20.0ha)", 140.0, 2972.0, 708.18, 3324.0),
+        ("Field S2 (10.0ha)", 718.18, 2972.0, 1002.27, 3324.0),
+        ("Field S3 (20.0ha)", 1012.27, 2972.0, 1580.45, 3324.0),
+        ("Field S4 (10.0ha)", 1590.45, 2972.0, 1874.54, 3324.0),
+        ("Field S5 (20.0ha)", 1884.54, 2972.0, 2452.72, 3324.0),
+        ("Field S6 (10.0ha)", 2462.72, 2972.0, 2756.81, 3324.0),
+        ("Field S7 (20.0ha)", 2756.81, 2972.0, 3324.99, 3324.0),
+        
+        # Bottom Row (Row 2): y in [3334.0, 3686.0]
+        ("Field S8 (10.0ha)", 175.0, 3334.0, 459.09, 3686.0),
+        ("Field S9 (20.0ha)", 469.09, 3334.0, 1037.27, 3686.0),
+        ("Field S10 (10.0ha)", 1047.27, 3334.0, 1331.36, 3686.0),
+        ("Field S11 (20.0ha)", 1341.36, 3334.0, 1909.54, 3686.0),
+        ("Field S12 (10.0ha)", 1919.54, 3334.0, 2203.63, 3686.0),
+        ("Field S13 (20.0ha)", 2213.63, 3334.0, 2781.81, 3686.0),
+        ("Field S14 (10.0ha)", 2791.81, 3334.0, 3075.90, 3686.0),
+        ("Field S15 (10.0ha)", 3085.90, 3334.0, 3369.99, 3686.0),
+    ]
+    
+    for name, x0, y0, x1, y1 in south_fields_data:
+        pts = [
+            to_geo(x0, y0),
+            to_geo(x1, y0),
+            to_geo(x1, y1),
+            to_geo(x0, y1),
+            to_geo(x0, y0)
+        ]
+        features.append({
+            "name": name,
+            "points": pts,
+            "tags": {"landuse": "farmland"},
+            "color": "#96A858",
+            "closed": True,
+            "is_field": True,
+            "local_rect": (x0, y0, x1, y1)
+        })
+        
+    # 2.7 Generate PLSS fields in the central region
+    # Large road-free blocks: (x0, y0, x1, y1)
+    central_blocks = [
+        # Slice 1: y in [1015, 1490]
+        (140.0, 1015.0, 1050.0, 1490.0),
+        (1650.0, 1015.0, 4056.0, 1490.0),
+        
+        # Slice 2: y in [1500, 1980]
+        (140.0, 1500.0, 1500.0, 1980.0),
+        (2040.0, 1500.0, 4056.0, 1980.0),
+        
+        # Slice 3: y in [1990, 2470]
+        (140.0, 1990.0, 1950.0, 2470.0),
+        (2250.0, 1990.0, 4056.0, 2470.0),
+        
+        # Slice 4: y in [2480, 2905]
+        (140.0, 2480.0, 1980.0, 2905.0),
+        (2390.0, 2480.0, 4056.0, 2905.0)
+    ]
+    
+    central_fields_raw = []
+    
+    def split_block_plss(x0, y0, x1, y1):
+        w = x1 - x0
+        h = y1 - y0
+        if w >= h:
+            w_half = w / 2.0
+            # Test if splitting vertically yields shrunk sub-blocks >= 40 hectares (400,000 m2)
+            if (w_half - 10.0) * (h - 10.0) >= 400000.0:
+                split_block_plss(x0, y0, x0 + w_half, y1)
+                split_block_plss(x0 + w_half, y0, x1, y1)
+            else:
+                central_fields_raw.append((x0, y0, x1, y1))
+        else:
+            h_half = h / 2.0
+            # Test if splitting horizontally yields shrunk sub-blocks >= 40 hectares (400,000 m2)
+            if (w - 10.0) * (h_half - 10.0) >= 400000.0:
+                split_block_plss(x0, y0, x1, y0 + h_half)
+                split_block_plss(x0, y0 + h_half, x1, y1)
+            else:
+                central_fields_raw.append((x0, y0, x1, y1))
+                
+    for x0, y0, x1, y1 in central_blocks:
+        split_block_plss(x0, y0, x1, y1)
+        
+    # Shrink each raw field by 5m on all sides for the 10m gap, and add to features
+    central_field_count = 1
+    for x0, y0, x1, y1 in central_fields_raw:
+        fx0 = x0 + 5.0
+        fy0 = y0 + 5.0
+        fx1 = x1 - 5.0
+        fy1 = y1 - 5.0
+        
+        area_ha = ((fx1 - fx0) * (fy1 - fy0)) / 10000.0
+        
+        pts = [
+            to_geo(fx0, fy0),
+            to_geo(fx1, fy0),
+            to_geo(fx1, fy1),
+            to_geo(fx0, fy1),
+            to_geo(fx0, fy0)
+        ]
+        
+        features.append({
+            "name": f"Field C{central_field_count} ({area_ha:.1f}ha)",
+            "points": pts,
+            "tags": {"landuse": "farmland"},
+            "color": "#96A858",
+            "closed": True,
+            "is_field": True,
+            "local_rect": (fx0, fy0, fx1, fy1)
+        })
+        central_field_count += 1
+
+    # 2.8 Generate irregular fields and forests around the sinuous road
+    def road_x(y):
+        y_val = y
+        x_diag = 650.0 + (y_val / size_m) * (3200.0 - 650.0)
+        x_val = x_diag + amp * math.sin(2.0 * math.pi * y_val / wavelength)
+        return x_val
+        
+    def make_west_gap_polygon(y_start, y_end, x_field):
+        field_pts = []
+        road_pts = []
+        steps = 40
+        for i in range(steps + 1):
+            y = y_start + (y_end - y_start) * (i / steps)
+            rx_val = road_x(y)
+            # Road buffer: rx_val - 33.0 (road buffer) - 10.0 (separation buffer) = rx_val - 43.0
+            # Field buffer: x_field + 10.0 (separation buffer)
+            x_road_limit = rx_val - 43.0
+            x_field_limit = x_field + 10.0
+            if x_road_limit > x_field_limit + 10.0:
+                field_pts.append((x_field_limit, y))
+                road_pts.append((x_road_limit, y))
+        if len(field_pts) < 3:
+            return None
+        # Return closed polygon loop
+        raw_pts = field_pts + list(reversed(road_pts)) + [field_pts[0]]
+        return [to_geo(x, y) for x, y in raw_pts]
+
+    def make_east_gap_polygon(y_start, y_end, x_field):
+        field_pts = []
+        road_pts = []
+        steps = 40
+        for i in range(steps + 1):
+            y = y_start + (y_end - y_start) * (i / steps)
+            rx_val = road_x(y)
+            # Road buffer: rx_val + 33.0 (road buffer) + 10.0 (separation buffer) = rx_val + 43.0
+            # Field buffer: x_field - 10.0 (separation buffer)
+            x_road_limit = rx_val + 43.0
+            x_field_limit = x_field - 10.0
+            if x_field_limit > x_road_limit + 10.0:
+                field_pts.append((x_field_limit, y))
+                road_pts.append((x_road_limit, y))
+        if len(field_pts) < 3:
+            return None
+        # Return closed polygon loop
+        raw_pts = road_pts + list(reversed(field_pts)) + [road_pts[0]]
+        return [to_geo(x, y) for x, y in raw_pts]
+
+    # Alternate farmland and forest in the gaps
+    # Slice 1: y in [1015, 1490], West field x limit = 1050, East field x limit = 1650
+    poly_s1_w = make_west_gap_polygon(1015.0, 1490.0, 1050.0)
+    if poly_s1_w:
+        features.append({
+            "name": "Forest Gap S1 West",
+            "points": poly_s1_w,
+            "tags": {"landuse": "forest"},
+            "color": "#264A2C",
+            "closed": True,
+            "is_custom_forest": True
+        })
+        
+    poly_s1_e = make_east_gap_polygon(1015.0, 1490.0, 1650.0)
+    if poly_s1_e:
+        features.append({
+            "name": "Field Gap S1 East",
+            "points": poly_s1_e,
+            "tags": {"landuse": "farmland"},
+            "color": "#96A858",
+            "closed": True,
+            "is_field": True,
+            "irregular": True
+        })
+
+    # Slice 2: y in [1500, 1980], West field x limit = 1500, East field x limit = 2040
+    poly_s2_w = make_west_gap_polygon(1500.0, 1980.0, 1500.0)
+    if poly_s2_w:
+        features.append({
+            "name": "Field Gap S2 West",
+            "points": poly_s2_w,
+            "tags": {"landuse": "farmland"},
+            "color": "#96A858",
+            "closed": True,
+            "is_field": True,
+            "irregular": True
+        })
+        
+    poly_s2_e = make_east_gap_polygon(1500.0, 1980.0, 2040.0)
+    if poly_s2_e:
+        features.append({
+            "name": "Forest Gap S2 East",
+            "points": poly_s2_e,
+            "tags": {"landuse": "forest"},
+            "color": "#264A2C",
+            "closed": True,
+            "is_custom_forest": True
+        })
+
+    # Slice 3: y in [1990, 2470], West field x limit = 1950, East field x limit = 2250
+    poly_s3_w = make_west_gap_polygon(1990.0, 2470.0, 1950.0)
+    if poly_s3_w:
+        features.append({
+            "name": "Forest Gap S3 West",
+            "points": poly_s3_w,
+            "tags": {"landuse": "forest"},
+            "color": "#264A2C",
+            "closed": True,
+            "is_custom_forest": True
+        })
+        
+    poly_s3_e = make_east_gap_polygon(1990.0, 2470.0, 2250.0)
+    if poly_s3_e:
+        features.append({
+            "name": "Field Gap S3 East",
+            "points": poly_s3_e,
+            "tags": {"landuse": "farmland"},
+            "color": "#96A858",
+            "closed": True,
+            "is_field": True,
+            "irregular": True
+        })
+
+    # Slice 4: y in [2480, 2905], West field x limit = 1980, East field x limit = 2390
+    poly_s4_w = make_west_gap_polygon(2480.0, 2905.0, 1980.0)
+    if poly_s4_w:
+        features.append({
+            "name": "Field Gap S4 West",
+            "points": poly_s4_w,
+            "tags": {"landuse": "farmland"},
+            "color": "#96A858",
+            "closed": True,
+            "is_field": True,
+            "irregular": True
+        })
+        
+    poly_s4_e = make_east_gap_polygon(2480.0, 2905.0, 2390.0)
+    if poly_s4_e:
+        features.append({
+            "name": "Forest Gap S4 East",
+            "points": poly_s4_e,
+            "tags": {"landuse": "forest"},
+            "color": "#264A2C",
+            "closed": True,
+            "is_custom_forest": True
+        })
+        # 2.9 Generate Channel and Southern Pond Forest buffer (at least 100m wide)
+    forest_channel_pond_pts = [
+        (0.0, 515.0),
+        (130.0, 515.0),
+        (130.0, 3646.0),
+        (165.0, 3646.0),
+        (165.0, 3696.0),
+        (0.0, 3696.0),
+        (0.0, 515.0)
+    ]
+    features.append({
+        "name": "Channel and Southern Pond Forest",
+        "points": [to_geo(x, y) for x, y in forest_channel_pond_pts],
+        "tags": {"landuse": "forest"},
+        "color": "#264A2C",
+        "closed": True,
+        "is_custom_forest": True
+    })
+
     # 3. Generate OSM XML File
     print(f"Creating OSM XML at: {output_osm_path}...")
     root = ET.Element("osm", version="0.6", generator="osm_generator")
@@ -497,8 +776,13 @@ def main():
     # 4.0 Draw agricultural fields (parcels)
     for feat in features:
         if feat.get("is_field", False):
-            x0, y0, x1, y1 = feat["local_rect"]
-            d.rectangle([x0, y0, x1, y1], fill=C_FARM, outline=C_FARMB, width=12)
+            if feat.get("irregular", False):
+                pts = [(((lon - min_lon) / (max_lon - min_lon)) * S_canvas, ((max_lat - lat) / (max_lat - min_lat)) * S_canvas) for lat, lon in feat["points"]]
+                d.polygon(pts, fill=C_FARM)
+                d.line(pts, fill=C_FARMB, width=12)
+            else:
+                x0, y0, x1, y1 = feat["local_rect"]
+                d.rectangle([x0, y0, x1, y1], fill=C_FARM, outline=C_FARMB, width=12)
             
     # 4.1 Draw yards (polygons)
     # Southeast Flat Square
@@ -531,6 +815,13 @@ def main():
     pond_pts = [(15.0, 3646.0), (65.0, 3646.0), (65.0, 3696.0), (15.0, 3696.0)]
     d.polygon(pond_pts, fill=C_FOREST)
     d.line(pond_pts + [pond_pts[0]], fill=C_FARMB, width=12)
+    
+    # Custom Forests around Sinuous Road
+    for feat in features:
+        if feat.get("is_custom_forest", False):
+            pts = [(((lon - min_lon) / (max_lon - min_lon)) * S_canvas, ((max_lat - lat) / (max_lat - min_lat)) * S_canvas) for lat, lon in feat["points"]]
+            d.polygon(pts, fill=C_FOREST)
+            d.line(pts, fill=C_FARMB, width=12)
     
     # 4.3 Draw Road Outlines (black margins)
     # North Primary Highway
