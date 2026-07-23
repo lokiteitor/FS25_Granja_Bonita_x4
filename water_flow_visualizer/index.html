@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Flujo de Agua - Granja Bonita x4</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Three.js and OrbitControls via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --panel-bg: rgba(15, 17, 26, 0.75);
+            --panel-border: rgba(255, 255, 255, 0.08);
+            --accent-color: #3b82f6; /* Hydrology Blue */
+            --accent-hover: #60a5fa;
+            --accent-glow: rgba(59, 130, 246, 0.4);
+            --text-color: #f3f4f6;
+            --text-muted: #9ca3af;
+            --danger-color: #ef4444;
+            --warning-color: #f59e0b;
+            --success-color: #10b981;
+            --header-gradient: linear-gradient(135deg, #60a5fa, #3b82f6);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Outfit', sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        #canvas-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* UI Overlays */
+        .hud-panel {
+            position: absolute;
+            z-index: 10;
+            background: var(--panel-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--panel-border);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+        }
+
+        .hud-panel::-webkit-scrollbar {
+            width: 6px;
+        }
+        .hud-panel::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .hud-panel:hover {
+            border-color: rgba(59, 130, 246, 0.25);
+            box-shadow: 0 10px 45px rgba(0, 0, 0, 0.7), 0 0 15px rgba(59, 130, 246, 0.05);
+        }
+
+        /* Left Dashboard (Stats & Analysis) */
+        #dashboard {
+            top: 20px;
+            left: 20px;
+            width: 380px;
+        }
+
+        h1 {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 2px;
+            background: linear-gradient(135deg, #fff 40%, var(--text-muted) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 11px;
+            color: var(--accent-hover);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .description {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-color);
+            margin: 18px 0 10px 0;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Flow Progress Bar */
+        .progress-container {
+            margin: 15px 0;
+        }
+        .progress-bar-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+        .progress-bar {
+            height: 14px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 7px;
+            overflow: hidden;
+            display: flex;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        .progress-segment {
+            height: 100%;
+            transition: width 0.5s ease-out;
+        }
+        .segment-reservoir { background-color: var(--accent-color); }
+        .segment-channel { background-color: #06b6d4; }
+        .segment-sink { background-color: var(--danger-color); }
+        .segment-offmap { background-color: var(--text-muted); }
+
+        /* Stats List */
+        .stat-list-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            padding: 8px 12px;
+        }
+        .stat-name {
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .stat-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+        .stat-value {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Depression / Sinks List */
+        .sink-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            max-height: 200px;
+            overflow-y: auto;
+            margin-top: 10px;
+        }
+        .sink-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(239, 68, 68, 0.04);
+            border: 1px solid rgba(239, 68, 68, 0.1);
+            border-radius: 8px;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .sink-item:hover {
+            background: rgba(239, 68, 68, 0.09);
+            border-color: rgba(239, 68, 68, 0.25);
+            transform: translateX(2px);
+        }
+        .sink-title {
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .sink-meta {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+            margin-top: 2px;
+        }
+        .sink-percentage {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--danger-color);
+        }
+
+        /* Warning Banner */
+        .verdict-banner {
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-size: 12.5px;
+            line-height: 1.4;
+            margin-top: 16px;
+        }
+        .verdict-banner.danger {
+            background: rgba(239, 68, 68, 0.08);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            color: #fca5a5;
+        }
+        .verdict-banner.success {
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            color: #a7f3d0;
+        }
+
+        /* Right Panel (Controls) */
+        #controls {
+            top: 20px;
+            right: 20px;
+            width: 320px;
+        }
+
+        .control-group {
+            margin-bottom: 18px;
+        }
+        .control-group:last-child {
+            margin-bottom: 0;
+        }
+        .group-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .control-row {
+            margin-bottom: 12px;
+        }
+        .control-row:last-child {
+            margin-bottom: 0;
+        }
+        label {
+            display: block;
+            font-size: 11.5px;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+        }
+
+        /* Inputs & Buttons */
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        input[type="range"] {
+            flex: 1;
+            -webkit-appearance: none;
+            height: 4px;
+            border-radius: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            outline: none;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        input[type="range"]::-webkit-slider-thumb:hover {
+            background: var(--accent-hover);
+            box-shadow: 0 0 8px var(--accent-glow);
+            transform: scale(1.1);
+        }
+        .slider-value {
+            font-size: 11.5px;
+            font-family: 'JetBrains Mono', monospace;
+            width: 40px;
+            text-align: right;
+        }
+
+        .btn-toggle-group {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 3px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        .btn-toggle {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 8px 4px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 11px;
+            font-weight: 600;
+            transition: all 0.2s;
+            text-transform: uppercase;
+        }
+        .btn-toggle.active {
+            background: var(--accent-color);
+            color: #fff;
+            box-shadow: 0 2px 8px var(--accent-glow);
+        }
+        .btn-toggle:hover:not(.active) {
+            color: var(--text-color);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            border: none;
+            color: #fff;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 12.5px;
+            font-weight: 600;
+            width: 100%;
+            transition: all 0.2s;
+            box-shadow: 0 4px 14px var(--accent-glow);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            box-shadow: 0 4px 18px rgba(59, 130, 246, 0.6);
+        }
+        .btn-primary.active {
+            background: var(--danger-color);
+            box-shadow: 0 4px 14px rgba(239, 68, 68, 0.4);
+        }
+        .btn-primary.active:hover {
+            background: #f87171;
+            box-shadow: 0 4px 18px rgba(239, 68, 68, 0.6);
+        }
+
+        /* Switch checkbox */
+        .switch-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .switch-container:last-child {
+            margin-bottom: 0;
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 36px;
+            height: 18px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .switch-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.08);
+            transition: .25s;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .switch-slider:before {
+            position: absolute;
+            content: "";
+            height: 12px;
+            width: 12px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            transition: .25s;
+            border-radius: 50%;
+        }
+        input:checked + .switch-slider {
+            background-color: var(--accent-color);
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+        input:checked + .switch-slider:before {
+            transform: translateX(18px);
+        }
+
+        /* Hover Info / Probe Panel */
+        #probe-panel {
+            bottom: 20px;
+            left: 20px;
+            width: 380px;
+            display: none;
+            border-left: 3px solid var(--accent-color);
+        }
+        .probe-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px 15px;
+            margin-top: 10px;
+            font-size: 12px;
+        }
+        .probe-label {
+            color: var(--text-muted);
+            margin-bottom: 2px;
+        }
+        .probe-value {
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Path Tracer HUD Info */
+        #tracer-panel {
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 450px;
+            display: none;
+            border-left: 3px solid #22d3ee;
+            text-align: center;
+        }
+        #tracer-close {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            font-size: 14px;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+        #tracer-close:hover {
+            color: #fff;
+        }
+
+        /* Help btn */
+        #help-btn {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--panel-bg);
+            border: 1px solid var(--panel-border);
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            font-weight: bold;
+            font-size: 16px;
+            backdrop-filter: blur(12px);
+        }
+        #help-btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-hover);
+        }
+
+        #help-modal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            z-index: 100;
+            width: 90%;
+            max-width: 440px;
+            background: rgba(11, 12, 16, 0.95);
+            border: 1px solid var(--panel-border);
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        #help-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .modal-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--accent-hover);
+        }
+        .modal-body p {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 14px;
+        }
+        .modal-controls {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 10px 14px;
+            margin-top: 14px;
+            font-size: 12.5px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 14px;
+        }
+        .control-key {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Loading Screen */
+        #loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-color);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease;
+        }
+        .spinner {
+            width: 44px;
+            height: 44px;
+            border: 3px solid rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            border-top-color: var(--accent-color);
+            animation: spin 1s ease-in-out infinite;
+            margin-bottom: 16px;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        #loading-text {
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--text-color);
+            text-transform: uppercase;
+        }
+        #loading-progress {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+        <div id="loading-text">Cargando Elevación Hidrológica...</div>
+        <div id="loading-progress">Descifrando altura del terreno</div>
+    </div>
+
+    <!-- WebGL Canvas Container -->
+    <div id="canvas-container"></div>
+
+    <!-- Left Panel: Hydrological Dashboard -->
+    <div id="dashboard" class="hud-panel">
+        <div class="subtitle">Análisis Hidrológico</div>
+        <h1>Caída de Lluvia y Escurrimiento</h1>
+        <p class="description" style="margin-top: 4px;">Estudio de pendientes y drenaje del terreno hacia embalses y canales en Granja Bonita x4.</p>
+        
+        <div class="section-title">Destino de la Lluvia en Juego</div>
+        
+        <div class="progress-container">
+            <div class="progress-bar-labels">
+                <span>NW Embalse</span>
+                <span>Canal Oeste</span>
+                <span>Atrapada (Sinks)</span>
+            </div>
+            <div class="progress-bar">
+                <div id="seg-res" class="progress-segment segment-reservoir" style="width: 0%"></div>
+                <div id="seg-ch" class="progress-segment segment-channel" style="width: 0%"></div>
+                <div id="seg-sink" class="progress-segment segment-sink" style="width: 0%"></div>
+                <div id="seg-off" class="progress-segment segment-offmap" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+            <div class="stat-list-item">
+                <span class="stat-name"><span class="stat-dot" style="background-color: var(--accent-color)"></span>Escurre al NW Embalse</span>
+                <span class="stat-value" id="val-res">0.00%</span>
+            </div>
+            <div class="stat-list-item">
+                <span class="stat-name"><span class="stat-dot" style="background-color: #06b6d4"></span>Escurre al Canal y Estanque</span>
+                <span class="stat-value" id="val-ch">0.00%</span>
+            </div>
+            <div class="stat-list-item">
+                <span class="stat-name"><span class="stat-dot" style="background-color: var(--danger-color)"></span>Se estanca en el terreno (Sinks)</span>
+                <span class="stat-value" id="val-sink">0.00%</span>
+            </div>
+            <div class="stat-list-item">
+                <span class="stat-name"><span class="stat-dot" style="background-color: var(--text-muted)"></span>Drena fuera del mapa</span>
+                <span class="stat-value" id="val-off">0.00%</span>
+            </div>
+        </div>
+
+        <div id="verdict-banner" class="verdict-banner">
+            Cargando evaluación del escurrimiento...
+        </div>
+
+        <div class="section-title">
+            <span>Depresiones (Sinks) de Riesgo</span>
+            <span style="font-size: 10px; font-family: monospace; background: rgba(239, 68, 68, 0.1); padding: 1px 5px; border-radius: 4px; color: var(--danger-color);" id="sink-count-lbl">0</span>
+        </div>
+        <p class="description" style="margin-bottom: 8px; font-size: 12px;">Haz clic en una depresión para volar la cámara 3D hacia ella.</p>
+        
+        <div id="sink-list-container" class="sink-list">
+            <div style="font-size: 12px; color: var(--text-muted); text-align: center; padding: 10px;">Cargando lista de depresiones...</div>
+        </div>
+    </div>
+
+    <!-- Right Panel: Simulation Controls -->
+    <div id="controls" class="hud-panel">
+        <div class="control-group">
+            <div class="group-title">Modos de Lluvia</div>
+            <div class="control-row">
+                <button id="btn-rain" class="btn-primary" onclick="toggleRain()">Iniciar Lluvia</button>
+            </div>
+            <div class="control-row">
+                <label>Intensidad de Lluvia (Gotas)</label>
+                <div class="slider-container">
+                    <input type="range" id="rain-intensity" min="1000" max="8000" step="500" value="4000" oninput="updateRainIntensity(this.value)">
+                    <div class="slider-value" id="rain-intensity-val">4000</div>
+                </div>
+            </div>
+            <div class="control-row">
+                <label>Velocidad de Escurrimiento</label>
+                <div class="slider-container">
+                    <input type="range" id="flow-speed" min="1.0" max="6.0" step="0.2" value="3.0" oninput="updateFlowSpeed(this.value)">
+                    <div class="slider-value" id="flow-speed-val">3.0x</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="group-title">Herramienta de Trazo</div>
+            <div class="control-row">
+                <button id="btn-tracer" class="btn-primary" style="background-color: #0891b2; box-shadow: 0 4px 14px rgba(8, 145, 178, 0.3);" onclick="toggleTracerMode()">
+                    Trazar Caída de Gota
+                </button>
+            </div>
+            <p class="description" style="font-size: 11.5px; margin-top: 4px; line-height: 1.4;">
+                Activa el trazo y haz clic en cualquier loma del terreno para dibujar la trayectoria exacta que seguiría una gota hasta estancarse o llegar a un canal.
+            </p>
+        </div>
+
+        <div class="control-group">
+            <div class="group-title">Visualización del Mapa</div>
+            
+            <div class="switch-container">
+                <span>Resaltar Depresiones (Rojo)</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-sinks" checked onchange="toggleSinksMesh(this.checked)">
+                    <span class="switch-slider"></span>
+                </label>
+            </div>
+            
+            <div class="switch-container">
+                <span>Ver Malla (Wireframe)</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-wireframe" onchange="toggleWireframe(this.checked)">
+                    <span class="switch-slider"></span>
+                </label>
+            </div>
+
+            <div class="control-row" style="margin-top: 10px;">
+                <label>Exageración Vertical del 3D</label>
+                <div class="slider-container">
+                    <input type="range" id="exaggeration-slider" min="0.5" max="4.0" step="0.1" value="1.5" oninput="updateExaggeration(this.value)">
+                    <div class="slider-value" id="exaggeration-val">1.5x</div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn-primary" style="background: transparent; border: 1px solid rgba(255,255,255,0.15); box-shadow: none;" onclick="resetCamera()">
+            Restablecer Cámara
+        </button>
+    </div>
+
+    <!-- Hover Probe Panel -->
+    <div id="probe-panel" class="hud-panel">
+        <div class="group-title" style="margin-bottom: 6px; font-size: 13px;">Inspección del Terreno</div>
+        <div class="probe-grid">
+            <div>
+                <div class="probe-label">Coordenadas X, Z:</div>
+                <div class="probe-value" id="probe-coords">0m, 0m</div>
+            </div>
+            <div>
+                <div class="probe-label">Elevación:</div>
+                <div class="probe-value" id="probe-height" style="color: #60a5fa;">0.00m</div>
+            </div>
+            <div>
+                <div class="probe-label">Pendiente (Inclinación):</div>
+                <div class="probe-value" id="probe-slope">0.0%</div>
+            </div>
+            <div>
+                <div class="probe-label">Hacia dónde corre:</div>
+                <div class="probe-value" id="probe-flow-dest" style="color: #cbd5e1;">Analizando...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Path Tracer HUD Overlay -->
+    <div id="tracer-panel" class="hud-panel">
+        <span id="tracer-close" onclick="closeTracerInfo()">×</span>
+        <div class="subtitle" style="color: #22d3ee; margin-bottom: 4px;">Trayectoria Analizada</div>
+        <p style="font-size: 13.5px; font-weight: 500;" id="lbl-trace-result">Haz clic en el mapa para ver la escorrentía.</p>
+        <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;" id="lbl-trace-meta">Pendiente media y distancia de recorrido.</p>
+    </div>
+
+    <!-- Floating Help Button and Help Modal -->
+    <div id="help-btn" onclick="toggleHelp(true)">?</div>
+
+    <div id="help-modal">
+        <div class="modal-title">Simulador Hidrológico 3D</div>
+        <div class="modal-body">
+            <p>Este visualizador muestra la trayectoria que sigue el agua de lluvia a lo largo del terreno de <strong>Granja Bonita x4</strong>.</p>
+            <p><strong>¿Cómo interactuar en 3D?</strong></p>
+            <div class="modal-controls">
+                <span class="control-key">Arrastrar Clic Izq</span>
+                <span>Rotar la vista sobre el terreno</span>
+                
+                <span class="control-key">Rueda del Ratón</span>
+                <span>Zoom (Acercar/Alejar)</span>
+                
+                <span class="control-key">Arrastrar Clic Der</span>
+                <span>Desplazar la vista lateralmente (Pan)</span>
+            </div>
+            <p style="margin-top: 14px;"><strong>¿Cómo usar la herramienta de Trazo?</strong></p>
+            <p style="font-size: 13px;">Haz clic en <strong>"Trazar Caída de Gota"</strong>, luego haz clic sobre el terreno. Se dibujará una línea cian que rastrea exactamente por dónde fluirá la lluvia y dónde se detendrá.</p>
+        </div>
+        <button class="btn-primary" onclick="toggleHelp(false)">¡Comenzar!</button>
+    </div>
+
+    <!-- Simulation Code -->
+    <script>
+        // Real map dimensions
+        const MAP_SIZE = 8192; // 8.19km x 8.19km
+        const PLAYABLE_SIZE = 4096;
+        const OFFSET = (MAP_SIZE - PLAYABLE_SIZE) / 2; // 2048m
+        
+        let container, scene, camera, renderer, controls;
+        let terrainGeom, terrainMesh, terrainMaterial;
+        let heightData = null; // Float32Array
+        let heightWidth = 1024;
+        let heightHeight = 1024;
+        let colorTexture;
+        let rawHeightsClipped = null; // Uint16 for precise coordinate calculations
+        
+        // Simulation settings
+        let verticalExaggeration = 1.5;
+        let isRainActive = false;
+        let maxParticles = 4000;
+        let flowSpeedMultiplier = 3.0;
+        let showSinksOverlay = true;
+        let tracerModeActive = false;
+        
+        // Watershed results cache from JSON
+        let drainageData = null;
+        
+        // Sinks and tracer objects
+        let sinkMarkersGroup = null;
+        let traceLineMesh = null;
+        
+        // Raycasting and Hover
+        let raycaster, mouse;
+        let planeHelper; // For raycasting intersections
+        
+        // Particle System
+        let particleGeometry;
+        let particlePositions;
+        let particleData = []; // Array of { u, v, vx, vy, life, age }
+        let particleSystem;
+
+        // Initialize WebGL
+        window.onload = function() {
+            initScene();
+            loadTerrainAssets();
+        };
+
+        function initScene() {
+            container = document.getElementById('canvas-container');
+            
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x07080a);
+            scene.fog = new THREE.FogExp2(0x07080a, 0.00015);
+
+            camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 10, 25000);
+            
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+            container.appendChild(renderer.domElement);
+
+            // Orbit controls
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.05;
+            controls.screenSpacePanning = false;
+            controls.maxPolarAngle = Math.PI / 2 - 0.05; // Stay above ground
+            controls.minDistance = 100;
+            controls.maxDistance = 12000;
+            
+            resetCamera();
+
+            // Lights
+            const ambient = new THREE.AmbientLight(0xffffff, 0.45);
+            scene.add(ambient);
+
+            const sun = new THREE.DirectionalLight(0xffffff, 0.75);
+            sun.position.set(-4000, 5000, 3000);
+            sun.castShadow = true;
+            sun.shadow.mapSize.width = 1024;
+            sun.shadow.mapSize.height = 1024;
+            sun.shadow.camera.near = 100;
+            sun.shadow.camera.far = 15000;
+            const d = 5000;
+            sun.shadow.camera.left = -d;
+            sun.shadow.camera.right = d;
+            sun.shadow.camera.top = d;
+            sun.shadow.camera.bottom = -d;
+            scene.add(sun);
+            
+            const fillLight = new THREE.DirectionalLight(0x3b82f6, 0.2); // Soft blue light from opposite side
+            fillLight.position.set(4000, 2000, -3000);
+            scene.add(fillLight);
+
+            // Raycaster
+            raycaster = new THREE.Raycaster();
+            mouse = new THREE.Vector2();
+
+            sinkMarkersGroup = new THREE.Group();
+            scene.add(sinkMarkersGroup);
+
+            window.addEventListener('resize', onWindowResize, false);
+            window.addEventListener('mousemove', onMouseMove, false);
+            window.addEventListener('click', onMouseClick, false);
+            
+            // Loop
+            animate();
+        }
+
+        function resetCamera() {
+            camera.position.set(0, 3000, 5000);
+            controls.target.set(-1000, 100, 0); // Focus slightly to the west towards the canal
+            controls.update();
+        }
+
+        function loadTerrainAssets() {
+            const loadingProgress = document.getElementById('loading-progress');
+            const textureLoader = new THREE.TextureLoader();
+            
+            // Fetch the drainage JSON first, so we have stats
+            fetch('drainage_data.json')
+                .then(response => response.json())
+                .then(data => {
+                    drainageData = data;
+                    updateUIWithStats(data);
+                })
+                .catch(err => {
+                    console.warn("Could not load drainage_data.json. Will retry or use computed fallbacks.", err);
+                });
+
+            // Load heightmap
+            loadingProgress.innerText = "Descifrando mapa de elevación...";
+            const img = new Image();
+            img.src = 'dem_1024_rgb16.png';
+            img.onload = function() {
+                parseHeightmap(img);
+                
+                loadingProgress.innerText = "Cargando texturas del terreno...";
+                textureLoader.load('dem_1024_texture.png', function(tex) {
+                    colorTexture = tex;
+                    colorTexture.wrapS = THREE.ClampToEdgeWrapping;
+                    colorTexture.wrapT = THREE.ClampToEdgeWrapping;
+                    
+                    buildTerrainMesh(512); // Build mesh at 512x512 resolution (fast & high detail)
+                    initParticleSystem();
+                    
+                    document.getElementById('loading-overlay').style.opacity = 0;
+                    setTimeout(() => {
+                        document.getElementById('loading-overlay').style.display = 'none';
+                    }, 500);
+                });
+            };
+            img.onerror = function() {
+                loadingProgress.innerText = "Error cargando recursos de elevación. Verifica dem_1024_rgb16.png.";
+            };
+        }
+
+        function parseHeightmap(img) {
+            const canvas = document.createElement('canvas');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0);
+            
+            const imgData = ctx.getImageData(0, 0, img.width, img.height);
+            const data = imgData.data;
+            
+            heightWidth = img.width;
+            heightHeight = img.height;
+            heightData = new Float32Array(heightWidth * heightHeight);
+            
+            for (let i = 0; i < heightData.length; i++) {
+                const r = data[i * 4];
+                const g = data[i * 4 + 1];
+                // Decode 16-bit height values (stored in units where 1m = 128 units)
+                const rawHeight = r + g * 256;
+                heightData[i] = rawHeight / 128.0;
+            }
+        }
+
+        function getInterpolatedHeight(u, v) {
+            if (!heightData) return 0;
+            
+            const px = u * (heightWidth - 1);
+            const py = v * (heightHeight - 1);
+            
+            const x0 = Math.floor(px);
+            const y0 = Math.floor(py);
+            const x1 = Math.min(x0 + 1, heightWidth - 1);
+            const y1 = Math.min(y0 + 1, heightHeight - 1);
+            
+            const tx = px - x0;
+            const ty = py - y0;
+            
+            const h00 = heightData[y0 * heightWidth + x0];
+            const h10 = heightData[y0 * heightWidth + x1];
+            const h01 = heightData[y1 * heightWidth + x0];
+            const h11 = heightData[y1 * heightWidth + x1];
+            
+            const h0 = h00 * (1 - tx) + h10 * tx;
+            const h1 = h01 * (1 - tx) + h11 * tx;
+            return h0 * (1 - ty) + h1 * ty;
+        }
+
+        // Get slope/gradient direction (negative points downhill)
+        function getSlopeAt(u, v) {
+            const step = 1.0 / heightWidth;
+            
+            const hL = getInterpolatedHeight(Math.max(0, u - step), v);
+            const hR = getInterpolatedHeight(Math.min(1, u + step), v);
+            const hD = getInterpolatedHeight(u, Math.max(0, v - step));
+            const hU = getInterpolatedHeight(u, Math.min(1, v + step));
+            
+            // X and Y directions
+            const dx = (hR - hL) / (2.0 * step * MAP_SIZE);
+            const dy = (hU - hD) / (2.0 * step * MAP_SIZE);
+            
+            return {
+                dx: dx,
+                dy: dy,
+                slope: Math.sqrt(dx*dx + dy*dy)
+            };
+        }
+
+        function buildTerrainMesh(res) {
+            if (terrainMesh) {
+                scene.remove(terrainMesh);
+                terrainGeom.dispose();
+            }
+            
+            terrainGeom = new THREE.PlaneGeometry(MAP_SIZE, MAP_SIZE, res - 1, res - 1);
+            
+            const posAttr = terrainGeom.attributes.position;
+            const count = posAttr.count;
+            
+            for (let i = 0; i < count; i++) {
+                const x = posAttr.getX(i);
+                const z = posAttr.getY(i);
+                
+                // Map [-4096, 4096] to [0, 1]
+                const u = (x + MAP_SIZE / 2) / MAP_SIZE;
+                const v = 1.0 - (z + MAP_SIZE / 2) / MAP_SIZE;
+                
+                const h = getInterpolatedHeight(u, v);
+                posAttr.setZ(i, h * verticalExaggeration);
+            }
+            
+            terrainGeom.rotateX(-Math.PI / 2);
+            terrainGeom.computeVertexNormals();
+            
+            terrainMaterial = new THREE.MeshStandardMaterial({
+                map: colorTexture,
+                roughness: 0.82,
+                metalness: 0.1,
+                flatShading: false
+            });
+            
+            terrainMesh = new THREE.Mesh(terrainGeom, terrainMaterial);
+            terrainMesh.castShadow = true;
+            terrainMesh.receiveShadow = true;
+            scene.add(terrainMesh);
+            
+            // Create invisible horizontal helper plane for simple raycasting calculations
+            const planeGeometry = new THREE.PlaneGeometry(MAP_SIZE, MAP_SIZE);
+            planeGeometry.rotateX(-Math.PI / 2);
+            planeHelper = new THREE.Mesh(planeGeometry, new THREE.MeshBasicMaterial({ visible: false }));
+            scene.add(planeHelper);
+            
+            // Place 3D pins for depressions if drainage data loaded
+            if (drainageData) {
+                placeSinkMarkers();
+            }
+        }
+
+        function updateExaggeration(val) {
+            verticalExaggeration = parseFloat(val);
+            document.getElementById('exaggeration-val').innerText = verticalExaggeration.toFixed(1) + 'x';
+            
+            if (terrainGeom) {
+                // Rebuild mesh with new displacement
+                buildTerrainMesh(512);
+            }
+        }
+
+        function toggleWireframe(checked) {
+            if (terrainMaterial) {
+                terrainMaterial.wireframe = checked;
+            }
+        }
+
+        // --- Rain Particle System ---
+        function initParticleSystem() {
+            particleGeometry = new THREE.BufferGeometry();
+            particlePositions = new Float32Array(maxParticles * 3);
+            
+            // Initialize off-screen (y = -1000)
+            for (let i = 0; i < maxParticles; i++) {
+                particlePositions[i * 3] = 0;
+                particlePositions[i * 3 + 1] = -1000;
+                particlePositions[i * 3 + 2] = 0;
+                
+                particleData.push({
+                    u: 0,
+                    v: 0,
+                    y: -1000,
+                    vx: 0,
+                    vy: 0,
+                    life: 0,
+                    age: 0,
+                    state: 'falling',
+                    active: false
+                });
+            }
+            
+            particleGeometry.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
+            
+            // Dynamic blue shader-like particles using canvas texture
+            const pTexture = createParticleTexture();
+            const pMaterial = new THREE.PointsMaterial({
+                color: 0x60a5fa,
+                size: 14,
+                map: pTexture,
+                transparent: true,
+                blending: THREE.AdditiveBlending,
+                depthWrite: false
+            });
+            
+            particleSystem = new THREE.Points(particleGeometry, pMaterial);
+            scene.add(particleSystem);
+        }
+
+        function createParticleTexture() {
+            const canvas = document.createElement('canvas');
+            canvas.width = 16;
+            canvas.height = 16;
+            const ctx = canvas.getContext('2d');
+            const grad = ctx.createRadialGradient(8, 8, 0, 8, 8, 8);
+            grad.addColorStop(0, 'rgba(255, 255, 255, 1)');
+            grad.addColorStop(0.3, 'rgba(59, 130, 246, 0.8)');
+            grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+            ctx.fillStyle = grad;
+            ctx.fillRect(0, 0, 16, 16);
+            
+            const tex = new THREE.CanvasTexture(canvas);
+            return tex;
+        }
+
+        function spawnParticle(idx) {
+            // Spawn inside the playable area [0.25, 0.75]
+            const u = 0.25 + Math.random() * 0.50;
+            const v = 0.25 + Math.random() * 0.50;
+            
+            // Spawn high in the sky (e.g. 600m to 1000m above the ground level)
+            const ground_y = getInterpolatedHeight(u, v) * verticalExaggeration;
+            const sky_y = ground_y + 800 + Math.random() * 400;
+            
+            particleData[idx] = {
+                u: u,
+                v: v,
+                y: sky_y,
+                vx: 0,
+                vy: 0,
+                life: 300 + Math.random() * 150, // frame lifetime
+                age: 0,
+                state: 'falling',
+                active: true
+            };
+        }
+
+        function toggleRain() {
+            isRainActive = !isRainActive;
+            const btn = document.getElementById('btn-rain');
+            if (isRainActive) {
+                btn.innerText = "Detener Lluvia";
+                btn.classList.add('active');
+            } else {
+                btn.innerText = "Iniciar Lluvia";
+                btn.classList.remove('active');
+                
+                // Clear active particles
+                for (let i = 0; i < maxParticles; i++) {
+                    particleData[i].active = false;
+                    particlePositions[i * 3 + 1] = -1000;
+                }
+                particleGeometry.attributes.position.needsUpdate = true;
+            }
+        }
+
+        function updateRainIntensity(val) {
+            maxParticles = parseInt(val);
+            document.getElementById('rain-intensity-val').innerText = maxParticles;
+            
+            // Re-allocate particles array if needed
+            while (particleData.length < maxParticles) {
+                particleData.push({ u: 0, v: 0, vx: 0, vy: 0, life: 0, age: 0, active: false });
+            }
+            
+            // Re-create geometry with new size
+            scene.remove(particleSystem);
+            particleGeometry.dispose();
+            
+            particleGeometry = new THREE.BufferGeometry();
+            particlePositions = new Float32Array(maxParticles * 3);
+            for (let i = 0; i < maxParticles; i++) {
+                particlePositions[i * 3] = 0;
+                particlePositions[i * 3 + 1] = -1000;
+                particlePositions[i * 3 + 2] = 0;
+            }
+            particleGeometry.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
+            
+            const pTexture = createParticleTexture();
+            const pMaterial = new THREE.PointsMaterial({
+                color: 0x60a5fa,
+                size: 14,
+                map: pTexture,
+                transparent: true,
+                blending: THREE.AdditiveBlending,
+                depthWrite: false
+            });
+            particleSystem = new THREE.Points(particleGeometry, pMaterial);
+            scene.add(particleSystem);
+        }
+
+        function updateFlowSpeed(val) {
+            flowSpeedMultiplier = parseFloat(val);
+            document.getElementById('flow-speed-val').innerText = flowSpeedMultiplier.toFixed(1) + 'x';
+        }
+
+        // Hydrological features logic:
+        // u,v range: northwest reservoir is roughly [0.25, 0.32]
+        function isReservoir(u, v) {
+            return u >= 0.25 && u <= 0.325 && v >= 0.25 && v <= 0.325;
+        }
+
+        function isChannelOrPond(u, v) {
+            return u >= 0.25 && u <= 0.275;
+        }
+
+        function updateSimulation() {
+            if (!heightData) return;
+            
+            let posAttr = particleGeometry.attributes.position;
+            
+            // Spawn rate per frame
+            const spawnRate = isRainActive ? Math.ceil(maxParticles / 60) : 0;
+            let spawned = 0;
+            
+            for (let i = 0; i < maxParticles; i++) {
+                let p = particleData[i];
+                
+                if (!p.active && spawned < spawnRate) {
+                    spawnParticle(i);
+                    p = particleData[i];
+                    spawned++;
+                }
+                
+                if (p.active) {
+                    p.age++;
+                    
+                    // Out of bounds check (playable boundaries) or old age
+                    if (p.u < 0.24 || p.u > 0.76 || p.v < 0.24 || p.v > 0.76 || p.age >= p.life) {
+                        p.active = false;
+                        particlePositions[i * 3 + 1] = -1000; // hide
+                        continue;
+                    }
+                    
+                    if (p.state === 'falling') {
+                        // Fall rapidly vertically from the sky
+                        const fallSpeed = 16.0 * flowSpeedMultiplier;
+                        p.y -= fallSpeed;
+                        
+                        const ground_y = getInterpolatedHeight(p.u, p.v) * verticalExaggeration;
+                        if (p.y <= ground_y) {
+                            p.y = ground_y;
+                            p.state = 'flowing';
+                            p.vx = (Math.random() - 0.5) * 0.0001; // small random splash impact velocity
+                            p.vy = (Math.random() - 0.5) * 0.0001;
+                        }
+                    } else {
+                        // Stop/fade out in reservoir or canal
+                        if (isReservoir(p.u, p.v) || isChannelOrPond(p.u, p.v)) {
+                            p.life = Math.min(p.life, p.age + 8); 
+                        }
+                        
+                        // Calculate slope gradient
+                        const grad = getSlopeAt(p.u, p.v);
+                        
+                        // If slope is near zero, it reached a local sink
+                        if (grad.slope < 0.0001 && p.age > 40) {
+                            p.life = Math.min(p.life, p.age + 20); // fade out shortly
+                            p.vx = 0;
+                            p.vy = 0;
+                        } else {
+                            // Physics acceleration: flow downhill (negative gradient)
+                            // We use a much higher gravity constant (0.00018) so water flows visibly
+                            const g = 0.00018 * flowSpeedMultiplier;
+                            const inertia = 0.84;
+                            
+                            p.vx = p.vx * inertia - grad.dx * g;
+                            p.vy = p.vy * inertia - grad.dy * g;
+                            
+                            p.u += p.vx;
+                            p.v += p.vy;
+                            p.y = getInterpolatedHeight(p.u, p.v) * verticalExaggeration;
+                        }
+                    }
+                    
+                    // Convert normalized u, v coordinates to world coordinates in Three.js space
+                    const x_world = (p.u - 0.5) * MAP_SIZE;
+                    const z_world = (0.5 - p.v) * MAP_SIZE;
+                    
+                    particlePositions[i * 3] = x_world;
+                    particlePositions[i * 3 + 1] = p.y + 3.0; // Offset above surface to avoid Z-fighting
+                    particlePositions[i * 3 + 2] = z_world;
+                }
+            }
+            
+            posAttr.needsUpdate = true;
+        }
+
+        // --- Path Tracer tool ---
+        function toggleTracerMode() {
+            tracerModeActive = !tracerModeActive;
+            const btn = document.getElementById('btn-tracer');
+            if (tracerModeActive) {
+                btn.classList.add('active');
+                btn.innerText = "Modo Trazo Activo";
+                container.style.cursor = 'crosshair';
+                
+                // Alert notification
+                document.getElementById('tracer-panel').style.display = 'block';
+                document.getElementById('lbl-trace-result').innerText = "Haz clic en cualquier punto del terreno.";
+                document.getElementById('lbl-trace-meta').innerText = "Rastreará el camino que recorre el agua de lluvia.";
+            } else {
+                btn.classList.remove('active');
+                btn.innerText = "Trazar Caída de Gota";
+                container.style.cursor = 'default';
+                closeTracerInfo();
+            }
+        }
+
+        function closeTracerInfo() {
+            document.getElementById('tracer-panel').style.display = 'none';
+            if (traceLineMesh) {
+                scene.remove(traceLineMesh);
+                traceLineMesh.geometry.dispose();
+                traceLineMesh = null;
+            }
+            tracerModeActive = false;
+            document.getElementById('btn-tracer').classList.remove('active');
+            document.getElementById('btn-tracer').innerText = "Trazar Caída de Gota";
+            container.style.cursor = 'default';
+        }
+
+        function tracePath(startU, startV) {
+            if (!heightData) return;
+            
+            if (traceLineMesh) {
+                scene.remove(traceLineMesh);
+                traceLineMesh.geometry.dispose();
+                traceLineMesh = null;
+            }
+            
+            let u = startU;
+            let v = startV;
+            let vx = 0;
+            let vy = 0;
+            
+            const points = [];
+            let destination = "Estancada (Depresión)";
+            let resultColor = 0xef4444; // Red for stuck
+            
+            // Save starting point
+            const startH = getInterpolatedHeight(u, v);
+            
+            points.push(new THREE.Vector3(
+                (u - 0.5) * MAP_SIZE,
+                startH * verticalExaggeration + 3,
+                (0.5 - v) * MAP_SIZE
+            ));
+            
+            let steps = 0;
+            const maxSteps = 1000;
+            let distance = 0;
+            let lastX = (u - 0.5) * MAP_SIZE;
+            let lastZ = (0.5 - v) * MAP_SIZE;
+            
+            while (steps < maxSteps) {
+                // Out of playable area boundaries
+                if (u < 0.248 || u > 0.752 || v < 0.248 || v > 0.752) {
+                    destination = "Fuera del límite de juego";
+                    resultColor = 0x9ca3af; // Grey
+                    break;
+                }
+                
+                // Hydrological check
+                if (isReservoir(u, v)) {
+                    destination = "NW Embalse Principal";
+                    resultColor = 0x3b82f6; // Blue
+                    break;
+                }
+                if (isChannelOrPond(u, v)) {
+                    destination = "Canal del Oeste o Estanque";
+                    resultColor = 0x06b6d4; // Cyan
+                    break;
+                }
+                
+                const grad = getSlopeAt(u, v);
+                
+                // If slope is flat
+                if (grad.slope < 0.0001 && steps > 10) {
+                    destination = `Depresión Local (Coordenadas: ${Math.round((u - 0.5) * MAP_SIZE)}m, ${Math.round((0.5 - v) * MAP_SIZE)}m)`;
+                    resultColor = 0xef4444; // Red
+                    break;
+                }
+                
+                const stepScale = 0.000002;
+                vx = vx * 0.8 + grad.dx * stepScale;
+                vy = vy * 0.8 + grad.dy * stepScale;
+                
+                // Move uphill in slope direction -> wait, gradient points UPHILL, so we need to SUBTRACT gradient to go DOWNHILL.
+                // grad.dx and grad.dy are positive uphill, so we subtract:
+                u -= grad.dx * stepScale * 12;
+                v -= grad.dy * stepScale * 12;
+                
+                const currX = (u - 0.5) * MAP_SIZE;
+                const currZ = (0.5 - v) * MAP_SIZE;
+                const currH = getInterpolatedHeight(u, v);
+                
+                const dx = currX - lastX;
+                const dz = currZ - lastZ;
+                distance += Math.sqrt(dx*dx + dz*dz);
+                
+                points.push(new THREE.Vector3(currX, currH * verticalExaggeration + 3, currZ));
+                
+                lastX = currX;
+                lastZ = currZ;
+                steps++;
+            }
+            
+            // Draw path as thick ribbon/line
+            const lineGeometry = new THREE.BufferGeometry().setFromPoints(points);
+            const lineMaterial = new THREE.LineBasicMaterial({
+                color: resultColor,
+                linewidth: 3, // Note: WebGL ignore linewidth on Windows but looks good anyway
+                depthWrite: true
+            });
+            
+            traceLineMesh = new THREE.Line(lineGeometry, lineMaterial);
+            scene.add(traceLineMesh);
+            
+            // Compute stats
+            const endH = getInterpolatedHeight(u, v);
+            const drop = startH - endH;
+            const avgSlope = distance > 0 ? (drop / distance) * 100.0 : 0;
+            
+            // Show info HUD
+            const panel = document.getElementById('tracer-panel');
+            panel.style.display = 'block';
+            panel.style.borderLeftColor = '#' + new THREE.Color(resultColor).getHexString();
+            
+            document.getElementById('lbl-trace-result').innerHTML = `
+                Drena hacia: <span style="color: #${new THREE.Color(resultColor).getHexString()}; font-weight: bold;">${destination}</span>
+            `;
+            document.getElementById('lbl-trace-meta').innerText = `
+                Distancia: ${Math.round(distance)}m | Caída: ${drop.toFixed(1)}m | Pendiente media: ${avgSlope.toFixed(1)}%
+            `;
+        }
+
+        // --- Interaction Logic ---
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function onMouseMove(event) {
+            // Update mouse coordinates for raycasting
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+            
+            if (!heightData || !terrainMesh) return;
+            
+            raycaster.setFromCamera(mouse, camera);
+            const intersects = raycaster.intersectObject(terrainMesh);
+            
+            if (intersects.length > 0) {
+                const pt = intersects[0].point;
+                
+                // Convert world coordinates back to normalized coordinate system
+                const u = (pt.x + MAP_SIZE / 2) / MAP_SIZE;
+                const v = 0.5 - pt.z / MAP_SIZE;
+                
+                const height = getInterpolatedHeight(u, v);
+                const grad = getSlopeAt(u, v);
+                
+                // Display probe panel
+                const panel = document.getElementById('probe-panel');
+                panel.style.display = 'block';
+                
+                const mapX = Math.round(pt.x);
+                const mapZ = Math.round(pt.z);
+                document.getElementById('probe-coords').innerText = `${mapX}m, ${mapZ}m`;
+                document.getElementById('probe-height').innerText = `${height.toFixed(2)}m`;
+                document.getElementById('probe-slope').innerText = `${(grad.slope * 100.0).toFixed(1)}%`;
+                
+                let dest = "Buscando...";
+                let color = "#f3f4f6";
+                if (isReservoir(u, v)) {
+                    dest = "NW Embalse";
+                    color = "#3b82f6";
+                } else if (isChannelOrPond(u, v)) {
+                    dest = "Canal del Oeste";
+                    color = "#06b6d4";
+                } else if (drainageData) {
+                    // Sample the downsampled 128x128 grid
+                    const gridX = Math.floor(u * 128);
+                    const gridY = Math.floor(v * 128);
+                    if (gridY >= 0 && gridY < 128 && gridX >= 0 && gridX < 128) {
+                        const dVal = drainageData.dest_grid_128[gridY][gridX];
+                        if (dVal === 1) { dest = "Drena al NW Embalse"; color = "#60a5fa"; }
+                        else if (dVal === 2) { dest = "Drena al Canal / Estanque"; color = "#22d3ee"; }
+                        else if (dVal === 3) { dest = "Drena fuera del mapa"; color = "#9ca3af"; }
+                        else if (dVal === 0) { dest = "Estancamiento (Trapped!)"; color = "#f87171"; }
+                    }
+                }
+                
+                const lbl = document.getElementById('probe-flow-dest');
+                lbl.innerText = dest;
+                lbl.style.color = color;
+            } else {
+                document.getElementById('probe-panel').style.display = 'none';
+            }
+        }
+
+        function onMouseClick(event) {
+            // Ignore if clicking on UI panels
+            if (event.clientX < 420 && event.clientY < window.innerHeight - 150) return;
+            if (event.clientX > window.innerWidth - 340) return;
+            if (event.clientY > window.innerHeight - 80) return;
+
+            if (!heightData || !terrainMesh || !tracerModeActive) return;
+            
+            raycaster.setFromCamera(mouse, camera);
+            const intersects = raycaster.intersectObject(terrainMesh);
+            
+            if (intersects.length > 0) {
+                const pt = intersects[0].point;
+                const u = (pt.x + MAP_SIZE / 2) / MAP_SIZE;
+                const v = 0.5 - pt.z / MAP_SIZE;
+                
+                tracePath(u, v);
+            }
+        }
+
+        // Fly the camera smoothly to a 3D coordinate
+        function flyTo(x, z, zoom = 1200) {
+            const h = getInterpolatedHeight((x + MAP_SIZE/2)/MAP_SIZE, 0.5 - z/MAP_SIZE);
+            const y = h * verticalExaggeration;
+            
+            // Animate target
+            const duration = 1000;
+            const startPos = camera.position.clone();
+            const endPos = new THREE.Vector3(x, y + zoom, z + zoom);
+            
+            const startTarget = controls.target.clone();
+            const endTarget = new THREE.Vector3(x, y, z);
+            
+            const startTime = performance.now();
+            
+            function step() {
+                const elapsed = performance.now() - startTime;
+                const progress = Math.min(elapsed / duration, 1.0);
+                
+                // Ease function (smoothstep)
+                const t = progress * progress * (3 - 2 * progress);
+                
+                camera.position.lerpVectors(startPos, endPos, t);
+                controls.target.lerpVectors(startTarget, endTarget, t);
+                controls.update();
+                
+                if (progress < 1.0) {
+                    requestAnimationFrame(step);
+                }
+            }
+            
+            requestAnimationFrame(step);
+            
+            // Also trace a flow path from this location to show how it drains
+            const u = (x + MAP_SIZE/2)/MAP_SIZE;
+            const v = 0.5 - z/MAP_SIZE;
+            tracePath(u, v);
+            
+            // Turn on tracer mode visually
+            tracerModeActive = true;
+            document.getElementById('btn-tracer').classList.add('active');
+            document.getElementById('btn-tracer').innerText = "Modo Trazo Activo";
+            container.style.cursor = 'crosshair';
+        }
+
+        // --- UI Updates ---
+        function updateUIWithStats(data) {
+            const sum = data.summary;
+            document.getElementById('seg-res').style.width = sum.reservoir.percentage + '%';
+            document.getElementById('seg-ch').style.width = sum.channel.percentage + '%';
+            document.getElementById('seg-sink').style.width = sum.sinks.percentage + '%';
+            document.getElementById('seg-off').style.width = sum.offmap.percentage + '%';
+            
+            document.getElementById('val-res').innerText = sum.reservoir.percentage.toFixed(2) + '%';
+            document.getElementById('val-ch').innerText = sum.channel.percentage.toFixed(2) + '%';
+            document.getElementById('val-sink').innerText = sum.sinks.percentage.toFixed(2) + '%';
+            document.getElementById('val-off').innerText = sum.offmap.percentage.toFixed(2) + '%';
+            
+            const count = data.significant_sinks.length;
+            document.getElementById('sink-count-lbl').innerText = count;
+            
+            const banner = document.getElementById('verdict-banner');
+            if (sum.sinks.percentage > 40.0) {
+                banner.className = "verdict-banner danger";
+                banner.innerHTML = `
+                    <strong>⚠️ ALERTA DE DRENAJE:</strong> El <strong>${sum.sinks.percentage.toFixed(1)}%</strong> del agua queda estancada en depresiones locales. La mayor parte de la lluvia <strong>NO escurre</strong> hacia los canales y embalses. Se requiere nivelación de terreno.
+                `;
+            } else {
+                banner.className = "verdict-banner success";
+                banner.innerHTML = `
+                    <strong>✅ DRENAJE EFECTIVO:</strong> La mayor parte del agua corre satisfactoriamente hacia el embalse y canales. Menos del 40% se estanca.
+                `;
+            }
+            
+            // Populate list of depressions
+            const list = document.getElementById('sink-list-container');
+            list.innerHTML = "";
+            
+            data.significant_sinks.forEach((sink, idx) => {
+                // Convert grid coordinates to meters
+                const mapX = Math.round((sink.x / 1024 - 0.5) * MAP_SIZE);
+                const mapZ = Math.round((0.5 - sink.y / 1024) * MAP_SIZE);
+                
+                const item = document.createElement('div');
+                item.className = "sink-item";
+                item.onclick = function() {
+                    flyTo(mapX, mapZ);
+                };
+                
+                item.innerHTML = `
+                    <div>
+                        <div class="sink-title">Depresión #${idx + 1}</div>
+                        <div class="sink-meta">Pos: ${mapX}m, ${mapZ}m | Alt: ${sink.height.toFixed(1)}m</div>
+                    </div>
+                    <div class="sink-percentage">${sink.drained_percentage.toFixed(1)}%</div>
+                `;
+                list.appendChild(item);
+            });
+            
+            // Re-trigger place markers if terrain exists
+            placeSinkMarkers();
+        }
+
+        // Render glowing 3D spheres at the locations of major depressions
+        function placeSinkMarkers() {
+            if (!terrainMesh || !drainageData) return;
+            
+            // Clear existing
+            while (sinkMarkersGroup.children.length > 0) {
+                const m = sinkMarkersGroup.children[0];
+                sinkMarkersGroup.remove(m);
+                m.geometry.dispose();
+                m.material.dispose();
+            }
+            
+            if (!showSinksOverlay) return;
+            
+            drainageData.significant_sinks.forEach((sink, idx) => {
+                const x = (sink.x / 1024 - 0.5) * MAP_SIZE;
+                const z = (0.5 - sink.y / 1024) * MAP_SIZE;
+                const y = getInterpolatedHeight(sink.x / 1024, sink.y / 1024) * verticalExaggeration;
+                
+                // Create a small glowing ring or cylinder
+                const geom = new THREE.CylinderGeometry(15, 15, 80, 8, 1, false);
+                const mat = new THREE.MeshBasicMaterial({
+                    color: 0xef4444,
+                    transparent: true,
+                    opacity: 0.6,
+                    wireframe: true
+                });
+                
+                const mesh = new THREE.Mesh(geom, mat);
+                mesh.position.set(x, y + 40, z); // half height offset
+                
+                // Add reference ID
+                mesh.userData = { sinkIndex: idx, x: x, z: z };
+                
+                sinkMarkersGroup.add(mesh);
+            });
+        }
+
+        function toggleSinksMesh(checked) {
+            showSinksOverlay = checked;
+            placeSinkMarkers();
+        }
+
+        function toggleHelp(show) {
+            document.getElementById('help-modal').classList.toggle('active', show);
+        }
+
+        // --- Render Loop ---
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            // Update camera controls
+            controls.update();
+            
+            // Run rain simulation step
+            updateSimulation();
+            
+            // Render scene
+            renderer.render(scene, camera);
+        }
+    </script>
+</body>
+</html>

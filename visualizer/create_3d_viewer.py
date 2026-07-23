@@ -179,9 +179,54 @@ def main():
     print(f"Original size: {img.size}, format: {img.format}, mode: {img.mode}")
     
     # Downsample to target size using bilinear interpolation
-    print(f"Downsampling to {target_size}x{target_size}...")
     img_resized = img.resize((target_size, target_size), Image.Resampling.BILINEAR)
     data_resized = np.array(img_resized, dtype=np.float32)
+    
+    # Apply Planchon-Darboux sink filling on the 1024x1024 downsampled grid
+    # This removes local depression traps (sinks) in the playable area to ensure correct flow simulation.
+    print("Applying Planchon-Darboux sink filling on the 1024x1024 grid...")
+    offset_px = 256
+    size_px = 512
+    
+    t_play = np.copy(data_resized[offset_px : offset_px+size_px, offset_px : offset_px+size_px])
+    
+    # Boundary mask: Reservoir and Channel cells, plus edge of playable area
+    # Base height H_flat in units: 29000.0 (226.5625m)
+    H_flat_units = 29000.0
+    boundary = np.zeros_like(t_play, dtype=bool)
+    
+    # Any cell carved lower than H_flat - 0.5m inside the playable area is a drain
+    boundary[t_play < H_flat_units - 64.0] = True
+    
+    # Set edges of the playable area to boundary (water can flow off-map)
+    boundary[0, :] = True
+    boundary[-1, :] = True
+    boundary[:, 0] = True
+    boundary[:, -1] = True
+    
+    h_fill = np.copy(t_play)
+    h_fill[~boundary] = 65535.0
+    
+    dx = [1, 1, 0, -1, -1, -1, 0, 1]
+    dy = [0, 1, 1, 1, 0, -1, -1, -1]
+    
+    # Alternating sweeps in vectorised numpy for ultra-fast convergence
+    max_iters = 600
+    for iteration in range(max_iters):
+        prev_h = np.copy(h_fill)
+        h_pad = np.pad(h_fill, 1, mode='edge')
+        shifts = [h_pad[1+dy[k] : 1+dy[k]+size_px, 1+dx[k] : 1+dx[k]+size_px] for k in range(8)]
+        min_neighbor = np.minimum.reduce(shifts)
+        h_fill = np.maximum(t_play, min_neighbor + 1.0)
+        h_fill[boundary] = t_play[boundary]
+        
+        diff = np.max(np.abs(h_fill - prev_h))
+        if diff < 0.1:
+            print(f"   Sink filling converged at 1024x1024 after {iteration} iterations.")
+            break
+            
+    # Write back the filled playable area
+    data_resized[offset_px : offset_px+size_px, offset_px : offset_px+size_px] = h_fill
     
     # Min/Max in raw values and meters (1 meter = 128 units)
     h_min_raw = data_resized.min()
@@ -373,7 +418,7 @@ def main():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualizador 3D - DEM Matopiba</title>
+    <title>Visualizador 3D - Granja Bonita x4</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

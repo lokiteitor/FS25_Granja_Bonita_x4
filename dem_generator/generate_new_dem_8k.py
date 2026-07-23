@@ -98,8 +98,46 @@ def main():
     else:
         undulating_noise = np.zeros_like(undulating_noise_raw)
         
-    # Combine playable terrain: H_flat + undulating variation in the "rest" area
-    playable_terrain = H_flat + w_rest * undulating_noise
+    # Add global Southeast to Northwest slope to the undulating area only.
+    # Northwest playable corner is (offset_m, offset_m) = (2048, 2048), Southeast corner is (6144, 6144).
+    # u_play and v_play represent normalized coordinates inside the playable area.
+    u_play = np.clip((x_m - offset_m) / playable_size_m, 0.0, 1.0)
+    v_play = np.clip((y_m - offset_m) / playable_size_m, 0.0, 1.0)
+    
+    # Slope height: elevation increases by up to 10 meters along X and 10 meters along Y towards the Southeast.
+    # 1 meter = 128 units
+    slope_h = (u_play * 10.0 + v_play * 10.0) * 128.0
+    
+    # Combine playable terrain: H_flat + undulating variation + slope in the "rest" area.
+    # This leaves the North flat area (w_rest = 0) perfectly flat for rice cultivation!
+    playable_terrain = H_flat + w_rest * (slope_h + undulating_noise)
+    
+    # Pre-calculate reservoir and channel masks for mountain masking
+    rx0 = offset_m + 15.0
+    rx1 = rx0 + 500.0
+    ry0 = offset_m + 15.0
+    ry1 = ry0 + 500.0
+    rcx = (rx0 + rx1) / 2.0
+    rcy = (ry0 + ry1) / 2.0
+    rrx = (rx1 - rx0) / 2.0
+    rry = (ry1 - ry0) / 2.0
+    dx_res = np.abs(x_m - rcx) - rrx
+    dy_res = np.abs(y_m - rcy) - rry
+    dist_outside_res = np.sqrt(np.maximum(0.0, dx_res)**2 + np.maximum(0.0, dy_res)**2)
+    dist_inside_res = np.minimum(0.0, np.maximum(dx_res, dy_res))
+    sdf_res = dist_outside_res + dist_inside_res
+    t_res = np.clip(-sdf_res / 15.0, 0.0, 1.0)
+    w_res = 3 * t_res**2 - 2 * t_res**3  # Smoothstep mask for reservoir
+    
+    x_c = offset_m + 15.0 + 7.5
+    y_start_ch = offset_m + 15.0
+    y_end_ch = offset_m + playable_size_m - 400.0
+    t_ch_segment = np.clip((y_m - y_start_ch) / (y_end_ch - y_start_ch), 0.0, 1.0)
+    proj_y = y_start_ch + t_ch_segment * (y_end_ch - y_start_ch)
+    proj_x = x_c
+    dist_segment = np.sqrt((x_m - proj_x)**2 + (y_m - proj_y)**2)
+    t_ch = np.clip((dist_segment - 3.5) / 4.0, 0.0, 1.0)
+    w_ch = 0.5 * (1.0 + np.cos(np.pi * t_ch))  # Cosine mask for channel
     
     # Generate the South Mountain barrier along the southern border of the playable area
     # Max height: 100 meters (100 * 128 = 12800 units), extending 400 meters inward (up to y_m = 6144.0 - 400 = 5744.0)
@@ -164,13 +202,63 @@ def main():
     t_sq = np.clip(sdf_sq / blend_w, 0.0, 1.0)
     w_sq = 0.5 * (1.0 - np.cos(np.pi * t_sq))
     
-    # Blend the flat height H_flat into playable_terrain
-    playable_terrain = w_sq * playable_terrain + (1.0 - w_sq) * H_flat
+    # Calculate the sloped elevation at the center of the Southeast yard
+    # scx and scy are the center coordinates of the yard in meters
+    u_sq_c = (scx - offset_m) / playable_size_m
+    v_sq_c = (scy - offset_m) / playable_size_m
+    slope_h_c = (u_sq_c * 10.0 + v_sq_c * 10.0) * 128.0
+    
+    # Set the flat yard height to the local sloped height plus a 0.25m offset (32 units) to sit slightly above
+    H_sq = H_flat + slope_h_c + 32.0
+    
+    # Blend the flat height H_sq into playable_terrain
+    playable_terrain = w_sq * playable_terrain + (1.0 - w_sq) * H_sq
+    
+    # Generate larger, more layered background mountains in the northern non-playable area (y_m < offset_m)
+    # Peak height of 180m (180 * 128 = 23040 units)
+    # The mountains start rising 5m north of the playable border (y_m = 2043)
+    # and reach full height over a transition of 600m (at y_m = 1443).
+    # This leaves a 5m flat buffer zone and ensures mountains rise gradually and tower over the playable area.
+    buffer_m = 5.0
+    transition_m = 600.0
+    d_nm = (offset_m - buffer_m) - y_m
+    t_nm = np.clip(d_nm / transition_m, 0.0, 1.0)
+    w_nm = 0.5 * (1.0 - np.cos(np.pi * t_nm)) # 0 for y_m >= 2043, 1 for y_m <= 1443
+    
+    # Layer 1: Massive ridges (scale=8, amplitude 220m)
+    nm_noise_1d_large = val_noise((S_px, S_px), 8, 1.0, seed=seed+30)[0, :]
+    nm_noise_min_l, nm_noise_max_l = nm_noise_1d_large.min(), nm_noise_1d_large.max()
+    if nm_noise_max_l > nm_noise_min_l:
+        nm_noise_1d_large = 0.4 + 0.6 * (nm_noise_1d_large - nm_noise_min_l) / (nm_noise_max_l - nm_noise_min_l)
+    else:
+        nm_noise_1d_large = np.ones_like(nm_noise_1d_large)
+    nm_height_mod_large = nm_noise_1d_large[np.newaxis, :]  # Broadcasting
+    
+    # Layer 2: Medium ridges (scale=16, amplitude 80m)
+    nm_noise_1d_med = val_noise((S_px, S_px), 16, 1.0, seed=seed+35)[0, :]
+    nm_noise_min_m, nm_noise_max_m = nm_noise_1d_med.min(), nm_noise_1d_med.max()
+    if nm_noise_max_m > nm_noise_min_m:
+        nm_noise_1d_med = 0.3 + 0.7 * (nm_noise_1d_med - nm_noise_min_m) / (nm_noise_max_m - nm_noise_min_m)
+    else:
+        nm_noise_1d_med = np.ones_like(nm_noise_1d_med)
+    nm_height_mod_med = nm_noise_1d_med[np.newaxis, :]  # Broadcasting
+    
+    # Rugged high-frequency details (amplitude 600 units, approx 4.7m)
+    nm_rugged_noise = val_noise((S_px, S_px), 64, 600.0, seed=seed+31)
+    
+    # Combine layers and apply the envelope
+    # Softened peaks: total 180m height (130m large + 50m medium) to prevent flat capping at 62000
+    north_mountains = w_nm * (130.0 * 128.0 * nm_height_mod_large + 50.0 * 128.0 * nm_height_mod_med + nm_rugged_noise)
+    north_mountains = np.maximum(0.0, north_mountains) # Ensure no negative adjustments
     
     # Blend the playable terrain with the background mountain terrain
-    # inside playable area (w_bg=0), terrain is playable_terrain
-    # outside playable area (w_bg>0), terrain transitions to slope + noise
-    terrain = w_bg * (slope + noise_mountains) + (1.0 - w_bg) * playable_terrain
+    # Ensure the background terrain does not drop below the playable area base height (H_flat).
+    # This equalizes the low-elevation background border on the west and north sides (which previously dipped down to 12000 units, appearing blue on the visual map) to the playable height (29000 units).
+    bg_terrain_raw = slope + noise_mountains + north_mountains
+    bg_terrain_clamped = np.maximum(H_flat, bg_terrain_raw)
+    
+    # Blend using w_bg (inside playable w_bg=0 -> playable_terrain, outside w_bg=1 -> bg_terrain_clamped)
+    terrain = w_bg * bg_terrain_clamped + (1.0 - w_bg) * playable_terrain
     
     print("3. Smoothing the transition zone at the border...")
     terrain = gaussian_filter(terrain, sigma=6 * scale_m_to_px)
@@ -225,8 +313,8 @@ def main():
     t_ch = np.clip((dist_segment - 3.5) / 4.0, 0.0, 1.0)
     w_ch = 0.5 * (1.0 + np.cos(np.pi * t_ch))
     
-    # Depth: 4 meters (4 * 128 = 512 units)
-    channel_depth = 4.0 * 128.0
+    # Depth: 4m at south end, sloping down to 6m at north end (near reservoir)
+    channel_depth = (4.0 + (1.0 - t_ch_segment) * 2.0) * 128.0
     channel_carve = w_ch * channel_depth
     terrain = terrain - channel_carve
     
@@ -310,6 +398,7 @@ def main():
     boundary_y_vis_local = boundary_y_vis[p_start:p_end] - p_start
     ax.plot(np.arange(len(boundary_y_vis_local)), boundary_y_vis_local, color='yellow', linestyle='--', linewidth=1.5, label='Flat North boundary (Natural)')
     
+
     # Draw South Mountain boundary line
     y_mountain_start = (playable_size_m - 400.0) / vis_scale
     ax.axhline(y=y_mountain_start, color='orange', linestyle=':', linewidth=1.5, label='South Mountain boundary (400m)')
