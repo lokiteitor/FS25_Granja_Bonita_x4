@@ -212,7 +212,9 @@ def main():
     max_lat = 47.653344312978426
 
     # 2.5. Parse OSM way coordinates to build polygon mask for texture coloring
-    osm_path = os.path.join(project_root, "osm_generator", "outputs", "zoning_map.osm")
+    osm_path = os.path.join(project_root, "osm_generator", "outputs", "manual.osm")
+    if not os.path.exists(osm_path):
+        osm_path = os.path.join(project_root, "osm_generator", "outputs", "zoning_map.osm")
     if not os.path.exists(osm_path):
         osm_path = os.path.join(current_dir, "map.osm")
         
@@ -262,25 +264,30 @@ def main():
     # Generate the base color image (1024x1024)
     # Default background is the gorgeous procedural base texture representing geography
     base_color_img = create_procedural_base_texture(target_size)
-    draw = ImageDraw.Draw(base_color_img)
     
     if ways_data:
+        # Create a transparent overlay image for transparency
+        overlay = Image.new("RGBA", base_color_img.size, (0, 0, 0, 0))
+        draw_overlay = ImageDraw.Draw(overlay)
         
-        # Color definitions for tags
-        # (tag_key, tag_value, hex_color)
+        # Color definitions for tags with transparency
+        # Format: (tag_key, tag_value, fill_hex, fill_alpha, outline_hex, outline_alpha, outline_width)
         color_rules = [
-            ("natural", "wood", "#22C55E"),      # Forest green
-            ("landuse", "forest", "#22C55E"),
-            ("landuse", "farmyard", "#EC4899"),   # Pink for farmyard
-            ("landuse", "farmland", "#86EFAC"),   # Light green for farmland
-            ("natural", "water", "#2563EB"),     # Water blue
-            ("water", None, "#2563EB"),
-            ("highway", None, "#4B5563"),        # Road gray
+            ("natural", "wood", "#15803D", 80, "#14532D", 140, 1),
+            ("landuse", "forest", "#15803D", 80, "#14532D", 140, 1),
+            ("landuse", "farmyard", "#A8A29E", 100, "#57534E", 180, 2),
+            ("landuse", "farmland", "#D8A060", 60, "#5C3E21", 150, 2),
+            ("natural", "water", "#1D4ED8", 180, "#1E3A8A", 220, 2),
+            ("water", None, "#1D4ED8", 180, "#1E3A8A", 220, 2),
+            ("highway", "primary", "#374151", 220, "#1F2937", 220, 6),
+            ("highway", "secondary", "#4B5563", 220, "#374151", 220, 4),
+            ("highway", None, "#52525B", 220, "#3F3F46", 220, 3),
         ]
         
-        def hex_to_rgb(hex_str):
+        def hex_to_rgba(hex_str, alpha):
             h = hex_str.lstrip('#')
-            return tuple(int(h[i:i+2], 16) for i in (0, 2, 4))
+            rgb = tuple(int(h[i:i+2], 16) for i in (0, 2, 4))
+            return rgb + (alpha,)
             
         for way in ways_data:
             tags = way.get("tags", {})
@@ -289,16 +296,21 @@ def main():
                 continue
                 
             # Find matching color rule
-            match_color = None
-            for key, val, hex_color in color_rules:
+            match_rule = None
+            for rule in color_rules:
+                key, val, fill_hex, fill_alpha, outline_hex, outline_alpha, outline_width = rule
                 if key in tags:
                     if val is None or tags[key] == val:
-                        match_color = hex_to_rgb(hex_color)
+                        match_rule = rule
                         break
                         
-            if match_color is None:
+            if match_rule is None:
                 continue
                 
+            key, val, fill_hex, fill_alpha, outline_hex, outline_alpha, outline_width = match_rule
+            fill_rgba = hex_to_rgba(fill_hex, fill_alpha)
+            outline_rgba = hex_to_rgba(outline_hex, outline_alpha)
+            
             # Convert coords to pixel coordinates on the 1024x1024 texture.
             # The DEM is 8192px total but only the central 4096px correspond to the playable area.
             # Ratio = 4096/8192 = 0.5. In the 1024px texture that central band is:
@@ -317,9 +329,15 @@ def main():
             is_closed = len(coords) > 2 and coords[0] == coords[-1]
             
             if is_closed:
-                draw.polygon(poly_points, fill=match_color)
+                draw_overlay.polygon(poly_points, fill=fill_rgba)
+                if outline_width > 0:
+                    draw_overlay.line(poly_points + [poly_points[0]], fill=outline_rgba, width=outline_width)
             else:
-                draw.line(poly_points, fill=match_color, width=4)
+                draw_overlay.line(poly_points, fill=fill_rgba, width=outline_width if outline_width > 0 else 4)
+                
+        # Composite the overlay onto base_color_img
+        base_color_img = Image.alpha_composite(base_color_img.convert("RGBA"), overlay).convert("RGB")
+
                 
     # 3. Generate a beautiful custom terrain texture with shaded relief
     print("Generating shaded relief terrain texture (OSM colors shaded, rest grayscale)...")
