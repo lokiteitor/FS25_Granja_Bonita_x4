@@ -156,7 +156,7 @@ def strip_ring(ring):
 
     Clipped, not clamped: clamping folded the part of a timber strip that hung over the
     boundary onto the boundary itself, and put a run of nodes straight across the river
-    channel. What comes back has the same straight edge 100 m in that the fields have.
+    channel. What comes back has the same straight edge EDGE_CLEAR_M in that the fields have.
     """
     m = ml.EDGE_CLEAR_M
     return ml.clip_ring_to_rect(ring, m, m, ml.PLAYABLE_M - m, ml.PLAYABLE_M - m)

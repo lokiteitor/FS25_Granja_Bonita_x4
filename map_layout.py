@@ -88,7 +88,7 @@ EDGE_MAX = PLAYABLE_M + OFFSET_M + EXTEND_M   # 6444
 #
 # The roads and the water are the two exemptions, and neither is a loophole: a road that
 # stopped 15 m short of the edge would end in mid-air, and a river has to leave the map.
-EDGE_CLEAR_M = 50.0
+EDGE_CLEAR_M = 15.0
 
 # --- the datum --------------------------------------------------------------------
 BASE_ELEV_M = 46.4
@@ -888,7 +888,7 @@ def wood_area(wid, name, road_id, station, side):
 # first, then the north-south field belts, then the east-west ones, and each later belt
 # stops at the earlier. A transversal belt crossing a north-south one, drawn twice over
 # the same ground, is the overlap case the old map found the hard way.
-SHELTER_W_M = 50.0
+SHELTER_W_M = 25.0
 # What is planted in them, and it is deliberately not what is in the woods: a windbreak
 # on a field boundary is a row of hardwood, the woods are conifer, and both renderers
 # colour the two apart.
@@ -910,6 +910,11 @@ SHELTER_ROAD_SIDE = -1
 # and the twenty that stay are the longest, because a belt shelters the frontage it runs
 # along and a long one shelters more of it. `validate()` holds the cap.
 SHELTER_MAX_COUNT = 20
+# Field roads that carry no belt, by corridor id. Two fields facing each other across
+# one of these keep their whole depth: the lane along the north band (way 119) has
+# Campo 2 to 6 on one side and Campo 64 on the other, and a 50 m belt beside it would
+# take 65 m off five fields to shelter the strip that was just put under the plough.
+SHELTER_NO_BELT_ROADS = {'road_119'}
 # The corner radius the fields were drawn with, fitted to the arcs in the input. A cut
 # corner is rounded back to it so the trimmed fields match the untouched ones.
 FIELD_CORNER_R_M = 9.0
@@ -1366,6 +1371,8 @@ def _boundary_lines(fields):
                     continue
                 mid = (e[1] + f[1]) / 2.0
                 road = _road_in_gap(o, mid, lo, hi, gap / 2.0)
+                if road is not None and road['id'] in SHELTER_NO_BELT_ROADS:
+                    continue
                 cands.append((mid, lo, hi, None if road is None else road['id']))
         cands.sort(key=lambda c: (c[0], c[1]))
         i = 0
@@ -3089,11 +3096,19 @@ if os.path.exists(_INPUT_OSM):
     # stays so a way can be taken out of the build by id without editing the survey.
     _TOWN_RESERVOIR_WAYS = set()
 
-    # Open Ground parcels dropped from the map. They are still drawn in the input file,
-    # which is the authored survey and is not edited here - a way is taken out by id, the
-    # same way the town and reservoir ways are, so the input stays the one record of what
-    # was surveyed and this module stays the one record of what is built.
-    _DROPPED_WAYS = set()
+    # Ways dropped from the map. They are still drawn in the input file, which is the
+    # authored survey - a way is taken out by id, the same way the town and reservoir
+    # ways are, so the input stays the one record of what was surveyed and this module
+    # stays the one record of what is built.
+    #   190            Yard N5_1, the strip yard along the north lane
+    #   187, 188, 189  three lane stubs that ran north off the lane into Campo 6
+    #   204            the lane between the stubs and the primary; Yard N5_7 now
+    #                  stretches east over it to the boundary lane, and way 203 on its
+    #                  west side is the access that stays
+    #   509 to 521     the eleven rectangular woods the survey drew between the fields
+    #                  (517, the wood on the eastern ridge, stays)
+    _DROPPED_WAYS = {190, 187, 188, 189, 204,
+                     509, 510, 511, 512, 514, 515, 516, 518, 519, 520, 521}
 
     # Farmyards levelled by name rather than by the `m4fs:level` tag: every yard called
     # "Granja N" is a working farm and gets a platform. Kept here, like the dropped ways,
@@ -3247,7 +3262,11 @@ if os.path.exists(_INPUT_OSM):
 # trimmed back along the road, and where the line runs straight *through* a ring on its
 # way to the edge the ring is split into the two fields either side. The belts are laid
 # after this, so they keep off the railway on their own.
-RAIL_ALONG_ROAD = 'Mountain Pass Road'
+#
+# Off: the map has no railway. `None` here makes `build_railway` return nothing, so no
+# ring is cut back to its reserve and neither generator sees it. Naming a road again
+# ('Mountain Pass Road' was the one) brings it back beside that road.
+RAIL_ALONG_ROAD = None
 RAIL_SIDE = +1                 # +1 = left of travel from the road's first node: the lake
                                # side, where the line meets only three yards and no
                                # levelled platform; -1 runs into Granja 3

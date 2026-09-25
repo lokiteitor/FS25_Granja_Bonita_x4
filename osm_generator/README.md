@@ -76,7 +76,7 @@ that neither renderer can see.
 - every area closed on its own first node - the 3D viewer decides polygon versus line by
   comparing the first and last coordinate exactly
 - every way carrying a tag both renderers draw
-- nothing planted inside the 50 m clean strip along the boundary
+- nothing planted inside the 15 m clean strip along the boundary
 - the file and `map_layout` agreeing on whether the map is empty. Both halves of the
   pipeline describe the same world or neither does, and an OSM that quietly stopped
   emitting what the layout carries is the failure that rule exists to catch

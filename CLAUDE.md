@@ -157,7 +157,7 @@ conversion so it can be updated if the bands change.
 - Everything is 1 m/px on the canvas, output pixel `i` at `i + 0.5`. `roughen_till` builds
   its relief on a 4 m grid (`TILL_PX`) and resamples; `level_platforms` works directly at
   1 m/px in playable metres.
-- A 50 m clean strip (`EDGE_CLEAR_M`) inside the playable boundary: every ring the OSM
+- A 15 m clean strip (`EDGE_CLEAR_M`) inside the playable boundary: every ring the OSM
   draws is clipped back to it (`strip_ring`), pads are held inside it by extent, and
   `check_osm.py` fails on anything planted in it. Roads and water are exempt.
 
