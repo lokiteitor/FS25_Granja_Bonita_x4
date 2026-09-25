@@ -105,6 +105,9 @@ def main():
                     zorder=6)
         elif tags.get('highway') == 'tertiary':
             ax.plot(xs, ys, color='#CBD5E1', linewidth=0.9, alpha=0.85, zorder=5)
+        elif tags.get('highway') == 'track':
+            ax.plot(xs, ys, color='#A8A29E', linewidth=0.8, linestyle=(0, (4, 2)), alpha=0.9,
+                    zorder=5)
         elif 'railway' in tags:
             ax.plot(xs, ys, color='#475569', linewidth=3.0, zorder=5)
             ax.plot(xs, ys, color='#FFFFFF', linewidth=0.9, linestyle='--', zorder=5)

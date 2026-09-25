@@ -5808,57 +5808,57 @@
   <way id="115" visible="true" version="1">
     <nd ref="130" />
     <nd ref="131" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="track" />
   </way>
   <way id="119" visible="true" version="1">
     <nd ref="132" />
     <nd ref="133" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="track" />
   </way>
   <way id="120" visible="true" version="1">
     <nd ref="130" />
     <nd ref="134" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="track" />
   </way>
   <way id="121" visible="true" version="1">
     <nd ref="131" />
     <nd ref="135" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="track" />
   </way>
   <way id="134" visible="true" version="1">
     <nd ref="136" />
     <nd ref="137" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="track" />
   </way>
   <way id="151" visible="true" version="1">
     <nd ref="137" />
     <nd ref="138" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="track" />
   </way>
   <way id="168" visible="true" version="1">
     <nd ref="138" />
     <nd ref="139" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="track" />
   </way>
   <way id="185" visible="true" version="1">
     <nd ref="139" />
     <nd ref="140" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="track" />
   </way>
   <way id="187" visible="true" version="1">
     <nd ref="141" />
     <nd ref="142" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="track" />
   </way>
   <way id="188" visible="true" version="1">
     <nd ref="143" />
     <nd ref="144" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="track" />
   </way>
   <way id="189" visible="true" version="1">
     <nd ref="145" />
     <nd ref="146" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="track" />
   </way>
   <way id="190" visible="true" version="1">
     <nd ref="147" />
@@ -5881,66 +5881,66 @@
   <way id="198" visible="true" version="1">
     <nd ref="155" />
     <nd ref="156" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="track" />
   </way>
   <way id="203" visible="true" version="1">
     <nd ref="142" />
     <nd ref="157" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="track" />
   </way>
   <way id="204" visible="true" version="1">
     <nd ref="146" />
     <nd ref="158" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="track" />
   </way>
   <way id="205" visible="true" version="1">
     <nd ref="159" />
     <nd ref="160" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="track" />
   </way>
   <way id="207" visible="true" version="1">
     <nd ref="163" />
     <nd ref="161" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="track" />
   </way>
   <way id="213" visible="true" version="1">
     <nd ref="164" />
     <nd ref="165" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="track" />
   </way>
   <way id="229" visible="true" version="1">
     <nd ref="168" />
     <nd ref="169" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="track" />
   </way>
   <way id="231" visible="true" version="1">
     <nd ref="170" />
     <nd ref="171" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="track" />
   </way>
   <way id="234" visible="true" version="1">
     <nd ref="30" />
     <nd ref="119" />
     <nd ref="172" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="track" />
   </way>
   <way id="236" visible="true" version="1">
     <nd ref="31" />
     <nd ref="173" />
     <nd ref="174" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="track" />
   </way>
   <way id="238" visible="true" version="1">
     <nd ref="32" />
     <nd ref="175" />
     <nd ref="176" />
     <nd ref="177" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="track" />
   </way>
   <way id="241" visible="true" version="1">
     <nd ref="108" />
     <nd ref="50" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="track" />
   </way>
   <way id="244" visible="true" version="1">
     <nd ref="35" />
@@ -5948,14 +5948,14 @@
     <nd ref="179" />
     <nd ref="180" />
     <nd ref="181" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="track" />
   </way>
   <way id="246" visible="true" version="1">
     <nd ref="36" />
     <nd ref="182" />
     <nd ref="183" />
     <nd ref="85" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="track" />
   </way>
   <way id="253" visible="true" version="1">
     <nd ref="185" />
@@ -10252,6 +10252,7 @@
     <nd ref="8253" />
     <tag k="landuse" v="farmyard" />
     <tag k="natural" v="wood" />
+    <tag k="leaf_type" v="needleleaved" />
   </way>
   <way id="518" visible="true" version="1">
     <nd ref="5937" />
@@ -10767,32 +10768,32 @@
   <way id="606" visible="true" version="1">
     <nd ref="7965" />
     <nd ref="7966" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="secondary" />
   </way>
   <way id="607" visible="true" version="1">
     <nd ref="7967" />
     <nd ref="7968" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="secondary" />
   </way>
   <way id="608" visible="true" version="1">
     <nd ref="7969" />
     <nd ref="7970" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="secondary" />
   </way>
   <way id="609" visible="true" version="1">
     <nd ref="7973" />
     <nd ref="7974" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="secondary" />
   </way>
   <way id="610" visible="true" version="1">
     <nd ref="7975" />
     <nd ref="7976" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="secondary" />
   </way>
   <way id="611" visible="true" version="1">
     <nd ref="7977" />
     <nd ref="7978" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="secondary" />
   </way>
   <way id="614" visible="true" version="1">
     <nd ref="7917" />
@@ -11033,28 +11034,28 @@
     <nd ref="7047" />
     <nd ref="7048" />
     <nd ref="7049" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="secondary" />
   </way>
   <way id="660" visible="true" version="1">
     <nd ref="7051" />
     <nd ref="7052" />
     <nd ref="7053" />
     <nd ref="7054" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="secondary" />
   </way>
   <way id="661" visible="true" version="1">
     <nd ref="7056" />
     <nd ref="7057" />
     <nd ref="7058" />
     <nd ref="7059" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="secondary" />
   </way>
   <way id="662" visible="true" version="1">
     <nd ref="7061" />
     <nd ref="7062" />
     <nd ref="7063" />
     <nd ref="7064" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="secondary" />
   </way>
   <way id="663" visible="true" version="1">
     <nd ref="7047" />
@@ -11062,7 +11063,7 @@
     <nd ref="7057" />
     <nd ref="7062" />
     <nd ref="7066" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="secondary" />
   </way>
   <way id="664" visible="true" version="1">
     <nd ref="7048" />
@@ -11070,7 +11071,7 @@
     <nd ref="7058" />
     <nd ref="7063" />
     <nd ref="7067" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="secondary" />
   </way>
   <way id="665" visible="true" version="1">
     <nd ref="7049" />
@@ -11078,7 +11079,7 @@
     <nd ref="7059" />
     <nd ref="7064" />
     <nd ref="7068" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="secondary" />
   </way>
   <way id="10001" visible="true" version="1">
     <nd ref="8764" />
@@ -11867,14 +11868,14 @@
   <way id="20010" visible="true" version="1">
     <nd ref="7971" />
     <nd ref="7972" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="secondary" />
   </way>
   <way id="20011" visible="true" version="1">
     <nd ref="8055" />
     <nd ref="7066" />
     <nd ref="7067" />
     <nd ref="7068" />
-    <tag k="highway" v="tertiary" />
+    <tag k="highway" v="secondary" />
   </way>
   <way id="10051" visible="true" version="1">
     <nd ref="8064" />

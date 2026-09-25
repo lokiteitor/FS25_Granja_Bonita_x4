@@ -1,0 +1,85 @@
+{
+    "mode": "raw",
+    "input_height_scale": 0.003891050583657588,
+    "original": {
+        "min": 150.0,
+        "max": 29540.0,
+        "deviation": 29390.0,
+        "dtype": "uint16",
+        "shape": "(8192, 8192)"
+    },
+    "meters": {
+        "min": 0.5836575875486382,
+        "max": 114.94163424124515,
+        "deviation": 114.35797665369651,
+        "dtype": "float64",
+        "shape": "(8192, 8192)"
+    },
+    "raised_lowered": {
+        "min": 30.0,
+        "max": 144.3579766536965,
+        "deviation": 114.35797665369651,
+        "dtype": "float64",
+        "shape": "(8192, 8192)"
+    },
+    "height_scale": {
+        "height_scale_from_settings": 255,
+        "adjusted_height_scale": 255,
+        "mesh_z_scaling_factor": 257.0,
+        "height_scale_multiplier": 1.0
+    },
+    "normalized": {
+        "min": 7710.0,
+        "max": 37100.0,
+        "deviation": 29390.0,
+        "dtype": "uint16",
+        "shape": "(8192, 8192)"
+    },
+    "blurred": {
+        "min": 7710.0,
+        "max": 37100.0,
+        "deviation": 29390.0,
+        "dtype": "uint16",
+        "shape": "(8192, 8192)"
+    },
+    "full": {
+        "min": 7710.0,
+        "max": 37100.0,
+        "deviation": 29390.0,
+        "dtype": "uint16",
+        "shape": "(8192, 8192)"
+    },
+    "not_resized": {
+        "min": 7710.0,
+        "max": 27170.0,
+        "deviation": 19460.0,
+        "dtype": "uint16",
+        "shape": "(4096, 4096)"
+    },
+    "flatten": {
+        "roads": {
+            "input": 39,
+            "applied": 39,
+            "skipped": 0,
+            "unknown_tags": [],
+            "feather": null,
+            "smooth": 25.0
+        },
+        "changed_pixels": 454566,
+        "changed_fraction": 0.006774
+    },
+    "flattened": {
+        "min": 7710.0,
+        "max": 37100.0,
+        "deviation": 29390.0,
+        "dtype": "uint16",
+        "shape": "(8192, 8192)"
+    },
+    "dem": {
+        "min": 7710.0,
+        "max": 27168.0,
+        "deviation": 19458.0,
+        "dtype": "uint16",
+        "shape": "(4097, 4097)"
+    }
+}

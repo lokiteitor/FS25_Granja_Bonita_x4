@@ -1,0 +1,415 @@
+{
+    "software": "mapforge 0.1.0",
+    "date": "2026-09-25T17:42:11-06:00",
+    "project": {
+        "name": "Granja Bonita",
+        "size": 4096,
+        "rotation": 0.0,
+        "rotated_size": 4096,
+        "background_size": 8192,
+        "latitude": 43.14569235,
+        "longitude": -95.14507865,
+        "output_size": null
+    },
+    "inputs": {
+        "heightmap": "/home/ddelgado/git/MapFSGenerator/maps/dem_8k.png",
+        "osm": "/home/ddelgado/git/MapFSGenerator/maps/map.osm",
+        "template": "/home/ddelgado/git/MapFSGenerator/templates/fs25-map-template.zip",
+        "texture_schema": "/home/ddelgado/git/MapFSGenerator/config/texture_schema.json",
+        "grle_schema": "/home/ddelgado/git/MapFSGenerator/config/grle_schema.json"
+    },
+    "settings": {
+        "seed": 42,
+        "input_height_scale": 0.003891050583657588,
+        "dem": {
+            "custom_dem": false,
+            "adjust_terrain_to_ground_level": true,
+            "multiplier": 1,
+            "minimum_height_scale": 255,
+            "plateau": 15,
+            "ceiling": 15,
+            "water_depth": 15,
+            "blur_radius": 3,
+            "add_foundations": false,
+            "water_bank_steepness": 3,
+            "flatten_farmyard": false,
+            "flatten_farmyard_feather": 8.0,
+            "flatten_farmyard_max_relief": 10.0
+        },
+        "background": {
+            "generate_background": true,
+            "generate_water": false,
+            "water_blurriness": 20,
+            "remove_center": true,
+            "flatten_roads": true,
+            "flatten_water": false,
+            "flatten_roads_feather": null,
+            "flatten_roads_smooth": 25.0,
+            "procedural": {
+                "resize_factor": 8,
+                "apply_decimation": true,
+                "decimation_percent": 25,
+                "decimation_aggression": 3,
+                "texture_size": 4096,
+                "noise_octaves": 5,
+                "palette_low": [
+                    101,
+                    84,
+                    59
+                ],
+                "palette_high": [
+                    78,
+                    105,
+                    54
+                ],
+                "height_texture": true,
+                "palette_rock": [
+                    122,
+                    118,
+                    110
+                ],
+                "palette_snow": [
+                    238,
+                    242,
+                    247
+                ],
+                "rock_height": 110,
+                "snow_height": 120,
+                "band_blend": 25,
+                "band_noise": 12,
+                "slope_rock_deg": 30,
+                "slope_rock_blend": 12,
+                "snow_slope_limit_deg": 45,
+                "texture_flip_v": false
+            }
+        },
+        "grle": {
+            "farmland_margin": 5,
+            "add_farmyards": true,
+            "base_price": 12500,
+            "price_scale": 100,
+            "add_grass": true,
+            "base_grass": "meadow",
+            "random_plants": false,
+            "plants_island_minimum_size": 10,
+            "plants_island_maximum_size": 200,
+            "plants_island_vertex_count": 30,
+            "plants_island_rounding_radius": 15,
+            "plants_island_percent": 100,
+            "fill_empty_farmlands": true
+        },
+        "i3d": {
+            "add_trees": true,
+            "forest_density": 10,
+            "tree_limit": 12500,
+            "trees_relative_shift": 20,
+            "spline_density": 2,
+            "add_reversed_splines": true,
+            "field_splines": false,
+            "license_plate_prefix": "M4F",
+            "self_clear": false,
+            "displacement_layer_max_height": 0.2,
+            "displacement_layer_size_factor": 8,
+            "displacement_layer_cell_size_base": 16384
+        },
+        "texture": {
+            "dissolve": false,
+            "fields_padding": 3,
+            "skip_drains": true,
+            "use_cache": false,
+            "use_precise_tags": false
+        }
+    },
+    "height_scale": 255,
+    "pipeline_order": [
+        "template",
+        "textures",
+        "dem",
+        "grle_layers",
+        "farmlands",
+        "plants",
+        "fields",
+        "splines",
+        "i3d",
+        "background"
+    ],
+    "skipped_stages": [],
+    "timings_s": {
+        "template": 0.035,
+        "textures": 3.197,
+        "dem": 3.949,
+        "grle_layers": 1.987,
+        "farmlands": 0.031,
+        "plants": 0.93,
+        "fields": 0.02,
+        "splines": 0.006,
+        "i3d": 0.011,
+        "background": 15.007,
+        "total": 25.175
+    },
+    "components": {
+        "template": {
+            "template": "/home/ddelgado/git/MapFSGenerator/templates/fs25-map-template.zip",
+            "output_dir": "/home/ddelgado/git/MapFSGenerator/output/FS25_Granja_Bonita_V4"
+        },
+        "textures": {
+            "osm": {
+                "nodes": 5080,
+                "ways": 194,
+                "relations": 0,
+                "features": 194
+            },
+            "layers": 43,
+            "info_layers": {
+                "farmyards": 72,
+                "roads": 39,
+                "roads_polylines": 39,
+                "fields": 82
+            }
+        },
+        "dem": {
+            "mode": "raw",
+            "height_scale": 255,
+            "stages": {
+                "original": {
+                    "min": 150.0,
+                    "max": 29540.0,
+                    "deviation": 29390.0,
+                    "dtype": "uint16",
+                    "shape": "(8192, 8192)"
+                },
+                "meters": {
+                    "min": 0.5836575875486382,
+                    "max": 114.94163424124515,
+                    "deviation": 114.35797665369651,
+                    "dtype": "float64",
+                    "shape": "(8192, 8192)"
+                },
+                "raised_lowered": {
+                    "min": 30.0,
+                    "max": 144.3579766536965,
+                    "deviation": 114.35797665369651,
+                    "dtype": "float64",
+                    "shape": "(8192, 8192)"
+                },
+                "height_scale": {
+                    "height_scale_from_settings": 255,
+                    "adjusted_height_scale": 255,
+                    "mesh_z_scaling_factor": 257.0,
+                    "height_scale_multiplier": 1.0
+                },
+                "normalized": {
+                    "min": 7710.0,
+                    "max": 37100.0,
+                    "deviation": 29390.0,
+                    "dtype": "uint16",
+                    "shape": "(8192, 8192)"
+                },
+                "blurred": {
+                    "min": 7710.0,
+                    "max": 37100.0,
+                    "deviation": 29390.0,
+                    "dtype": "uint16",
+                    "shape": "(8192, 8192)"
+                },
+                "full": {
+                    "min": 7710.0,
+                    "max": 37100.0,
+                    "deviation": 29390.0,
+                    "dtype": "uint16",
+                    "shape": "(8192, 8192)"
+                },
+                "not_resized": {
+                    "min": 7710.0,
+                    "max": 27170.0,
+                    "deviation": 19460.0,
+                    "dtype": "uint16",
+                    "shape": "(4096, 4096)"
+                },
+                "flatten": {
+                    "roads": {
+                        "input": 39,
+                        "applied": 39,
+                        "skipped": 0,
+                        "unknown_tags": [],
+                        "feather": null,
+                        "smooth": 25.0
+                    },
+                    "changed_pixels": 454566,
+                    "changed_fraction": 0.006774
+                },
+                "flattened": {
+                    "min": 7710.0,
+                    "max": 37100.0,
+                    "deviation": 29390.0,
+                    "dtype": "uint16",
+                    "shape": "(8192, 8192)"
+                },
+                "dem": {
+                    "min": 7710.0,
+                    "max": 27168.0,
+                    "deviation": 19458.0,
+                    "dtype": "uint16",
+                    "shape": "(4097, 4097)"
+                }
+            },
+            "flatten": {
+                "roads": {
+                    "input": 39,
+                    "applied": 39,
+                    "skipped": 0,
+                    "unknown_tags": [],
+                    "feather": null,
+                    "smooth": 25.0
+                },
+                "changed_pixels": 454566,
+                "changed_fraction": 0.006774
+            }
+        },
+        "grle_layers": {
+            "created": 21,
+            "layers": [
+                "infoLayer_environment.png",
+                "infoLayer_farmlands.png",
+                "infoLayer_fieldType.png",
+                "infoLayer_indoorMask.png",
+                "infoLayer_limeLevel.png",
+                "infoLayer_navigationCollision.png",
+                "infoLayer_placementCollision.png",
+                "infoLayer_placementCollisionGenerated.png",
+                "infoLayer_plowLevel.png",
+                "infoLayer_rollerLevel.png",
+                "infoLayer_sprayLevel.png",
+                "infoLayer_stubbleShredLevel.png",
+                "infoLayer_tipCollision.png",
+                "infoLayer_tipCollisionGenerated.png",
+                "infoLayer_weed.png",
+                "densityMap_fruits.png",
+                "densityMap_ground.png",
+                "densityMap_groundFoliage.png",
+                "densityMap_height.png",
+                "densityMap_stones.png",
+                "densityMap_weed.png"
+            ]
+        },
+        "farmlands": {
+            "added": 154,
+            "skipped": 0
+        },
+        "plants": {
+            "status": "ok",
+            "grass_layer": "grass",
+            "forest_layer": "forestGrass",
+            "base_grass": "meadow",
+            "plant_value": 131,
+            "islands": 0,
+            "pixels": 18793344,
+            "coverage": 0.28
+        },
+        "fields": {
+            "added": 82,
+            "skipped": 0
+        },
+        "splines": {
+            "written_curves": 78
+        },
+        "i3d": {
+            "terrain": {
+                "lodTextureSize": "4096",
+                "heightScale": "255"
+            },
+            "displacement_layer": {
+                "size": "32768",
+                "maxHeight": "0.2",
+                "cellSize": "4"
+            },
+            "sun": {
+                "lastShadowMapSplitBboxMin": "-2048,-128,-2048",
+                "lastShadowMapSplitBboxMax": "2048,148,2048"
+            },
+            "fields": {
+                "status": "skipped",
+                "reason": "fields ya presentes"
+            },
+            "background": [],
+            "map_xml": {
+                "width": "4096",
+                "height": "4096"
+            },
+            "mod_desc_titles": 2
+        },
+        "background": {
+            "obj": "/home/ddelgado/git/MapFSGenerator/output/FS25_Granja_Bonita_V4/background/decimated_background.obj",
+            "texture": "/home/ddelgado/git/MapFSGenerator/output/FS25_Granja_Bonita_V4/assets/background/background_texture.png",
+            "translation_y": 144.3579766536965,
+            "parts": [
+                {
+                    "name": "background_terrain_part_01",
+                    "i3d": "assets/background/background_terrain_part_01.i3d",
+                    "vertices": 11793,
+                    "faces": 23150
+                },
+                {
+                    "name": "background_terrain_part_02",
+                    "i3d": "assets/background/background_terrain_part_02.i3d",
+                    "vertices": 13188,
+                    "faces": 25902
+                },
+                {
+                    "name": "background_terrain_part_03",
+                    "i3d": "assets/background/background_terrain_part_03.i3d",
+                    "vertices": 13272,
+                    "faces": 26113
+                },
+                {
+                    "name": "background_terrain_part_04",
+                    "i3d": "assets/background/background_terrain_part_04.i3d",
+                    "vertices": 15439,
+                    "faces": 30438
+                }
+            ],
+            "mesh": {
+                "vertices": 53351,
+                "faces": 105603,
+                "x_size": 8192.0,
+                "y_size": 8192.0,
+                "z_size": 102.8779,
+                "x_center": 0.0,
+                "y_center": 0.0,
+                "z_center": -51.509,
+                "x_min": -4096.0,
+                "x_max": 4096.0,
+                "y_min": -4096.0,
+                "y_max": 4096.0,
+                "z_min": -102.948,
+                "z_max": -0.07
+            },
+            "i3d_references": [
+                {
+                    "name": "background_terrain_part_01",
+                    "file_id": 1212,
+                    "node_id": 3617,
+                    "filename": "../assets/background/background_terrain_part_01.i3d"
+                },
+                {
+                    "name": "background_terrain_part_02",
+                    "file_id": 1213,
+                    "node_id": 3618,
+                    "filename": "../assets/background/background_terrain_part_02.i3d"
+                },
+                {
+                    "name": "background_terrain_part_03",
+                    "file_id": 1214,
+                    "node_id": 3619,
+                    "filename": "../assets/background/background_terrain_part_03.i3d"
+                },
+                {
+                    "name": "background_terrain_part_04",
+                    "file_id": 1215,
+                    "node_id": 3620,
+                    "filename": "../assets/background/background_terrain_part_04.i3d"
+                }
+            ]
+        }
+    }
+}

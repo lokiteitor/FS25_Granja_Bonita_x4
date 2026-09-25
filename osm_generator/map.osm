@@ -8382,6 +8382,7 @@
     <nd ref="3164"/>
     <tag k="landuse" v="farmyard"/>
     <tag k="natural" v="wood"/>
+    <tag k="leaf_type" v="needleleaved"/>
     <tag k="name" v="Bosque de la Sierra 1"/>
   </way>
   <way id="8" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
@@ -8416,6 +8417,7 @@
     <nd ref="3191"/>
     <tag k="landuse" v="farmyard"/>
     <tag k="natural" v="wood"/>
+    <tag k="leaf_type" v="needleleaved"/>
     <tag k="name" v="Bosque de la Sierra 2"/>
   </way>
   <way id="9" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
@@ -8449,6 +8451,7 @@
     <nd ref="3208"/>
     <tag k="landuse" v="farmyard"/>
     <tag k="natural" v="wood"/>
+    <tag k="leaf_type" v="needleleaved"/>
     <tag k="name" v="Bosque de la Sierra 3"/>
   </way>
   <way id="10" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
@@ -8493,6 +8496,7 @@
     <nd ref="3242"/>
     <tag k="landuse" v="farmyard"/>
     <tag k="natural" v="wood"/>
+    <tag k="leaf_type" v="needleleaved"/>
     <tag k="name" v="Bosque de la Sierra 4"/>
   </way>
   <way id="11" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
@@ -8534,6 +8538,7 @@
     <nd ref="3268"/>
     <tag k="landuse" v="farmyard"/>
     <tag k="natural" v="wood"/>
+    <tag k="leaf_type" v="needleleaved"/>
     <tag k="name" v="Bosque de la Sierra 5"/>
   </way>
   <way id="12" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
@@ -11028,7 +11033,7 @@
     <nd ref="4993"/>
     <nd ref="4999"/>
     <nd ref="4994"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="track"/>
     <tag k="name" v="way_115"/>
   </way>
   <way id="160" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
@@ -11039,90 +11044,90 @@
     <nd ref="5006"/>
     <nd ref="5070"/>
     <nd ref="4996"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="track"/>
     <tag k="name" v="way_119"/>
   </way>
   <way id="161" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
     <nd ref="4993"/>
     <nd ref="5069"/>
     <nd ref="4997"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="track"/>
     <tag k="name" v="way_120"/>
   </way>
   <way id="162" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
     <nd ref="4994"/>
     <nd ref="5070"/>
     <nd ref="4998"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="track"/>
     <tag k="name" v="way_121"/>
   </way>
   <way id="163" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
     <nd ref="4999"/>
     <nd ref="5000"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="track"/>
     <tag k="name" v="way_134"/>
   </way>
   <way id="164" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
     <nd ref="5000"/>
     <nd ref="5001"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="track"/>
     <tag k="name" v="way_151"/>
   </way>
   <way id="165" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
     <nd ref="5001"/>
     <nd ref="5002"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="track"/>
     <tag k="name" v="way_168"/>
   </way>
   <way id="166" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
     <nd ref="5002"/>
     <nd ref="5003"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="track"/>
     <tag k="name" v="way_185"/>
   </way>
   <way id="167" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
     <nd ref="5004"/>
     <nd ref="5005"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="track"/>
     <tag k="name" v="way_198"/>
   </way>
   <way id="168" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
     <nd ref="5006"/>
     <nd ref="5007"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="track"/>
     <tag k="name" v="way_203"/>
   </way>
   <way id="169" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
     <nd ref="5008"/>
     <nd ref="5071"/>
     <nd ref="5009"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="track"/>
     <tag k="name" v="way_205"/>
   </way>
   <way id="170" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
     <nd ref="5010"/>
     <nd ref="5008"/>
     <nd ref="5011"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="track"/>
     <tag k="name" v="way_207"/>
   </way>
   <way id="171" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
     <nd ref="5012"/>
     <nd ref="5071"/>
     <nd ref="5013"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="track"/>
     <tag k="name" v="way_213"/>
   </way>
   <way id="172" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
     <nd ref="5014"/>
     <nd ref="5015"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="track"/>
     <tag k="name" v="way_229"/>
   </way>
   <way id="173" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
     <nd ref="5016"/>
     <nd ref="5017"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="track"/>
     <tag k="name" v="way_231"/>
   </way>
   <way id="174" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
@@ -11132,14 +11137,14 @@
     <nd ref="5074"/>
     <nd ref="5018"/>
     <nd ref="5019"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="track"/>
     <tag k="name" v="way_234"/>
   </way>
   <way id="175" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
     <nd ref="4906"/>
     <nd ref="5020"/>
     <nd ref="5021"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="track"/>
     <tag k="name" v="way_236"/>
   </way>
   <way id="176" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
@@ -11147,13 +11152,13 @@
     <nd ref="5022"/>
     <nd ref="5023"/>
     <nd ref="5024"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="track"/>
     <tag k="name" v="way_238"/>
   </way>
   <way id="177" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
     <nd ref="4983"/>
     <nd ref="4925"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="track"/>
     <tag k="name" v="way_241"/>
   </way>
   <way id="178" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
@@ -11162,7 +11167,7 @@
     <nd ref="5026"/>
     <nd ref="5027"/>
     <nd ref="5028"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="track"/>
     <tag k="name" v="way_244"/>
   </way>
   <way id="179" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
@@ -11170,7 +11175,7 @@
     <nd ref="5029"/>
     <nd ref="5030"/>
     <nd ref="4960"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="track"/>
     <tag k="name" v="way_246"/>
   </way>
   <way id="180" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
@@ -11178,7 +11183,7 @@
     <nd ref="5075"/>
     <nd ref="5076"/>
     <nd ref="5032"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="secondary"/>
     <tag k="name" v="way_606"/>
   </way>
   <way id="181" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
@@ -11186,7 +11191,7 @@
     <nd ref="5077"/>
     <nd ref="5078"/>
     <nd ref="5034"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="secondary"/>
     <tag k="name" v="way_607"/>
   </way>
   <way id="182" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
@@ -11194,7 +11199,7 @@
     <nd ref="5079"/>
     <nd ref="5080"/>
     <nd ref="5036"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="secondary"/>
     <tag k="name" v="way_608"/>
   </way>
   <way id="183" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
@@ -11204,7 +11209,7 @@
     <nd ref="5079"/>
     <nd ref="5072"/>
     <nd ref="5038"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="secondary"/>
     <tag k="name" v="way_609"/>
   </way>
   <way id="184" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
@@ -11214,7 +11219,7 @@
     <nd ref="5080"/>
     <nd ref="5073"/>
     <nd ref="5040"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="secondary"/>
     <tag k="name" v="way_610"/>
   </way>
   <way id="185" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
@@ -11224,7 +11229,7 @@
     <nd ref="5036"/>
     <nd ref="5074"/>
     <nd ref="5042"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="secondary"/>
     <tag k="name" v="way_611"/>
   </way>
   <way id="186" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
@@ -11233,7 +11238,7 @@
     <nd ref="5044"/>
     <nd ref="5045"/>
     <nd ref="5046"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="secondary"/>
     <tag k="name" v="way_659"/>
   </way>
   <way id="187" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
@@ -11242,7 +11247,7 @@
     <nd ref="5048"/>
     <nd ref="5049"/>
     <nd ref="5050"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="secondary"/>
     <tag k="name" v="way_660"/>
   </way>
   <way id="188" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
@@ -11251,7 +11256,7 @@
     <nd ref="5052"/>
     <nd ref="5053"/>
     <nd ref="5054"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="secondary"/>
     <tag k="name" v="way_661"/>
   </way>
   <way id="189" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
@@ -11260,7 +11265,7 @@
     <nd ref="5056"/>
     <nd ref="5057"/>
     <nd ref="5058"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="secondary"/>
     <tag k="name" v="way_662"/>
   </way>
   <way id="190" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
@@ -11269,7 +11274,7 @@
     <nd ref="5052"/>
     <nd ref="5056"/>
     <nd ref="5059"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="secondary"/>
     <tag k="name" v="way_663"/>
   </way>
   <way id="191" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
@@ -11278,7 +11283,7 @@
     <nd ref="5053"/>
     <nd ref="5057"/>
     <nd ref="5060"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="secondary"/>
     <tag k="name" v="way_664"/>
   </way>
   <way id="192" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
@@ -11287,7 +11292,7 @@
     <nd ref="5054"/>
     <nd ref="5058"/>
     <nd ref="5061"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="secondary"/>
     <tag k="name" v="way_665"/>
   </way>
   <way id="193" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
@@ -11295,7 +11300,7 @@
     <nd ref="5037"/>
     <nd ref="5039"/>
     <nd ref="5041"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="secondary"/>
     <tag k="name" v="way_20010"/>
   </way>
   <way id="194" version="1" timestamp="2026-09-02T12:00:00Z" changeset="1" uid="1" user="generator">
@@ -11304,7 +11309,7 @@
     <nd ref="5059"/>
     <nd ref="5060"/>
     <nd ref="5061"/>
-    <tag k="highway" v="tertiary"/>
+    <tag k="highway" v="secondary"/>
     <tag k="name" v="way_20011"/>
   </way>
 </osm>

@@ -177,6 +177,7 @@ def main():
         ("highway", "primary", "#111827", 8),     # Road hierarchy, darkest = biggest
         ("highway", "secondary", "#374151", 5),
         ("highway", "tertiary", "#78716C", 3),
+        ("highway", "track", "#A8A29E", 2),
         ("highway", None, "#9CA3AF", 3),
     ]
 
