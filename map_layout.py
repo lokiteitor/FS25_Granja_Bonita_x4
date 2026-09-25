@@ -3107,8 +3107,11 @@ if os.path.exists(_INPUT_OSM):
     #                  west side is the access that stays
     #   509 to 521     the eleven rectangular woods the survey drew between the fields
     #                  (517, the wood on the eastern ridge, stays)
+    #   259, 346       Open Ground 51b and I33, two slivers between the Mountain Pass
+    #                  Road and the ridge wood; the ground is Pinar 4 now
     _DROPPED_WAYS = {190, 187, 188, 189, 204,
-                     509, 510, 511, 512, 514, 515, 516, 518, 519, 520, 521}
+                     509, 510, 511, 512, 514, 515, 516, 518, 519, 520, 521,
+                     259, 346}
 
     # Farmyards levelled by name rather than by the `m4fs:level` tag: every yard called
     # "Granja N" is a working farm and gets a platform. Kept here, like the dropped ways,
