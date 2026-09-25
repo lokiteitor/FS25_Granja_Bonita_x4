@@ -1715,7 +1715,7 @@ def _validate_shelterbelts(bad):
     for f in fields:
         if not ring_is_simple(f['ring']):
             bad.append(f"{f['id']}: field ring crosses itself")
-        if not field_floors_ok(f['ring']):
+        if f['name'].split(' (')[0] not in FIELD_FLOOR_EXEMPT and not field_floors_ok(f['ring']):
             bad.append(f"{f['id']}: under {FIELD_MIN_HA:.0f} ha or {FIELD_MIN_SIDE_M:.0f} m "
                        f"across after trimming")
 
@@ -2236,6 +2236,11 @@ FIELD_MERGE_STEPS = 2
 FIELD_MAX_HA = FIELD_MERGE_MAX_HA
 FIELD_MIN_HA = 3.0
 FIELD_MIN_SIDE_M = 100.0
+# Fields `validate` lets under the floors, by name. Campo 83 is the 387 x 71 m strip
+# between Granja 4 and the boundary shelterbelt: the column is 517 m tall and a 15 ha
+# square yard leaves no more. The floors themselves stay, so the shelterbelt builder
+# keeps cutting no other field under them.
+FIELD_FLOOR_EXEMPT = {'Campo 83'}
 # How much of a side a parcel has to keep for trimming to be the right answer. Past this
 # the obstacle is not along an edge, it is *in* the cell, and the cell wants quartering
 # so its children can take the ground on both sides of it - trim instead and one side is
