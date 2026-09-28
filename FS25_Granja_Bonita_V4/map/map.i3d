@@ -892,7 +892,7 @@
 
   <Scene>
     <Light name="sun" translation="0 400 0" rotation="-39.5664 39.1063 0" objectMask="0x83ff0000" nodeId="77" type="directional" color="1 1 1" emitDiffuse="true" emitSpecular="true" castShadowMap="true" depthMapBias="0.001" depthMapSlopeScaleBias="2" depthMapSlopeClamp="0.001" depthMapResolution="2048" shadowFarDistance="1000" shadowExtrusionDistance="200" softShadowsLightSize="0.5" softShadowsLightDistance="15" softShadowsDepthBiasFactor="1" softShadowsMaxPenumbraSize="0.5" numShadowMapSplits="5" shadowMapSplitDistancesParameter="0.9" lastShadowMapSplitBboxMin="-2048,-128,-2048" lastShadowMapSplitBboxMax="2048,148,2048" range="10000" scattering="true"/>
-    <Camera name="persp" translation="-1485.02 66.6913 1794.8" rotation="162.354 89.0738 -179.999" visibility="false" nodeId="78" fov="60" nearClip="0.01" farClip="6000" orthographicHeight="1500"/>
+    <Camera name="persp" translation="549.462 57.4919 1492.24" rotation="-17.8795 82.0261 -4.53662e-05" visibility="false" nodeId="78" fov="60" nearClip="0.01" farClip="6000" orthographicHeight="1500"/>
     <TerrainTransformGroup name="terrain" static="true" collisionFilterGroup="0x100" collisionFilterMask="0xfffff9c3" nodeId="80" heightMapId="1" patchSize="65" maxLODDistance="750" heightScale="255" unitsPerPixel="1" lodBlendStart="200" lodBlendEnd="300" lodTextureSize="4096" lodBlendStartDynamic="50" lodBlendEndDynamic="65" detailLodBlendDelta="5" materialId="27" castShadowMap="true" occNumLODs="1" occMaxLODDistance="300" occPatchSize="65" occLevel="2" occDistanceWeight="1" occMaxAdjacentFaces="10">
       <OccluderLods>
         <OccluderLod occLodLevel="0" occFaceCount="100" occMaxHausdorffDistance="7" occMaxHausdorffDistanceExtra="9" occMinHorizontalDistance="1" />
@@ -15364,7 +15364,7 @@
       <ReferenceNode name="townBuilding01" translation="-12.0317 0.0179253 -7.16279" rotation="0 -90 0" referenceId="711" nodeId="58913"/>
     </TransformGroup>
     <ReferenceNode name="gasStation02" translation="-287.125 44.0208 1097.38" rotation="-7.03485e-08 54.2824 -5.70188e-08" referenceId="712" nodeId="47527"/>
-    <ReferenceNode name="generalStore" translation="-1455.84 43.0389 -1369.96" rotation="0 -90 0" referenceId="713" nodeId="47607"/>
+    <ReferenceNode name="generalStore" translation="-1455.84 43.0389 -1373.5" rotation="0 -90 0" referenceId="713" nodeId="47607"/>
     <TransformGroup name="residentialA" translation="-1300.79 42.8935 -1260.37" nodeId="65246">
       <ReferenceNode name="residentialBuilding01" translation="-37.689 0.032608 -24.6901" rotation="1.36738e-05 -90 0" referenceId="714" nodeId="55845"/>
       <ReferenceNode name="residentialBuilding02" translation="-32.2126 -0.00148773 0.591187" rotation="0 -90 0" referenceId="715" nodeId="55894"/>
@@ -15376,7 +15376,7 @@
     <TransformGroup name="residentialB" translation="-1675.79 42.8945 -1259.97" nodeId="65247">
       <ReferenceNode name="residentialBuilding07" translation="28.1814 -0.0306702 20.541" rotation="-0 90 0" referenceId="719" nodeId="56118"/>
       <ReferenceNode name="residentialBuilding08" translation="27.2129 0.00307083 -5.05444" rotation="-0 90 0" referenceId="720" nodeId="56160"/>
-      <ReferenceNode name="residentialBuilding09" translation="25.186 0.0276985 -27.9315" rotation="-0 90 0" referenceId="721" nodeId="56201"/>
+      <ReferenceNode name="residentialBuilding09" translation="29.9761 0.0276985 -32.2766" rotation="-0 -90 0" referenceId="721" nodeId="56201"/>
       <ReferenceNode name="residentialBuilding10" translation="-27.9524 0.0199203 -21.9032" rotation="0 -90 0" referenceId="722" nodeId="56243"/>
       <ReferenceNode name="residentialBuilding11" translation="-26.558 -0.0112114 28.1957" rotation="0 -90 0" referenceId="723" nodeId="56286"/>
       <ReferenceNode name="residentialBuilding13" translation="-26.0699 -0.00882721 6.15308" rotation="0 -90 0" referenceId="724" nodeId="56381"/>
@@ -15401,7 +15401,7 @@
     </TransformGroup>
     <ReferenceNode name="grainElevator" translation="475.766 44.677 1442.52" rotation="0 -90 0" referenceId="733" nodeId="60826"/>
     <ReferenceNode name="sanctuary" translation="-1729.5 42.9636 1687.83" rotation="0 90 0" referenceId="734" nodeId="61698"/>
-    <ReferenceNode name="waterTower05" translation="-1289.02 43.1479 -1479.04" referenceId="735" nodeId="61852"/>
+    <ReferenceNode name="waterTower05" translation="-1289.02 43.1479 -1479.04" rotation="0 90 0" referenceId="735" nodeId="61852"/>
     <ReferenceNode name="hospital" translation="-1516.62 43.1263 1546.43" referenceId="736" nodeId="61904"/>
     <ReferenceNode name="school" translation="-1413.6 43.0233 -1380.4" rotation="-180 90 -180" referenceId="737" nodeId="62790"/>
     <ReferenceNode name="riverhome03" translation="-1414.99 42.8833 -1248.44" rotation="180 90 -180" referenceId="738" nodeId="57501"/>
