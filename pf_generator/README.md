@@ -76,7 +76,7 @@ bloque, y con sigma 12 no hay tal detalle.
 
 Comprobado: la clase de suelo del preview coincide con la del mapa completo en el
 **99.15 %** de los píxeles a 512, y en el **98.37 %** a 256. Lo que no coincide es el borde
-entre clases moviéndose un píxel. El reparto por clase (5 / 46.45 / 43.55 / 5) sale exacto
+entre clases moviéndose un píxel. El reparto por clase (5 / 24.60 / 65.40 / 5) sale exacto
 en las dos resoluciones.
 
 Con `--size 2048` la salida es byte a byte idéntica a la de antes de que existiera la
@@ -97,13 +97,13 @@ por umbral de valor. Los dos extremos están capados al 5% a propósito.
 | Array | Suelo | Rendimiento | Reparto |
 |---|---|---|---|
 | 0 | Arena Limosa / Loamy Sand | 75% | 5.00% |
-| 1 | Franco Arenoso / Sandy Loam | 100% | 46.45% |
-| 2 | Franco / Loam | 125% | 43.55% |
+| 1 | Franco Arenoso / Sandy Loam | 100% | 24.60% |
+| 2 | Franco / Loam | 125% | 65.40% |
 | 3 | Arcilla Limosa / Silty Clay | 80% | 5.00% |
 
 El corte es anidado: un campo de ruido parte el mapa en la mitad arenosa y la arcillosa por
-el percentil 48.55, y un *segundo campo independiente* talla después la clase minoritaria
-dentro de cada mitad (percentil 9.718 dentro de A, 89.701 dentro de B). Usar un segundo
+el percentil 70.40, y un *segundo campo independiente* talla después la clase minoritaria
+dentro de cada mitad (percentil 16.892 dentro de A, 92.898 dentro de B). Usar un segundo
 campo es lo que hace que las clases del 5% sean parches orgánicos dentro de su zona, en vez
 de un anillo en su borde.
 

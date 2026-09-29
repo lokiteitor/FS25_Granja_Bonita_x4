@@ -122,16 +122,16 @@ def generate_map(seed, output_dir, args, prefix=""):
         noise_zone = combine_noise_field(futures_zone)
         noise_patch = combine_noise_field(futures_patch)
     
-    # Target proportions (Adjusted: Arena Limosa (0) and Arcilla Limosa (3) reduced to 5.0% max):
+    # Target proportions (Adjusted: Franco (2) increased to 65.4%, Arena Limosa (0) and Arcilla Limosa (3) at 5.0%):
     # 0 (Arena Limosa / Loamy Sand): 5.0% (209715 px)
-    # 1 (Franco Arenoso / Sandy Loam): 46.45% (1948254 px)
-    # 2 (Franco / Loam): 43.55% (1826620 px)
+    # 1 (Franco Arenoso / Sandy Loam): 24.6% (1031799 px)
+    # 2 (Franco / Loam): 65.4% (2743075 px)
     # 3 (Arcilla Limosa / Silty Clay): 5.0% (209715 px)
     
     # Total pixels = 4,194,304
-    # Zone B = Franco + Arcilla Limosa = 48.55%
-    # Zone A = Arena Limosa + Franco Arenoso = 51.45%
-    pct_zone_B = 48.55
+    # Zone B = Franco + Arcilla Limosa = 70.4%
+    # Zone A = Arena Limosa + Franco Arenoso = 29.6%
+    pct_zone_B = 70.4
     
     print("[*] Performing nested percentile thresholding...")
     # Step 1: Split noise_zone into Zone A and Zone B
@@ -139,15 +139,15 @@ def generate_map(seed, output_dir, args, prefix=""):
     zone_B_mask = (noise_zone < threshold_zone)
     zone_A_mask = ~zone_B_mask
     
-    # Step 2: Split Zone A (Loamy Sand 5.0% vs Sandy Loam 46.45%)
-    # Inside Zone A, Loamy Sand proportion is 5.0 / 51.45 = 9.718173%
-    pct_val0_in_A = 9.718173
+    # Step 2: Split Zone A (Loamy Sand 5.0% vs Sandy Loam 24.6%)
+    # Inside Zone A, Loamy Sand proportion is 5.0 / 29.6 = 16.891892%
+    pct_val0_in_A = 16.891892
     noise_patch_A = noise_patch[zone_A_mask]
     threshold_A = np.percentile(noise_patch_A, pct_val0_in_A)
     
-    # Step 3: Split Zone B (Loam 43.55% vs Silty Clay 5.0%)
-    # Inside Zone B, Loam proportion is 43.55 / 48.55 = 89.701339%
-    pct_val2_in_B = 89.701339
+    # Step 3: Split Zone B (Loam 65.4% vs Silty Clay 5.0%)
+    # Inside Zone B, Loam proportion is 65.4 / 70.4 = 92.897727%
+    pct_val2_in_B = 92.897727
     noise_patch_B = noise_patch[zone_B_mask]
     threshold_B = np.percentile(noise_patch_B, pct_val2_in_B)
     
