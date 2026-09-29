@@ -899,7 +899,7 @@
 
   <Scene>
     <Light name="sun" translation="0 400 0" rotation="-39.5664 39.1063 0" objectMask="0x83ff0000" nodeId="51" type="directional" color="1 1 1" emitDiffuse="true" emitSpecular="true" castShadowMap="true" depthMapBias="0.001" depthMapSlopeScaleBias="2" depthMapSlopeClamp="0.001" depthMapResolution="2048" shadowFarDistance="1000" shadowExtrusionDistance="200" softShadowsLightSize="0.5" softShadowsLightDistance="15" softShadowsDepthBiasFactor="1" softShadowsMaxPenumbraSize="0.5" numShadowMapSplits="5" shadowMapSplitDistancesParameter="0.9" lastShadowMapSplitBboxMin="-2048,-128,-2048" lastShadowMapSplitBboxMax="2048,148,2048" range="10000" scattering="true"/>
-    <Camera name="persp" translation="525.373 203.859 1620.23" rotation="-43.5533 2.81907 -1.59859e-06" visibility="false" nodeId="52" fov="60" nearClip="0.01" farClip="6000" orthographicHeight="1500"/>
+    <Camera name="persp" translation="498.709 56.8069 1474.1" rotation="-24.9903 43.3924 -3.85524e-07" visibility="false" nodeId="52" fov="60" nearClip="0.01" farClip="6000" orthographicHeight="1500"/>
     <TerrainTransformGroup name="terrain" static="true" collisionFilterGroup="0x100" collisionFilterMask="0xfffff9c3" nodeId="54" heightMapId="1" patchSize="65" maxLODDistance="750" heightScale="255" unitsPerPixel="1" lodBlendStart="200" lodBlendEnd="300" lodTextureSize="4096" lodBlendStartDynamic="50" lodBlendEndDynamic="65" detailLodBlendDelta="5" materialId="17" castShadowMap="true" occNumLODs="1" occMaxLODDistance="300" occPatchSize="65" occLevel="2" occDistanceWeight="1" occMaxAdjacentFaces="10">
       <OccluderLods>
         <OccluderLod occLodLevel="0" occFaceCount="100" occMaxHausdorffDistance="7" occMaxHausdorffDistanceExtra="9" occMinHorizontalDistance="1" />
@@ -15471,6 +15471,52 @@
       <ReferenceNode name="residentialBuilding08" translation="-797.765 21.5076 823.37" rotation="-0 180 0" referenceId="726" nodeId="51026"/>
     </TransformGroup>
     <ReferenceNode name="observationTower" translation="-1554.53 43.0301 -1378.73" referenceId="747" nodeId="51064"/>
+    <TransformGroup name="preplaced_gasStation" lockedgroup="true" translation="-1294.45 44.2162 -1537.57" nodeId="64672">
+      <TransformGroup name="placeable" nodeId="64673">
+        <TransformGroup name="gasStation" nodeId="64668">
+          <Shape name="gasStationTrigger" shapeId="32" static="true" trigger="true" collisionFilterGroup="0x20000000" collisionFilterMask="0x40000000" nodeId="64669" castsShadows="false" receiveShadows="false" nonRenderable="true" distanceBlending="false" materialIds="18"/>
+          <TransformGroup name="mapPosition" nodeId="64670"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="props" nodeId="64674"/>
+      <TransformGroup name="aiSplines" nodeId="64675"/>
+    </TransformGroup>
+    <TransformGroup name="preplaced_gasStation" lockedgroup="true" translation="-311.575 44.0288 1125.21" nodeId="64682">
+      <TransformGroup name="placeable" nodeId="64683">
+        <TransformGroup name="gasStation" nodeId="64678">
+          <Shape name="gasStationTrigger" shapeId="32" static="true" trigger="true" collisionFilterGroup="0x20000000" collisionFilterMask="0x40000000" nodeId="64679" castsShadows="false" receiveShadows="false" nonRenderable="true" distanceBlending="false" materialIds="18"/>
+          <TransformGroup name="mapPosition" nodeId="64680"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="props" nodeId="64684"/>
+      <TransformGroup name="aiSplines" nodeId="64685"/>
+    </TransformGroup>
+    <TransformGroup name="preplaced_gasStation" lockedgroup="true" translation="-1474.11 43.1323 1540.65" nodeId="64704">
+      <TransformGroup name="placeable" nodeId="64705">
+        <TransformGroup name="gasStation" nodeId="64700">
+          <Shape name="gasStationTrigger" shapeId="32" static="true" trigger="true" collisionFilterGroup="0x20000000" collisionFilterMask="0x40000000" nodeId="64701" castsShadows="false" receiveShadows="false" nonRenderable="true" distanceBlending="false" materialIds="18"/>
+          <TransformGroup name="mapPosition" nodeId="64702"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="props" nodeId="64706"/>
+      <TransformGroup name="aiSplines" nodeId="64707"/>
+    </TransformGroup>
+    <TransformGroup name="preplaced_grainBargeTerminal02Triggers" lockedgroup="true" translation="498.253 45.617 1449.75" nodeId="64847">
+      <TransformGroup name="placeable" nodeId="64848">
+        <TransformGroup name="grainBargeTerminal02Triggers" nodeId="64838">
+          <TransformGroup name="unloadStationTrailer" translation="-17.3071 0 5.25" rotation="0 90 0" nodeId="64839">
+            <Shape name="unloadNodeTrailer" translation="-6.04414 0.371339 -0.05" shapeId="33" kinematic="true" compound="true" collisionFilterGroup="0x40000000" collisionFilterMask="0x20000000" nodeId="64840" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="13"/>
+            <TransformGroup name="unloadMarkerTrailer" translation="-6.04414 0.371339 -0.05" nodeId="64841"/>
+            <TransformGroup name="unloadNodeAI" translation="-6.04414 0.371339 -0.05" nodeId="64842"/>
+            <Shape name="palletTrigger" translation="-6.04414 2.37134 -0.05" shapeId="34" kinematic="true" compound="true" trigger="true" collisionFilterGroup="0x20000000" collisionFilterMask="0x10000" nodeId="64843" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="13"/>
+            <Shape name="baleTrigger" translation="-6.04414 2.37134 -0.05" shapeId="34" kinematic="true" compound="true" trigger="true" collisionFilterGroup="0x20000000" collisionFilterMask="0x40000" nodeId="64844" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="13"/>
+          </TransformGroup>
+          <TransformGroup name="teleportNode" translation="-13.7905 0.240006 6.45475" nodeId="64845"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="props" nodeId="64849"/>
+      <TransformGroup name="aiSplines" nodeId="64850"/>
+    </TransformGroup>
   </Scene>
 
   <ProceduralPlacement>
@@ -17219,6 +17265,49 @@
     </UserAttribute>
     <UserAttribute nodeId="46490">
       <Attribute name="isFenceGroup" type="boolean" value="true"/>
+    </UserAttribute>
+    <UserAttribute nodeId="64672">
+      <Attribute name="aiSplines" type="string" value="2"/>
+      <Attribute name="boughtWithFarmlandOverwrite" type="boolean" value="false"/>
+      <Attribute name="onCreate" type="scriptCallback" value="Placeable.onCreate"/>
+      <Attribute name="uniqueId" type="string" value="preplaced_gasStation_028ae35652089128e1ca9e95be3f5b67d"/>
+      <Attribute name="xmlFilename" type="string" value="$data/placeables/mapUS/sellingPoints/gasStation/gasStation01.xml"/>
+    </UserAttribute>
+    <UserAttribute nodeId="64668">
+      <Attribute name="mapPositionIndex" type="string" value="1"/>
+      <Attribute name="uniqueId" type="string" value="preplaced_gasStation_028ae35652089128e1ca9e95be3f5b67d"/>
+    </UserAttribute>
+    <UserAttribute nodeId="64682">
+      <Attribute name="aiSplines" type="string" value="2"/>
+      <Attribute name="boughtWithFarmlandOverwrite" type="boolean" value="false"/>
+      <Attribute name="onCreate" type="scriptCallback" value="Placeable.onCreate"/>
+      <Attribute name="uniqueId" type="string" value="preplaced_gasStation_12ccabe2022a39eac6af6167ee187c61a"/>
+      <Attribute name="xmlFilename" type="string" value="$data/placeables/mapUS/sellingPoints/gasStation/gasStation01.xml"/>
+    </UserAttribute>
+    <UserAttribute nodeId="64678">
+      <Attribute name="mapPositionIndex" type="string" value="1"/>
+      <Attribute name="uniqueId" type="string" value="preplaced_gasStation_12ccabe2022a39eac6af6167ee187c61a"/>
+    </UserAttribute>
+    <UserAttribute nodeId="64704">
+      <Attribute name="aiSplines" type="string" value="2"/>
+      <Attribute name="boughtWithFarmlandOverwrite" type="boolean" value="false"/>
+      <Attribute name="onCreate" type="scriptCallback" value="Placeable.onCreate"/>
+      <Attribute name="uniqueId" type="string" value="preplaced_gasStation_241ccd2f5295d0f7d57cc05a0a84a02c7"/>
+      <Attribute name="xmlFilename" type="string" value="$data/placeables/mapUS/sellingPoints/gasStation/gasStation01.xml"/>
+    </UserAttribute>
+    <UserAttribute nodeId="64700">
+      <Attribute name="mapPositionIndex" type="string" value="1"/>
+      <Attribute name="uniqueId" type="string" value="preplaced_gasStation_241ccd2f5295d0f7d57cc05a0a84a02c7"/>
+    </UserAttribute>
+    <UserAttribute nodeId="64847">
+      <Attribute name="aiSplines" type="string" value="2"/>
+      <Attribute name="boughtWithFarmlandOverwrite" type="boolean" value="false"/>
+      <Attribute name="onCreate" type="scriptCallback" value="Placeable.onCreate"/>
+      <Attribute name="uniqueId" type="string" value="preplaced_grainBargeTerminal02Triggers_2eb98248d172499ef1ed45d5f1502da30"/>
+      <Attribute name="xmlFilename" type="string" value="$data/placeables/mapUS/sellingPoints/grainBargeTerminal02Triggers/grainBargeTerminal02Triggers.xml"/>
+    </UserAttribute>
+    <UserAttribute nodeId="64838">
+      <Attribute name="uniqueId" type="string" value="preplaced_grainBargeTerminal02Triggers_2eb98248d172499ef1ed45d5f1502da30"/>
     </UserAttribute>
   </UserAttributes>
 

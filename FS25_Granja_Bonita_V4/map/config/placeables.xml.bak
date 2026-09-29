@@ -1149,14 +1149,17 @@
             <animatedObject time="0" direction="0"/>
         </animatedObjects>
     </placeable>
+    <placeable isPreplaced="true" uniqueId="preplaced_gasStation_0b0a85133999c1987460198816f3ddae1"/>
+    <placeable isPreplaced="true" uniqueId="preplaced_gasStation_07589cd74acbb408b3285cb570f5e02b9"/>
+
+    <placeable isPreplaced="true" uniqueId="preplaced_pianoFactoryPlaceable_872888df3a807b2166927e968c6a5dec6"/>
+    <placeable isPreplaced="true" uniqueId="preplaced_biomassHeatingPlant_929bfd6c45034e8609560c222eae163c8"/>
+    <placeable isPreplaced="true" uniqueId="preplaced_gasStation_0d2fa35283f9c33798b22ec0440cdede7"/>
     <placeable isPreplaced="true" uniqueId="preplaced_sellingStationProducts_d4837e2423a2042b2945f18aa901b230"/>
+    <placeable isPreplaced="true" uniqueId="preplaced_grainBargeTerminal02Triggers_1780c549ea16bc8f922c9ecb1d0489a83"/>
     <placeable isPreplaced="true" uniqueId="preplaced_sellingStationVehicles_62b6b2c8dadf70c4cb99d2afcbe1e842"/>
     <placeable isPreplaced="true" uniqueId="preplaced_animalTrader_3a3fe89f7cbc68cf9d248b994f6268a5"/>
     <placeable isPreplaced="true" uniqueId="preplaced_buyingStationManure_26e11bad657c21bcc0983a0d3f8f941e"/>
     <placeable isPreplaced="true" uniqueId="preplaced_buyingStationLiquidManure_7a4a6779b0a1fd4777acbe046e303e78"/>
     <placeable isPreplaced="true" uniqueId="preplaced_warehouseLogisticUS_50e6adca71b9959d380c07a433a37572"/>
-    <placeable isPreplaced="true" uniqueId="preplaced_gasStation_028ae35652089128e1ca9e95be3f5b67d"/>
-    <placeable isPreplaced="true" uniqueId="preplaced_gasStation_12ccabe2022a39eac6af6167ee187c61a"/>
-    <placeable isPreplaced="true" uniqueId="preplaced_gasStation_241ccd2f5295d0f7d57cc05a0a84a02c7"/>
-    <placeable isPreplaced="true" uniqueId="preplaced_grainBargeTerminal02Triggers_2eb98248d172499ef1ed45d5f1502da30"/>
 </placeables>
