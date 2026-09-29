@@ -1,5 +1,60 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<placeables>
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<placeables version="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/savegame_placeables.xsd">
+    <placeable isPreplaced="true" uniqueId="preplaced_buyingStationLiquidManure_7a4a6779b0a1fd4777acbe046e303e78"/>
+    <placeable isPreplaced="true" uniqueId="preplaced_warehouseLogisticUS_50e6adca71b9959d380c07a433a37572"/>
+    <placeable isPreplaced="true" uniqueId="preplaced_animalTrader_3a3fe89f7cbc68cf9d248b994f6268a5"/>
+    <placeable isPreplaced="true" uniqueId="preplaced_sellingStationVehicles_62b6b2c8dadf70c4cb99d2afcbe1e842"/>
+    <placeable isPreplaced="true" uniqueId="preplaced_sellingStationProducts_d4837e2423a2042b2945f18aa901b230"/>
+    <placeable isPreplaced="true" uniqueId="preplaced_buyingStationManure_26e11bad657c21bcc0983a0d3f8f941e"/>
+    <placeable isPreplaced="true" uniqueId="preplaced_gasStation_0b0a85133999c1987460198816f3ddae1"/>
+    <placeable isPreplaced="true" uniqueId="preplaced_gasStation_07589cd74acbb408b3285cb570f5e02b9"/>
+    <placeable filename="data/placeables/brandless/productionPointsGeneric/biomassHeatingPlant/biomassHeatingPlant.xml" position="-1337 43.198 -1522.5" rotation="-0 -90 0" boughtWithFarmlandOverwrite="true">
+        <sellingStation>
+            <stats plateauDuration="51840000" priceVersion="1" nextPlateauNumber="1" fillType="ROUNDBALE_WOOD" meanValue="0" paid="0" plateauTime="26646266" isInPlateau="true" received="0">
+                <curveBaseCurve nominalPeriodVariation="64800000" amplitudeDistribution="2" time="53353940" period="71138584" amplitude="0.097487" nominalPeriod="172800000" periodDistribution="1" nominalAmplitudeVariation="0.15" nominalAmplitude="0.04"/>
+                <curve1 nominalPeriodVariation="120960000" amplitudeDistribution="1" time="420622528" period="472956320" amplitude="0.000538" nominalPeriod="604800000" periodDistribution="1" nominalAmplitudeVariation="0.02" nominalAmplitude="0.02"/>
+            </stats>
+            <stats plateauDuration="51840000" priceVersion="1" nextPlateauNumber="0" fillType="WOODCHIPS" meanValue="0" paid="0" plateauTime="20639854" isInPlateau="true" received="0">
+                <curveBaseCurve nominalPeriodVariation="64800000" amplitudeDistribution="2" time="18602128" period="74408512" amplitude="-0.029759" nominalPeriod="172800000" periodDistribution="1" nominalAmplitudeVariation="0.048" nominalAmplitude="0.0128"/>
+                <curve1 nominalPeriodVariation="120960000" amplitudeDistribution="1" time="140540640" period="568176128" amplitude="0.012226" nominalPeriod="604800000" periodDistribution="1" nominalAmplitudeVariation="0.0064" nominalAmplitude="0.0064"/>
+            </stats>
+            <stats plateauDuration="51840000" priceVersion="1" nextPlateauNumber="0" fillType="ROUNDBALE" meanValue="0" paid="0" plateauTime="25202848" isInPlateau="true" received="0">
+                <curveBaseCurve nominalPeriodVariation="64800000" amplitudeDistribution="2" time="19465556" period="77862224" amplitude="0.030581" nominalPeriod="172800000" periodDistribution="1" nominalAmplitudeVariation="0.15" nominalAmplitude="0.04"/>
+                <curve1 nominalPeriodVariation="120960000" amplitudeDistribution="1" time="184140832" period="431720672" amplitude="0.003034" nominalPeriod="604800000" periodDistribution="1" nominalAmplitudeVariation="0.02" nominalAmplitude="0.02"/>
+            </stats>
+            <stats plateauDuration="51840000" priceVersion="1" nextPlateauNumber="0" fillType="STRAW_PELLETS" meanValue="0" paid="0" plateauTime="0" isInPlateau="false" received="0">
+                <curveBaseCurve nominalPeriodVariation="64800000" amplitudeDistribution="2" time="13224598" period="66303160" amplitude="0.021736" nominalPeriod="172800000" periodDistribution="1" nominalAmplitudeVariation="0.02775" nominalAmplitude="0.0074"/>
+                <curve1 nominalPeriodVariation="120960000" amplitudeDistribution="1" time="248968224" period="542614464" amplitude="0.003359" nominalPeriod="604800000" periodDistribution="1" nominalAmplitudeVariation="0.0037" nominalAmplitude="0.0037"/>
+            </stats>
+            <stats plateauDuration="51840000" priceVersion="1" nextPlateauNumber="0" fillType="WOOD" meanValue="0" paid="0" plateauTime="0" isInPlateau="false" received="0">
+                <curveBaseCurve nominalPeriodVariation="64800000" amplitudeDistribution="2" time="1389400.875" period="71292432" amplitude="-0.021667" nominalPeriod="172800000" periodDistribution="1" nominalAmplitudeVariation="0.15" nominalAmplitude="0.04"/>
+                <curve1 nominalPeriodVariation="120960000" amplitudeDistribution="1" time="31753690" period="537260864" amplitude="0.034638" nominalPeriod="604800000" periodDistribution="1" nominalAmplitudeVariation="0.02" nominalAmplitude="0.02"/>
+            </stats>
+            <stats plateauDuration="51840000" priceVersion="1" nextPlateauNumber="0" fillType="STRAW" meanValue="0" paid="0" plateauTime="0" isInPlateau="false" received="0">
+                <curveBaseCurve nominalPeriodVariation="64800000" amplitudeDistribution="2" time="13922055" period="61440232" amplitude="0.004727" nominalPeriod="172800000" periodDistribution="1" nominalAmplitudeVariation="0.00615" nominalAmplitude="0.00164"/>
+                <curve1 nominalPeriodVariation="120960000" amplitudeDistribution="1" time="136623136" period="480114048" amplitude="0.000762" nominalPeriod="604800000" periodDistribution="1" nominalAmplitudeVariation="0.00082" nominalAmplitude="0.00082"/>
+            </stats>
+            <stats plateauDuration="51840000" priceVersion="1" nextPlateauNumber="1" fillType="SQUAREBALE" meanValue="0" paid="0" plateauTime="27466298" isInPlateau="true" received="0">
+                <curveBaseCurve nominalPeriodVariation="64800000" amplitudeDistribution="2" time="50936060" period="67914744" amplitude="-0.05426" nominalPeriod="172800000" periodDistribution="1" nominalAmplitudeVariation="0.15" nominalAmplitude="0.04"/>
+                <curve1 nominalPeriodVariation="120960000" amplitudeDistribution="1" time="69559784" period="591782016" amplitude="0.011642" nominalPeriod="604800000" periodDistribution="1" nominalAmplitudeVariation="0.02" nominalAmplitude="0.02"/>
+            </stats>
+        </sellingStation>
+    </placeable>
+    <placeable filename="data/placeables/mapEU/pianoFactory/pianoFactoryPlaceable.xml" position="-1343 43.144 -1476.25" rotation="-0 -90 0" boughtWithFarmlandOverwrite="true">
+        <sellingStation>
+            <stats plateauDuration="51840000" priceVersion="1" nextPlateauNumber="0" fillType="BOARDS" meanValue="0" paid="0" plateauTime="0" isInPlateau="false" received="0">
+                <curveBaseCurve nominalPeriodVariation="64800000" amplitudeDistribution="2" time="12158250" period="69833944" amplitude="0.020237" nominalPeriod="172800000" periodDistribution="1" nominalAmplitudeVariation="0.20085" nominalAmplitude="0.05356"/>
+                <curve1 nominalPeriodVariation="120960000" amplitudeDistribution="1" time="247247952" period="490906720" amplitude="0.026274" nominalPeriod="604800000" periodDistribution="1" nominalAmplitudeVariation="0.02678" nominalAmplitude="0.02678"/>
+            </stats>
+        </sellingStation>
+        <factory>
+            <input remainingAmount="5000" fillType="BOARDS"/>
+            <storage farmId="0"/>
+        </factory>
+        <animatedObjects>
+            <animatedObject time="0" direction="0"/>
+        </animatedObjects>
+    </placeable>
     <placeable modName="FS25_CarrefourPack" filename="$moddir$FS25_CarrefourPack/xml/market.xml" position="-1325.25 43.012 -1365.25" rotation="-0 -90 0" boughtWithFarmlandOverwrite="true">
         <animatedObjects>
             <animatedObject time="0" direction="0"/>
@@ -1143,23 +1198,111 @@
             </stats>
         </sellingStation>
     </placeable>
+    <placeable filename="data/placeables/brandless/fences/US/fence16/fence16.xml" position="0.000 -151.000 0.000" rotation="0.00 -0.00 0.00" boughtWithFarmlandOverwrite="true">
+        <newFence>
+            <segment start="-1594.003 43.070 -1411.227" end="-1594.203 42.988 -1343.488" id="SEGMENT"/>
+            <segment start="-1587.932 42.984 -1338.934" end="-1529.532 42.984 -1339.022" id="SEGMENT"/>
+            <segment start="-1513.885 42.985 -1340.115" end="-1514.083 43.070 -1415.989" id="SEGMENT"/>
+            <segment start="-1520.299 43.082 -1421.181" end="-1589.990 43.082 -1421.107" id="SEGMENT"/>
+        </newFence>
+    </placeable>
+    <placeable filename="data/placeables/brandless/fences/US/fence04/fence04.xml" position="0.000 -151.000 0.000" rotation="0.00 -0.00 0.00" boughtWithFarmlandOverwrite="true">
+        <newFence>
+            <segment start="-1632.885 43.222 -1542.777" end="-1632.000 43.148 -1458.250" id="SEGMENT"/>
+            <segment start="-1632.000 43.148 -1458.250" end="-1716.000 43.125 -1459.000" id="SEGMENT"/>
+            <segment start="-1716.000 43.125 -1459.000" end="-1715.754 43.222 -1543.600" id="SEGMENT"/>
+        </newFence>
+    </placeable>
     <placeable modName="FS25_The_Mechet_Production_And_Industry_Pack" filename="$moddir$FS25_The_Mechet_Production_And_Industry_Pack/Weighing_Station_02.xml" position="-1699.5 43.222 -1530.5" rotation="-0 -90 0" boughtWithFarmlandOverwrite="true">
         <animatedObjects>
             <animatedObject time="0" direction="0"/>
             <animatedObject time="0" direction="0"/>
         </animatedObjects>
     </placeable>
-    <placeable isPreplaced="true" uniqueId="preplaced_gasStation_0b0a85133999c1987460198816f3ddae1"/>
-    <placeable isPreplaced="true" uniqueId="preplaced_gasStation_07589cd74acbb408b3285cb570f5e02b9"/>
-
-    <placeable isPreplaced="true" uniqueId="preplaced_pianoFactoryPlaceable_872888df3a807b2166927e968c6a5dec6"/>
-    <placeable isPreplaced="true" uniqueId="preplaced_biomassHeatingPlant_929bfd6c45034e8609560c222eae163c8"/>
-    <placeable isPreplaced="true" uniqueId="preplaced_gasStation_0d2fa35283f9c33798b22ec0440cdede7"/>
-    <placeable isPreplaced="true" uniqueId="preplaced_sellingStationProducts_d4837e2423a2042b2945f18aa901b230"/>
-    <placeable isPreplaced="true" uniqueId="preplaced_grainBargeTerminal02Triggers_1780c549ea16bc8f922c9ecb1d0489a83"/>
-    <placeable isPreplaced="true" uniqueId="preplaced_sellingStationVehicles_62b6b2c8dadf70c4cb99d2afcbe1e842"/>
-    <placeable isPreplaced="true" uniqueId="preplaced_animalTrader_3a3fe89f7cbc68cf9d248b994f6268a5"/>
-    <placeable isPreplaced="true" uniqueId="preplaced_buyingStationManure_26e11bad657c21bcc0983a0d3f8f941e"/>
-    <placeable isPreplaced="true" uniqueId="preplaced_buyingStationLiquidManure_7a4a6779b0a1fd4777acbe046e303e78"/>
-    <placeable isPreplaced="true" uniqueId="preplaced_warehouseLogisticUS_50e6adca71b9959d380c07a433a37572"/>
+    <placeable filename="data/placeables/brandless/fences/EU/fence11/fence11.xml" position="0.000 -151.000 0.000" rotation="0.00 -0.00 0.00" boughtWithFarmlandOverwrite="true">
+        <newFence>
+            <segment start="-1354.000 42.981 -1338.000" end="-1301.601 43.012 -1337.752" id="SEGMENT"/>
+            <segment start="-1301.601 43.012 -1337.752" end="-1301.500 43.047 -1392.000" id="SEGMENT"/>
+            <segment start="-1301.500 43.047 -1392.000" end="-1301.500 43.051 -1396.400" id="SEGMENT"/>
+            <segment start="-1301.500 43.051 -1396.400" end="-1353.750 43.051 -1396.500" id="SEGMENT"/>
+            <segment start="-311.250 43.914 1166.000" end="-322.198 43.787 1160.177" id="SEGMENT"/>
+            <segment start="-322.198 43.787 1160.177" end="-323.983 43.731 1145.888" id="SEGMENT"/>
+            <segment start="-323.983 43.731 1145.888" end="-323.500 43.636 1121.500" id="SEGMENT"/>
+            <segment start="-323.500 43.636 1121.500" end="-318.000 43.693 1113.000" id="SEGMENT"/>
+            <segment start="-318.000 43.693 1113.000" end="-294.750 43.892 1082.750" id="SEGMENT"/>
+            <segment start="-294.750 43.892 1082.750" end="-286.711 43.954 1080.314" id="SEGMENT"/>
+            <segment start="-286.711 43.954 1080.314" end="-279.000 44.018 1080.750" id="SEGMENT"/>
+            <segment start="-279.000 44.018 1080.750" end="-273.750 44.089 1086.250" id="SEGMENT"/>
+            <segment start="-273.750 44.089 1086.250" end="-272.250 44.143 1091.750" id="SEGMENT"/>
+            <segment start="-272.250 44.143 1091.750" end="-272.932 44.184 1098.114" id="SEGMENT"/>
+            <segment start="-272.932 44.184 1098.114" end="-280.750 44.165 1110.000" id="SEGMENT"/>
+            <segment start="-280.750 44.165 1110.000" end="-281.641 44.163 1112.228" id="SEGMENT"/>
+            <segment start="-281.641 44.163 1112.228" end="-276.250 44.191 1115.000" id="SEGMENT"/>
+        </newFence>
+    </placeable>
+    <placeable filename="data/placeables/brandless/fences/EU/fence07/fence07.xml" position="0.000 -151.000 0.000" rotation="0.00 -0.00 0.00" boughtWithFarmlandOverwrite="true">
+        <newFence>
+            <segment start="-1312.750 42.942 -1301.000" end="-1314.476 42.847 -1220.619" id="SEGMENT"/>
+            <segment start="-1313.823 42.883 -1251.011" end="-1355.500 42.883 -1251.750" id="SEGMENT"/>
+            <segment start="-1313.308 42.911 -1275.006" end="-1355.250 42.911 -1276.000" id="SEGMENT"/>
+            <segment start="-1312.750 42.942 -1301.000" end="-1355.150 42.942 -1301.000" id="SEGMENT"/>
+            <segment start="-1313.823 42.883 -1251.011" end="-1267.434 42.879 -1250.020" id="SEGMENT"/>
+            <segment start="-1313.351 42.907 -1273.006" end="-1267.250 42.907 -1272.500" id="SEGMENT"/>
+            <segment start="-1434.750 42.848 -1221.000" end="-1431.044 42.938 -1299.312" id="SEGMENT"/>
+            <segment start="-1432.859 42.895 -1260.955" end="-1448.750 42.895 -1261.000" id="SEGMENT"/>
+            <segment start="-1448.750 42.895 -1261.000" end="-1474.500 42.895 -1261.500" id="SEGMENT"/>
+            <segment start="-1679.250 42.942 -1301.250" end="-1681.500 42.844 -1219.500" id="SEGMENT"/>
+            <segment start="-1680.240 42.899 -1265.264" end="-1716.000 42.899 -1265.750" id="SEGMENT"/>
+            <segment start="-1680.901 42.868 -1241.273" end="-1716.750 42.868 -1241.500" id="SEGMENT"/>
+            <segment start="-1679.910 42.912 -1277.259" end="-1641.513 42.911 -1276.763" id="SEGMENT"/>
+            <segment start="-1680.736 42.877 -1247.270" end="-1634.336 42.876 -1247.005" id="SEGMENT"/>
+            <segment start="-1530.000 42.965 1684.000" end="-1448.250 42.965 1684.250" id="SEGMENT"/>
+            <segment start="-1480.000 42.965 1684.153" end="-1481.250 42.914 1729.750" id="SEGMENT"/>
+            <segment start="-1478.000 42.965 1684.159" end="-1478.000 43.008 1646.500" id="SEGMENT"/>
+            <segment start="-1506.000 42.965 1684.073" end="-1505.000 43.008 1646.250" id="SEGMENT"/>
+            <segment start="-1609.750 42.774 1849.500" end="-1606.500 42.868 1767.750" id="SEGMENT"/>
+            <segment start="-1608.002 42.825 1805.535" end="-1650.000 42.825 1805.750" id="SEGMENT"/>
+            <segment start="-1608.717 42.805 1823.521" end="-1650.500 42.805 1824.000" id="SEGMENT"/>
+            <segment start="-1607.843 42.831 1801.538" end="-1569.500 42.831 1801.500" id="SEGMENT"/>
+            <segment start="-1608.797 42.802 1825.519" end="-1570.398 42.802 1825.258" id="SEGMENT"/>
+        </newFence>
+    </placeable>
+    <placeable filename="data/placeables/brandless/fences/EU/fence08/fence08.xml" position="0.000 -151.000 0.000" rotation="0.00 -0.00 0.00" boughtWithFarmlandOverwrite="true">
+        <newFence>
+            <segment start="-1393.000 42.983 -1338.750" end="-1433.400 42.983 -1338.750" id="SEGMENT"/>
+            <segment start="-1433.400 42.983 -1338.750" end="-1431.033 43.078 -1419.115" id="SEGMENT"/>
+            <segment start="-1431.033 43.078 -1419.115" end="-1426.707 43.078 -1419.915" id="SEGMENT"/>
+            <segment start="-1426.707 43.078 -1419.915" end="-1392.750 43.079 -1420.250" id="SEGMENT"/>
+        </newFence>
+    </placeable>
+    <placeable filename="data/placeables/brandless/fences/EU/fence06/fence06.xml" position="0.000 -151.000 0.000" rotation="0.00 -0.00 0.00" boughtWithFarmlandOverwrite="true">
+        <newFence>
+            <segment start="-1490.000 43.145 1531.750" end="-1489.750 43.093 1576.000" id="SEGMENT"/>
+            <segment start="-1489.750 43.093 1576.000" end="-1530.000 43.093 1576.000" id="SEGMENT"/>
+            <segment start="-1489.750 43.093 1576.000" end="-1449.353 43.093 1576.496" id="SEGMENT"/>
+        </newFence>
+    </placeable>
+    <placeable filename="data/placeables/brandless/fences/EU/fence19/fence19.xml" position="0.000 -151.000 0.000" rotation="0.00 -0.00 0.00" boughtWithFarmlandOverwrite="true">
+        <newFence>
+            <segment start="-1689.250 43.008 1646.750" end="-1771.650 43.008 1646.999" id="SEGMENT"/>
+            <segment start="-1771.650 43.008 1646.999" end="-1771.254 42.914 1729.398" id="SEGMENT"/>
+            <segment start="-1771.254 42.914 1729.398" end="-1689.000 42.914 1730.000" id="SEGMENT"/>
+            <segment start="-1689.000 42.914 1730.000" end="-1689.246 42.953 1695.601" id="SEGMENT"/>
+            <segment start="-1689.250 42.969 1683.000" end="-1689.250 43.008 1646.750" id="SEGMENT"/>
+        </newFence>
+    </placeable>
+    <placeable filename="data/placeables/brandless/fences/US/fence03/fence03.xml" position="0.000 -151.000 0.000" rotation="0.00 -0.00 0.00" boughtWithFarmlandOverwrite="true">
+        <newFence>
+            <segment start="-1569.000 43.148 1531.000" end="-1568.500 43.051 1612.250" id="SEGMENT"/>
+            <segment start="-1568.500 43.051 1612.250" end="-1647.069 43.054 1610.040" id="SEGMENT"/>
+            <segment start="-1647.069 43.054 1610.040" end="-1650.669 43.054 1610.011" id="SEGMENT"/>
+            <segment start="-1650.669 43.054 1610.011" end="-1651.250 43.054 1606.500" id="SEGMENT"/>
+            <segment start="-1651.250 43.054 1606.500" end="-1651.000 43.148 1530.900" id="SEGMENT"/>
+            <segment start="417.000 44.641 1498.750" end="418.250 44.778 1393.750" id="SEGMENT"/>
+            <segment start="418.250 44.778 1393.750" end="420.500 44.782 1392.000" id="SEGMENT"/>
+            <segment start="420.500 44.782 1392.000" end="589.100 44.781 1392.248" id="SEGMENT"/>
+            <segment start="589.100 44.781 1392.248" end="592.750 44.774 1396.500" id="SEGMENT"/>
+            <segment start="592.750 44.774 1396.500" end="592.500 44.551 1498.000" id="SEGMENT"/>
+        </newFence>
+    </placeable>    
 </placeables>
