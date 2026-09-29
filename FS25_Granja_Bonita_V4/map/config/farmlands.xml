@@ -17,7 +17,7 @@
     <farmland id="14" priceScale="1" npcName="GRANDPA" />
     <farmland id="15" priceScale="1" npcName="GRANDPA" />
     <farmland id="16" priceScale="1" npcName="GRANDPA" defaultFarmProperty="true"/>
-    <farmland id="17" priceScale="1" npcName="GRANDPA" />
+    <farmland id="17" priceScale="1" npcName="GRANDPA" defaultFarmProperty="true"/>
     <farmland id="18" priceScale="1" npcName="GRANDPA" />
     <farmland id="19" priceScale="1" npcName="GRANDPA" />
     <farmland id="20" priceScale="1" npcName="GRANDPA" />
@@ -35,7 +35,7 @@
     <farmland id="32" priceScale="1" npcName="HELPER" />
     <farmland id="33" priceScale="1" npcName="HELPER" />
     <farmland id="34" priceScale="1" npcName="HELPER" />
-    <farmland id="35" priceScale="1" npcName="HELPER" />
+    <farmland id="35" priceScale="1" npcName="HELPER" defaultFarmProperty="true"/>
     <farmland id="36" priceScale="1" npcName="HELPER" defaultFarmProperty="true"/>
     <farmland id="37" priceScale="1" npcName="HELPER" />
     <farmland id="38" priceScale="1" npcName="HELPER" />
