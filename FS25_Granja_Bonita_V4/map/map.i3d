@@ -600,84 +600,84 @@
     <File fileId="567" filename="$data/maps/textures/terrain/ground/spray_straw_displacement.png"/>
     <File fileId="566" filename="$data/maps/textures/terrain/ground/spray_straw_height.png"/>
     <File fileId="565" filename="$data/maps/textures/terrain/ground/spray_straw_normal.png"/>
-    <File fileId="758" filename="$data/maps/trees/americanElm/americanElm_stage01.i3d"/>
-    <File fileId="759" filename="$data/maps/trees/americanElm/americanElm_stage02.i3d"/>
-    <File fileId="760" filename="$data/maps/trees/americanElm/americanElm_stage03.i3d"/>
+    <File fileId="759" filename="$data/maps/trees/americanElm/americanElm_stage01.i3d"/>
+    <File fileId="760" filename="$data/maps/trees/americanElm/americanElm_stage02.i3d"/>
+    <File fileId="761" filename="$data/maps/trees/americanElm/americanElm_stage03.i3d"/>
     <File fileId="664" filename="$data/maps/trees/americanElm/americanElm_stage04.i3d"/>
-    <File fileId="761" filename="$data/maps/trees/americanElm/americanElm_stage05.i3d"/>
-    <File fileId="762" filename="$data/maps/trees/apple/apple_stage03.i3d"/>
-    <File fileId="763" filename="$data/maps/trees/aspen/aspen_stage01.i3d"/>
-    <File fileId="764" filename="$data/maps/trees/aspen/aspen_stage02.i3d"/>
-    <File fileId="765" filename="$data/maps/trees/aspen/aspen_stage03.i3d"/>
+    <File fileId="762" filename="$data/maps/trees/americanElm/americanElm_stage05.i3d"/>
+    <File fileId="763" filename="$data/maps/trees/apple/apple_stage03.i3d"/>
+    <File fileId="764" filename="$data/maps/trees/aspen/aspen_stage01.i3d"/>
+    <File fileId="765" filename="$data/maps/trees/aspen/aspen_stage02.i3d"/>
+    <File fileId="766" filename="$data/maps/trees/aspen/aspen_stage03.i3d"/>
     <File fileId="662" filename="$data/maps/trees/aspen/aspen_stage04.i3d"/>
-    <File fileId="766" filename="$data/maps/trees/aspen/aspen_stage05.i3d"/>
-    <File fileId="767" filename="$data/maps/trees/aspen/aspen_stage06_var01.i3d"/>
-    <File fileId="768" filename="$data/maps/trees/aspen/aspen_stage06_var02.i3d"/>
-    <File fileId="769" filename="$data/maps/trees/beech/beech_stage01.i3d"/>
-    <File fileId="770" filename="$data/maps/trees/beech/beech_stage02.i3d"/>
-    <File fileId="771" filename="$data/maps/trees/beech/beech_stage02_var02.i3d"/>
-    <File fileId="772" filename="$data/maps/trees/beech/beech_stage02_var03.i3d"/>
-    <File fileId="773" filename="$data/maps/trees/beech/beech_stage03.i3d"/>
-    <File fileId="774" filename="$data/maps/trees/beech/beech_stage04.i3d"/>
-    <File fileId="775" filename="$data/maps/trees/beech/beech_stage05.i3d"/>
-    <File fileId="776" filename="$data/maps/trees/beech/beech_stage06_var01.i3d"/>
-    <File fileId="777" filename="$data/maps/trees/beech/beech_stage06_var02.i3d"/>
-    <File fileId="778" filename="$data/maps/trees/betulaErmanii/betulaErmanii_stage01.i3d"/>
-    <File fileId="779" filename="$data/maps/trees/betulaErmanii/betulaErmanii_stage02.i3d"/>
-    <File fileId="780" filename="$data/maps/trees/betulaErmanii/betulaErmanii_stage03.i3d"/>
-    <File fileId="781" filename="$data/maps/trees/betulaErmanii/betulaErmanii_stage04.i3d"/>
-    <File fileId="782" filename="$data/maps/trees/boxelder/boxelder_stage01.i3d"/>
-    <File fileId="783" filename="$data/maps/trees/boxelder/boxelder_stage02.i3d"/>
+    <File fileId="767" filename="$data/maps/trees/aspen/aspen_stage05.i3d"/>
+    <File fileId="768" filename="$data/maps/trees/aspen/aspen_stage06_var01.i3d"/>
+    <File fileId="769" filename="$data/maps/trees/aspen/aspen_stage06_var02.i3d"/>
+    <File fileId="770" filename="$data/maps/trees/beech/beech_stage01.i3d"/>
+    <File fileId="771" filename="$data/maps/trees/beech/beech_stage02.i3d"/>
+    <File fileId="772" filename="$data/maps/trees/beech/beech_stage02_var02.i3d"/>
+    <File fileId="773" filename="$data/maps/trees/beech/beech_stage02_var03.i3d"/>
+    <File fileId="774" filename="$data/maps/trees/beech/beech_stage03.i3d"/>
+    <File fileId="775" filename="$data/maps/trees/beech/beech_stage04.i3d"/>
+    <File fileId="776" filename="$data/maps/trees/beech/beech_stage05.i3d"/>
+    <File fileId="777" filename="$data/maps/trees/beech/beech_stage06_var01.i3d"/>
+    <File fileId="778" filename="$data/maps/trees/beech/beech_stage06_var02.i3d"/>
+    <File fileId="779" filename="$data/maps/trees/betulaErmanii/betulaErmanii_stage01.i3d"/>
+    <File fileId="780" filename="$data/maps/trees/betulaErmanii/betulaErmanii_stage02.i3d"/>
+    <File fileId="781" filename="$data/maps/trees/betulaErmanii/betulaErmanii_stage03.i3d"/>
+    <File fileId="782" filename="$data/maps/trees/betulaErmanii/betulaErmanii_stage04.i3d"/>
+    <File fileId="783" filename="$data/maps/trees/boxelder/boxelder_stage01.i3d"/>
+    <File fileId="784" filename="$data/maps/trees/boxelder/boxelder_stage02.i3d"/>
     <File fileId="661" filename="$data/maps/trees/boxelder/boxelder_stage03.i3d"/>
-    <File fileId="784" filename="$data/maps/trees/cherry/cherry_stage01.i3d"/>
-    <File fileId="785" filename="$data/maps/trees/cherry/cherry_stage02.i3d"/>
-    <File fileId="786" filename="$data/maps/trees/cherry/cherry_stage03.i3d"/>
-    <File fileId="787" filename="$data/maps/trees/cherry/cherry_stage04.i3d"/>
-    <File fileId="788" filename="$data/maps/trees/chineseElm/chineseElm_stage01.i3d"/>
-    <File fileId="789" filename="$data/maps/trees/chineseElm/chineseElm_stage02.i3d"/>
-    <File fileId="790" filename="$data/maps/trees/chineseElm/chineseElm_stage03.i3d"/>
-    <File fileId="791" filename="$data/maps/trees/chineseElm/chineseElm_stage04.i3d"/>
-    <File fileId="792" filename="$data/maps/trees/downyServiceBerry/downyServiceBerry_stage01.i3d"/>
-    <File fileId="793" filename="$data/maps/trees/downyServiceBerry/downyServiceBerry_stage02.i3d"/>
-    <File fileId="794" filename="$data/maps/trees/downyServiceBerry/downyServiceBerry_stage03.i3d"/>
-    <File fileId="795" filename="$data/maps/trees/goldenRain/goldenRain_stage01.i3d"/>
-    <File fileId="796" filename="$data/maps/trees/goldenRain/goldenRain_stage02.i3d"/>
-    <File fileId="797" filename="$data/maps/trees/goldenRain/goldenRain_stage03.i3d"/>
+    <File fileId="785" filename="$data/maps/trees/cherry/cherry_stage01.i3d"/>
+    <File fileId="786" filename="$data/maps/trees/cherry/cherry_stage02.i3d"/>
+    <File fileId="787" filename="$data/maps/trees/cherry/cherry_stage03.i3d"/>
+    <File fileId="788" filename="$data/maps/trees/cherry/cherry_stage04.i3d"/>
+    <File fileId="789" filename="$data/maps/trees/chineseElm/chineseElm_stage01.i3d"/>
+    <File fileId="790" filename="$data/maps/trees/chineseElm/chineseElm_stage02.i3d"/>
+    <File fileId="791" filename="$data/maps/trees/chineseElm/chineseElm_stage03.i3d"/>
+    <File fileId="792" filename="$data/maps/trees/chineseElm/chineseElm_stage04.i3d"/>
+    <File fileId="793" filename="$data/maps/trees/downyServiceBerry/downyServiceBerry_stage01.i3d"/>
+    <File fileId="794" filename="$data/maps/trees/downyServiceBerry/downyServiceBerry_stage02.i3d"/>
+    <File fileId="795" filename="$data/maps/trees/downyServiceBerry/downyServiceBerry_stage03.i3d"/>
+    <File fileId="796" filename="$data/maps/trees/goldenRain/goldenRain_stage01.i3d"/>
+    <File fileId="797" filename="$data/maps/trees/goldenRain/goldenRain_stage02.i3d"/>
+    <File fileId="798" filename="$data/maps/trees/goldenRain/goldenRain_stage03.i3d"/>
     <File fileId="659" filename="$data/maps/trees/goldenRain/goldenRain_stage04.i3d"/>
-    <File fileId="798" filename="$data/maps/trees/japaneseZelkova/japaneseZelkova_stage01.i3d"/>
-    <File fileId="799" filename="$data/maps/trees/japaneseZelkova/japaneseZelkova_stage02.i3d"/>
-    <File fileId="800" filename="$data/maps/trees/japaneseZelkova/japaneseZelkova_stage03.i3d"/>
-    <File fileId="801" filename="$data/maps/trees/japaneseZelkova/japaneseZelkova_stage04.i3d"/>
-    <File fileId="802" filename="$data/maps/trees/lodgepolePine/lodgepolePine_stage01.i3d"/>
-    <File fileId="803" filename="$data/maps/trees/lodgepolePine/lodgepolePine_stage02.i3d"/>
+    <File fileId="799" filename="$data/maps/trees/japaneseZelkova/japaneseZelkova_stage01.i3d"/>
+    <File fileId="800" filename="$data/maps/trees/japaneseZelkova/japaneseZelkova_stage02.i3d"/>
+    <File fileId="801" filename="$data/maps/trees/japaneseZelkova/japaneseZelkova_stage03.i3d"/>
+    <File fileId="802" filename="$data/maps/trees/japaneseZelkova/japaneseZelkova_stage04.i3d"/>
+    <File fileId="803" filename="$data/maps/trees/lodgepolePine/lodgepolePine_stage01.i3d"/>
+    <File fileId="804" filename="$data/maps/trees/lodgepolePine/lodgepolePine_stage02.i3d"/>
     <File fileId="656" filename="$data/maps/trees/lodgepolePine/lodgepolePine_stage03.i3d"/>
-    <File fileId="804" filename="$data/maps/trees/northernCatalpa/northernCatalpa_stage01.i3d"/>
-    <File fileId="805" filename="$data/maps/trees/northernCatalpa/northernCatalpa_stage02.i3d"/>
-    <File fileId="806" filename="$data/maps/trees/northernCatalpa/northernCatalpa_stage03.i3d"/>
+    <File fileId="805" filename="$data/maps/trees/northernCatalpa/northernCatalpa_stage01.i3d"/>
+    <File fileId="806" filename="$data/maps/trees/northernCatalpa/northernCatalpa_stage02.i3d"/>
+    <File fileId="807" filename="$data/maps/trees/northernCatalpa/northernCatalpa_stage03.i3d"/>
     <File fileId="660" filename="$data/maps/trees/northernCatalpa/northernCatalpa_stage04.i3d"/>
-    <File fileId="807" filename="$data/maps/trees/oak/oak_stage01.i3d"/>
-    <File fileId="808" filename="$data/maps/trees/oak/oak_stage02.i3d"/>
-    <File fileId="809" filename="$data/maps/trees/oak/oak_stage03.i3d"/>
-    <File fileId="810" filename="$data/maps/trees/oak/oak_stage04.i3d"/>
+    <File fileId="808" filename="$data/maps/trees/oak/oak_stage01.i3d"/>
+    <File fileId="809" filename="$data/maps/trees/oak/oak_stage02.i3d"/>
+    <File fileId="810" filename="$data/maps/trees/oak/oak_stage03.i3d"/>
+    <File fileId="811" filename="$data/maps/trees/oak/oak_stage04.i3d"/>
     <File fileId="663" filename="$data/maps/trees/oak/oak_stage05.i3d"/>
-    <File fileId="811" filename="$data/maps/trees/pinusSylvestris/pinusSylvestris_stage01.i3d"/>
-    <File fileId="812" filename="$data/maps/trees/pinusSylvestris/pinusSylvestris_stage02.i3d"/>
-    <File fileId="813" filename="$data/maps/trees/pinusSylvestris/pinusSylvestris_stage03.i3d"/>
+    <File fileId="812" filename="$data/maps/trees/pinusSylvestris/pinusSylvestris_stage01.i3d"/>
+    <File fileId="813" filename="$data/maps/trees/pinusSylvestris/pinusSylvestris_stage02.i3d"/>
+    <File fileId="814" filename="$data/maps/trees/pinusSylvestris/pinusSylvestris_stage03.i3d"/>
     <File fileId="658" filename="$data/maps/trees/pinusSylvestris/pinusSylvestris_stage04.i3d"/>
-    <File fileId="814" filename="$data/maps/trees/pinusSylvestris/pinusSylvestris_stage05.i3d"/>
-    <File fileId="815" filename="$data/maps/trees/pinusTabuliformis/pinusTabuliformis_stage01.i3d"/>
-    <File fileId="816" filename="$data/maps/trees/pinusTabuliformis/pinusTabuliformis_stage02.i3d"/>
-    <File fileId="817" filename="$data/maps/trees/pinusTabuliformis/pinusTabuliformis_stage03.i3d"/>
+    <File fileId="815" filename="$data/maps/trees/pinusSylvestris/pinusSylvestris_stage05.i3d"/>
+    <File fileId="816" filename="$data/maps/trees/pinusTabuliformis/pinusTabuliformis_stage01.i3d"/>
+    <File fileId="817" filename="$data/maps/trees/pinusTabuliformis/pinusTabuliformis_stage02.i3d"/>
+    <File fileId="818" filename="$data/maps/trees/pinusTabuliformis/pinusTabuliformis_stage03.i3d"/>
     <File fileId="657" filename="$data/maps/trees/pinusTabuliformis/pinusTabuliformis_stage04.i3d"/>
-    <File fileId="818" filename="$data/maps/trees/pinusTabuliformis/pinusTabuliformis_stage05.i3d"/>
-    <File fileId="819" filename="$data/maps/trees/shagbarkHickory/shagbarkHickory_stage01.i3d"/>
-    <File fileId="820" filename="$data/maps/trees/shagbarkHickory/shagbarkHickory_stage02.i3d"/>
-    <File fileId="821" filename="$data/maps/trees/shagbarkHickory/shagbarkHickory_stage03.i3d"/>
-    <File fileId="822" filename="$data/maps/trees/shagbarkHickory/shagbarkHickory_stage04.i3d"/>
-    <File fileId="823" filename="$data/maps/trees/tiliaAmurensis/tiliaAmurensis_stage01.i3d"/>
-    <File fileId="824" filename="$data/maps/trees/tiliaAmurensis/tiliaAmurensis_stage02.i3d"/>
-    <File fileId="825" filename="$data/maps/trees/tiliaAmurensis/tiliaAmurensis_stage03.i3d"/>
-    <File fileId="826" filename="$data/maps/trees/tiliaAmurensis/tiliaAmurensis_stage04.i3d"/>
+    <File fileId="819" filename="$data/maps/trees/pinusTabuliformis/pinusTabuliformis_stage05.i3d"/>
+    <File fileId="820" filename="$data/maps/trees/shagbarkHickory/shagbarkHickory_stage01.i3d"/>
+    <File fileId="821" filename="$data/maps/trees/shagbarkHickory/shagbarkHickory_stage02.i3d"/>
+    <File fileId="822" filename="$data/maps/trees/shagbarkHickory/shagbarkHickory_stage03.i3d"/>
+    <File fileId="823" filename="$data/maps/trees/shagbarkHickory/shagbarkHickory_stage04.i3d"/>
+    <File fileId="824" filename="$data/maps/trees/tiliaAmurensis/tiliaAmurensis_stage01.i3d"/>
+    <File fileId="825" filename="$data/maps/trees/tiliaAmurensis/tiliaAmurensis_stage02.i3d"/>
+    <File fileId="826" filename="$data/maps/trees/tiliaAmurensis/tiliaAmurensis_stage03.i3d"/>
+    <File fileId="827" filename="$data/maps/trees/tiliaAmurensis/tiliaAmurensis_stage04.i3d"/>
     <File fileId="699" filename="$data/placeables/brandless/fences/US/fence03/fence03_diffuse.png"/>
     <File fileId="700" filename="$data/placeables/brandless/fences/US/fence03/fence03_normal.png"/>
     <File fileId="701" filename="$data/placeables/brandless/fences/US/fence03/fence03_specular.png"/>
@@ -693,11 +693,11 @@
     <File fileId="675" filename="$data/shaders/vtxVentShader.xml"/>
     <File fileId="645" filename="$data/shared/assets/marker/markerIconShopping.i3d"/>
     <File fileId="638" filename="$data/shared/groundHeightNoise.dds"/>
-    <File fileId="754" filename="../../../FS25_Granja_Bonita_x16/FS25_Granja_Bonita_V3/map/data/masks/PG_needleleaved.png"/>
     <File fileId="652" filename="../assets/background/background_terrain_part_01.i3d"/>
     <File fileId="653" filename="../assets/background/background_terrain_part_02.i3d"/>
     <File fileId="654" filename="../assets/background/background_terrain_part_03.i3d"/>
     <File fileId="655" filename="../assets/background/background_terrain_part_04.i3d"/>
+    <File fileId="754" filename="../../../FS25_Granja_Bonita_x16/FS25_Granja_Bonita_V3/map/data/masks/PG_needleleaved.png"/>
     <File fileId="4" filename="data/asphalt01_weight.png"/>
     <File fileId="9" filename="data/asphalt02_weight.png"/>
     <File fileId="34" filename="data/asphaltCracks01_weight.png"/>
@@ -770,7 +770,7 @@
     <File fileId="579" filename="data/infoLayer_placementCollisionGenerated.png"/>
     <File fileId="576" filename="data/infoLayer_tipCollision.png"/>
     <File fileId="577" filename="data/infoLayer_tipCollisionGenerated.png"/>
-    <File fileId="827" filename="data/masks/BLOCKMASK.png"/>
+    <File fileId="828" filename="data/masks/BLOCKMASK.png"/>
     <File fileId="742" filename="data/masks/PG_acres.png"/>
     <File fileId="756" filename="data/masks/PG_broadleaved.png"/>
     <File fileId="749" filename="data/masks/PG_buildings.png"/>
@@ -784,6 +784,7 @@
     <File fileId="753" filename="data/masks/PG_railways.png"/>
     <File fileId="746" filename="data/masks/PG_roads.png"/>
     <File fileId="747" filename="data/masks/PG_sideroads.png"/>
+    <File fileId="758" filename="data/masks/PG_trees.png"/>
     <File fileId="751" filename="data/masks/PG_water.png"/>
     <File fileId="757" filename="data/masks/pg_island.png"/>
     <File fileId="284" filename="data/mudDark01_weight.png"/>
@@ -893,7 +894,7 @@
 
   <Scene>
     <Light name="sun" translation="0 400 0" rotation="-39.5664 39.1063 0" objectMask="0x83ff0000" nodeId="52" type="directional" color="1 1 1" emitDiffuse="true" emitSpecular="true" castShadowMap="true" depthMapBias="0.001" depthMapSlopeScaleBias="2" depthMapSlopeClamp="0.001" depthMapResolution="2048" shadowFarDistance="1000" shadowExtrusionDistance="200" softShadowsLightSize="0.5" softShadowsLightDistance="15" softShadowsDepthBiasFactor="1" softShadowsMaxPenumbraSize="0.5" numShadowMapSplits="5" shadowMapSplitDistancesParameter="0.9" lastShadowMapSplitBboxMin="-2048,-128,-2048" lastShadowMapSplitBboxMax="2048,148,2048" range="10000" scattering="true"/>
-    <Camera name="persp" translation="115.98 173.417 644.545" rotation="167.611 -7.08646 180" visibility="false" nodeId="53" fov="60" nearClip="0.01" farClip="6000" orthographicHeight="1500"/>
+    <Camera name="persp" translation="-1991.32 109.38 -1711.17" rotation="-18.1201 -3.28049 -6.73116e-07" visibility="false" nodeId="53" fov="60" nearClip="0.01" farClip="6000" orthographicHeight="1500"/>
     <TerrainTransformGroup name="terrain" static="true" collisionFilterGroup="0x100" collisionFilterMask="0xfffff9c3" nodeId="55" heightMapId="1" patchSize="65" maxLODDistance="750" heightScale="255" unitsPerPixel="1" lodBlendStart="200" lodBlendEnd="300" lodTextureSize="4096" lodBlendStartDynamic="50" lodBlendEndDynamic="65" detailLodBlendDelta="5" materialId="17" castShadowMap="true" occNumLODs="1" occMaxLODDistance="300" occPatchSize="65" occLevel="2" occDistanceWeight="1" occMaxAdjacentFaces="10">
       <OccluderLods>
         <OccluderLod occLodLevel="0" occFaceCount="100" occMaxHausdorffDistance="7" occMaxHausdorffDistanceExtra="9" occMinHorizontalDistance="1" />
@@ -1361,7 +1362,7 @@
           </FoliageMultiLayer>
         </FoliageSystem>
       </Layers>
-      <ProceduralPlacementMasks blockMaskFileId="827">
+      <ProceduralPlacementMasks blockMaskFileId="828">
         <Mask name="PG_Acres" fileId="742" />
         <Mask name="PG_Grasslands" fileId="743" />
         <Mask name="PG_Meadows" fileId="744" />
@@ -1378,6 +1379,7 @@
         <Mask name="PG_needleleaved" fileId="755" />
         <Mask name="PG_broadleaved" fileId="756" />
         <Mask name="pg_island" fileId="757" />
+        <Mask name="PG_trees" fileId="758" />
       </ProceduralPlacementMasks>
     </TerrainTransformGroup>
     <TransformGroup name="careerStartPoint" translation="-1516.35 42.9361 -1298.57" rotation="-180 51.6196 -180" nodeId="74"/>
@@ -11728,6 +11730,281 @@
         <ReferenceNode name="americanElm_stage04" translation="-817 45.1206 129" rotation="0 62.6217 0" referenceId="664" nodeId="39350"/>
         <ReferenceNode name="goldenRain_stage04" translation="-826 52.3463 72" rotation="0 142.782 0" referenceId="659" nodeId="39354"/>
         <ReferenceNode name="boxelder_stage03" translation="-825 46.2179 124" rotation="0 175.464 0" referenceId="661" nodeId="39358"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="2040 43.035 -1785" rotation="0 192.514 0" referenceId="657" nodeId="65434"/>
+        <ReferenceNode name="oak_stage05" translation="2034 43.035 -1734" rotation="0 209.576 0" referenceId="663" nodeId="65450"/>
+        <ReferenceNode name="goldenRain_stage04" translation="2041 43.035 -1726" rotation="0 272.832 0" referenceId="659" nodeId="65464"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2033 43.035 -1802" rotation="0 308.424 0" referenceId="660" nodeId="65476"/>
+        <ReferenceNode name="boxelder_stage03" translation="2035 43.035 -1816" rotation="0 157.43 0" referenceId="661" nodeId="65488"/>
+        <ReferenceNode name="oak_stage05" translation="2040 43.035 -1903" rotation="0 333.048 0" referenceId="663" nodeId="65492"/>
+        <ReferenceNode name="boxelder_stage03" translation="2039 43.035 -1824" rotation="0 328.339 0" referenceId="661" nodeId="65498"/>
+        <ReferenceNode name="boxelder_stage03" translation="2033 43.035 -1896" rotation="0 224.458 0" referenceId="661" nodeId="65502"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="2043 43.035 -1895" rotation="0 22.7513 0" referenceId="657" nodeId="65506"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2032 43.035 -1952" rotation="0 66.3954 0" referenceId="660" nodeId="65510"/>
+        <ReferenceNode name="aspen_stage04" translation="2032 43.035 -1725" rotation="0 83.4341 0" referenceId="662" nodeId="65522"/>
+        <ReferenceNode name="goldenRain_stage04" translation="2036 43.035 -1862" rotation="0 207.561 0" referenceId="659" nodeId="65526"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2030 43.035 -1986" rotation="0 75.423 0" referenceId="660" nodeId="65530"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2043 43.035 -1858" rotation="0 96.6896 0" referenceId="660" nodeId="65534"/>
+        <ReferenceNode name="aspen_stage04" translation="2031 43.035 -1976" rotation="0 95.468 0" referenceId="662" nodeId="65538"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="2041 43.035 -1937" rotation="0 167.203 0" referenceId="658" nodeId="65550"/>
+        <ReferenceNode name="aspen_stage04" translation="2034 43.035 -1749" rotation="0 38.9825 0" referenceId="662" nodeId="65554"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2043 43.035 -2010" rotation="0 308.785 0" referenceId="660" nodeId="65558"/>
+        <ReferenceNode name="americanElm_stage04" translation="2047 43.035 -1951" rotation="0 32.4664 0" referenceId="664" nodeId="65570"/>
+        <ReferenceNode name="goldenRain_stage04" translation="2031 43.035 -1946" rotation="0 142.382 0" referenceId="659" nodeId="65574"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="-2030 43.035 -1845" rotation="0 279.514 0" referenceId="660" nodeId="65578"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="-2031 43.035 -1828" rotation="0 251.117 0" referenceId="658" nodeId="65582"/>
+        <ReferenceNode name="boxelder_stage03" translation="-2040 43.0311 -1870" rotation="0 177.009 0" referenceId="661" nodeId="65586"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="-2034 43.035 -1763" rotation="0 144.32 0" referenceId="658" nodeId="65590"/>
+        <ReferenceNode name="boxelder_stage03" translation="-2039 43.035 -1757" rotation="0 316.927 0" referenceId="661" nodeId="65594"/>
+        <ReferenceNode name="oak_stage05" translation="-2042 43.0311 -1818" rotation="0 186.812 0" referenceId="663" nodeId="65598"/>
+        <ReferenceNode name="americanElm_stage04" translation="-2034 43.035 -1775" rotation="0 335.536 0" referenceId="664" nodeId="65604"/>
+        <ReferenceNode name="boxelder_stage03" translation="-2042 43.0311 -1799" rotation="0 14.2587 0" referenceId="661" nodeId="65608"/>
+        <ReferenceNode name="oak_stage05" translation="-2031 43.035 -1811" rotation="0 52.0139 0" referenceId="663" nodeId="65612"/>
+        <ReferenceNode name="americanElm_stage04" translation="-2044 43.0311 -1790" rotation="0 288.743 0" referenceId="664" nodeId="65618"/>
+        <ReferenceNode name="boxelder_stage03" translation="-2037 43.035 -1795" rotation="0 137.226 0" referenceId="661" nodeId="65622"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="-2048 43.0311 -1779" rotation="0 62.7606 0" referenceId="660" nodeId="65626"/>
+        <ReferenceNode name="goldenRain_stage04" translation="-2034 43.035 -1667" rotation="0 30.4145 0" referenceId="659" nodeId="65630"/>
+        <ReferenceNode name="oak_stage05" translation="-2046 43.035 -1746" rotation="0 266.123 0" referenceId="663" nodeId="65634"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="-2046 43.035 -1678" rotation="0 33.3406 0" referenceId="660" nodeId="65640"/>
+        <ReferenceNode name="boxelder_stage03" translation="-2040 43.0311 -1719" rotation="0 14.3508 0" referenceId="661" nodeId="65644"/>
+        <ReferenceNode name="oak_stage05" translation="-2036 43.035 -1726" rotation="0 5.63936 0" referenceId="663" nodeId="65648"/>
+        <ReferenceNode name="boxelder_stage03" translation="-2039 43.035 -1700" rotation="0 71.808 0" referenceId="661" nodeId="65654"/>
+        <ReferenceNode name="boxelder_stage03" translation="-2044 43.035 -1712" rotation="0 192.177 0" referenceId="661" nodeId="65658"/>
+        <ReferenceNode name="aspen_stage04" translation="-2039 43.0311 -1883" rotation="0 333.534 0" referenceId="662" nodeId="65662"/>
+        <ReferenceNode name="aspen_stage04" translation="-2047 43.035 -1684" rotation="0 121.575 0" referenceId="662" nodeId="65666"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="-2034 43.035 -1693" rotation="0 342.583 0" referenceId="658" nodeId="65670"/>
+        <ReferenceNode name="oak_stage05" translation="-2034 43.0311 -1899" rotation="0 276.611 0" referenceId="663" nodeId="65674"/>
+        <ReferenceNode name="aspen_stage04" translation="-2032 43.0311 -1954" rotation="0 202.902 0" referenceId="662" nodeId="65680"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="-2033 43.0311 -1944" rotation="0 214.222 0" referenceId="657" nodeId="65684"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="-2044 43.035 -1595" rotation="0 71.9691 0" referenceId="657" nodeId="65688"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="-2046 43.035 -1589" rotation="0 136.969 0" referenceId="660" nodeId="65692"/>
+        <ReferenceNode name="boxelder_stage03" translation="-2045 43.035 -1617" rotation="0 43.7522 0" referenceId="661" nodeId="65696"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="-2045 43.035 -1633" rotation="0 310.065 0" referenceId="658" nodeId="65700"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="-2042 43.035 -1650" rotation="0 110.045 0" referenceId="660" nodeId="65704"/>
+        <ReferenceNode name="boxelder_stage03" translation="-2037 43.035 -1645" rotation="0 358.209 0" referenceId="661" nodeId="65708"/>
+        <ReferenceNode name="aspen_stage04" translation="-2034 43.0311 -2035" rotation="0 183.49 0" referenceId="662" nodeId="65712"/>
+        <ReferenceNode name="oak_stage05" translation="-2042 43.0311 -2031" rotation="0 71.2167 0" referenceId="663" nodeId="65716"/>
+        <ReferenceNode name="boxelder_stage03" translation="-2048 43.035 -1626" rotation="0 85.6001 0" referenceId="661" nodeId="65722"/>
+        <ReferenceNode name="americanElm_stage04" translation="-2034 43.0311 -1912" rotation="0 122.471 0" referenceId="664" nodeId="65726"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="-2048 43.035 -1646" rotation="0 202.836 0" referenceId="660" nodeId="65730"/>
+        <ReferenceNode name="goldenRain_stage04" translation="-2033 43.0311 -2020" rotation="0 201.236 0" referenceId="659" nodeId="65734"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="-2035 43.0311 -2006" rotation="0 103.047 0" referenceId="658" nodeId="65738"/>
+        <ReferenceNode name="oak_stage05" translation="-2038 43.0311 -2000" rotation="0 310.309 0" referenceId="663" nodeId="65742"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="-2048 43.0311 -2025" rotation="0 195.767 0" referenceId="660" nodeId="65748"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="-2043 43.0311 -1920" rotation="0 80.5848 0" referenceId="657" nodeId="65752"/>
+        <ReferenceNode name="goldenRain_stage04" translation="-2047 43.035 -1733" rotation="0 71.2354 0" referenceId="659" nodeId="65756"/>
+        <ReferenceNode name="goldenRain_stage04" translation="-2041 43.0311 -2006" rotation="0 328.969 0" referenceId="659" nodeId="65760"/>
+        <ReferenceNode name="aspen_stage04" translation="2037 43.2451 -322" rotation="0 356.19 0" referenceId="662" nodeId="65764"/>
+        <ReferenceNode name="oak_stage05" translation="2046 42.4747 -306" rotation="0 94.1017 0" referenceId="663" nodeId="65768"/>
+        <ReferenceNode name="americanElm_stage04" translation="2030 42.1984 -288" rotation="0 82.3903 0" referenceId="664" nodeId="65774"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="2029 42.0661 -243" rotation="0 219.091 0" referenceId="657" nodeId="65778"/>
+        <ReferenceNode name="boxelder_stage03" translation="2038 42.1167 -254" rotation="0 235.504 0" referenceId="661" nodeId="65782"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="2047 42.1051 -253" rotation="0 38.9628 0" referenceId="657" nodeId="65786"/>
+        <ReferenceNode name="boxelder_stage03" translation="2031 42.0817 -254" rotation="0 99.1875 0" referenceId="661" nodeId="65790"/>
+        <ReferenceNode name="aspen_stage04" translation="2030 42.0739 -237" rotation="0 149.317 0" referenceId="662" nodeId="65794"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="2033 42.0934 -232" rotation="0 218.069 0" referenceId="658" nodeId="65798"/>
+        <ReferenceNode name="oak_stage05" translation="2047 42.2607 -293" rotation="0 194.141 0" referenceId="663" nodeId="65802"/>
+        <ReferenceNode name="boxelder_stage03" translation="2045 42.1128 -243" rotation="0 347.986 0" referenceId="661" nodeId="65808"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2031 42.1907 -199" rotation="0 201.042 0" referenceId="660" nodeId="65812"/>
+        <ReferenceNode name="goldenRain_stage04" translation="2045 42.3385 -177" rotation="0 65.8866 0" referenceId="659" nodeId="65816"/>
+        <ReferenceNode name="goldenRain_stage04" translation="2038 42.3813 -165" rotation="0 315.306 0" referenceId="659" nodeId="65820"/>
+        <ReferenceNode name="boxelder_stage03" translation="2047 42.2179 -200" rotation="0 42.5032 0" referenceId="661" nodeId="65824"/>
+        <ReferenceNode name="goldenRain_stage04" translation="2031 42.3735 -153" rotation="0 314.626 0" referenceId="659" nodeId="65828"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2032 42.4163 -139" rotation="0 176.806 0" referenceId="660" nodeId="65832"/>
+        <ReferenceNode name="americanElm_stage04" translation="2031 42.6148 6" rotation="0 80.9566 0" referenceId="664" nodeId="65836"/>
+        <ReferenceNode name="goldenRain_stage04" translation="2036 42.4981 -96" rotation="0 262.602 0" referenceId="659" nodeId="65840"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="2034 42.7276 25" rotation="0 15.2107 0" referenceId="657" nodeId="65844"/>
+        <ReferenceNode name="boxelder_stage03" translation="2036 42.7704 32" rotation="0 282.478 0" referenceId="661" nodeId="65848"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2036 42.5058 -44" rotation="0 69.667 0" referenceId="660" nodeId="65852"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="2044 42.5331 -27" rotation="0 207.671 0" referenceId="657" nodeId="65856"/>
+        <ReferenceNode name="americanElm_stage04" translation="2043 42.5214 -41" rotation="0 133.037 0" referenceId="664" nodeId="65860"/>
+        <ReferenceNode name="boxelder_stage03" translation="2042 42.5214 -53" rotation="0 261.61 0" referenceId="661" nodeId="65864"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="2033 42.8638 55" rotation="0 153.016 0" referenceId="658" nodeId="65868"/>
+        <ReferenceNode name="aspen_stage04" translation="2046 42.8599 51" rotation="0 252.636 0" referenceId="662" nodeId="65872"/>
+        <ReferenceNode name="aspen_stage04" translation="2044 42.9339 75" rotation="0 356.832 0" referenceId="662" nodeId="65876"/>
+        <ReferenceNode name="aspen_stage04" translation="2036 42.9494 93" rotation="0 246.667 0" referenceId="662" nodeId="65880"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2030 42.9455 108" rotation="0 135.743 0" referenceId="660" nodeId="65884"/>
+        <ReferenceNode name="oak_stage05" translation="2029 42.9689 137" rotation="0 339.402 0" referenceId="663" nodeId="65888"/>
+        <ReferenceNode name="goldenRain_stage04" translation="2038 43.0117 147" rotation="0 59.4405 0" referenceId="659" nodeId="65894"/>
+        <ReferenceNode name="boxelder_stage03" translation="2047 42.9883 142" rotation="0 279.515 0" referenceId="661" nodeId="65898"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="2037 43.0156 153" rotation="0 352.258 0" referenceId="657" nodeId="65902"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="2045 43.035 168" rotation="0 239.728 0" referenceId="657" nodeId="65906"/>
+        <ReferenceNode name="aspen_stage04" translation="2036 43.0506 194" rotation="0 184.489 0" referenceId="662" nodeId="65910"/>
+        <ReferenceNode name="boxelder_stage03" translation="2031 43.0233 208" rotation="0 321.145 0" referenceId="661" nodeId="65914"/>
+        <ReferenceNode name="oak_stage05" translation="2030 43.0156 214" rotation="0 357.26 0" referenceId="663" nodeId="65918"/>
+        <ReferenceNode name="boxelder_stage03" translation="2031 43.0078 231" rotation="0 154.531 0" referenceId="661" nodeId="65924"/>
+        <ReferenceNode name="oak_stage05" translation="2030 43.0039 269" rotation="0 325.834 0" referenceId="663" nodeId="65928"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2041 43.0506 271" rotation="0 10.9607 0" referenceId="660" nodeId="65934"/>
+        <ReferenceNode name="boxelder_stage03" translation="2035 43.0389 276" rotation="0 15.7265 0" referenceId="661" nodeId="65938"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2047 43.0156 247" rotation="0 241.339 0" referenceId="660" nodeId="65942"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2046 43.0233 260" rotation="0 200.641 0" referenceId="660" nodeId="65946"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2037 43.0739 284" rotation="0 75.0452 0" referenceId="660" nodeId="65950"/>
+        <ReferenceNode name="oak_stage05" translation="2036 43.2568 313" rotation="0 266.261 0" referenceId="663" nodeId="65954"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="2038 43.1712 301" rotation="0 5.75308 0" referenceId="658" nodeId="65960"/>
+        <ReferenceNode name="boxelder_stage03" translation="2040 43.3852 325" rotation="0 82.577 0" referenceId="661" nodeId="65964"/>
+        <ReferenceNode name="boxelder_stage03" translation="2047 43.2724 315" rotation="0 183.178 0" referenceId="661" nodeId="65968"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="2034 43.323 321" rotation="0 59.8798 0" referenceId="658" nodeId="65972"/>
+        <ReferenceNode name="oak_stage05" translation="2045 43.4086 328" rotation="0 163.871 0" referenceId="663" nodeId="65976"/>
+        <ReferenceNode name="americanElm_stage04" translation="2046 43.3307 321" rotation="0 170.6 0" referenceId="664" nodeId="65982"/>
+        <ReferenceNode name="goldenRain_stage04" translation="2047 43.4747 335" rotation="0 15.0472 0" referenceId="659" nodeId="65986"/>
+        <ReferenceNode name="goldenRain_stage04" translation="2042 43.6848 352" rotation="0 219.92 0" referenceId="659" nodeId="65990"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2043 43.8949 374" rotation="0 336.725 0" referenceId="660" nodeId="65994"/>
+        <ReferenceNode name="aspen_stage04" translation="2039 43.9533 380" rotation="0 45.2211 0" referenceId="662" nodeId="65998"/>
+        <ReferenceNode name="goldenRain_stage04" translation="2035 44.2023 411" rotation="0 131.559 0" referenceId="659" nodeId="66002"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="2043 44.1479 406" rotation="0 54.1001 0" referenceId="657" nodeId="66006"/>
+        <ReferenceNode name="boxelder_stage03" translation="2041 44.4358 441" rotation="0 207.989 0" referenceId="661" nodeId="66010"/>
+        <ReferenceNode name="americanElm_stage04" translation="2033 44.6887 472" rotation="0 36.923 0" referenceId="664" nodeId="66014"/>
+        <ReferenceNode name="americanElm_stage04" translation="2047 44.6031 476" rotation="0 30.0918 0" referenceId="664" nodeId="66018"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2037 44.716 483" rotation="0 240.137 0" referenceId="660" nodeId="66022"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="2034 44.7121 516" rotation="0 294.645 0" referenceId="658" nodeId="66026"/>
+        <ReferenceNode name="goldenRain_stage04" translation="2032 44.7626 494" rotation="0 91.4858 0" referenceId="659" nodeId="66030"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="2034 44.5992 537" rotation="0 203.005 0" referenceId="658" nodeId="66034"/>
+        <ReferenceNode name="americanElm_stage04" translation="2039 44.6693 520" rotation="0 278.105 0" referenceId="664" nodeId="66038"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="2041 44.5603 537" rotation="0 130.754 0" referenceId="658" nodeId="66042"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2047 44.5953 519" rotation="0 3.84933 0" referenceId="660" nodeId="66046"/>
+        <ReferenceNode name="aspen_stage04" translation="2046 44.5292 534" rotation="0 176.891 0" referenceId="662" nodeId="66050"/>
+        <ReferenceNode name="americanElm_stage04" translation="2047 44.1829 575" rotation="0 193.74 0" referenceId="664" nodeId="66054"/>
+        <ReferenceNode name="boxelder_stage03" translation="2035 43.6965 630" rotation="0 267.846 0" referenceId="661" nodeId="66058"/>
+        <ReferenceNode name="oak_stage05" translation="2046 43.7121 624" rotation="0 182.562 0" referenceId="663" nodeId="66062"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="2044 43.6498 632" rotation="0 182.323 0" referenceId="658" nodeId="66068"/>
+        <ReferenceNode name="americanElm_stage04" translation="2047 44.4086 550" rotation="0 82.1081 0" referenceId="664" nodeId="66072"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="2033 43.5603 642" rotation="0 139.907 0" referenceId="658" nodeId="66076"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="2046 42.7043 701" rotation="0 57.0631 0" referenceId="658" nodeId="66080"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="2047 42.6187 707" rotation="0 253.3 0" referenceId="658" nodeId="66084"/>
+        <ReferenceNode name="goldenRain_stage04" translation="2044 42.3307 733" rotation="0 342.685 0" referenceId="659" nodeId="66088"/>
+        <ReferenceNode name="oak_stage05" translation="2038 42.1362 755" rotation="0 174.109 0" referenceId="663" nodeId="66092"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="2039 42.0389 781" rotation="0 89.7215 0" referenceId="657" nodeId="66098"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2047 42.0739 778" rotation="0 112.799 0" referenceId="660" nodeId="66102"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="2034 42.1907 836" rotation="0 195.142 0" referenceId="658" nodeId="66106"/>
+        <ReferenceNode name="americanElm_stage04" translation="2043 42.2412 835" rotation="0 139.422 0" referenceId="664" nodeId="66110"/>
+        <ReferenceNode name="aspen_stage04" translation="2043 42.3969 856" rotation="0 225.611 0" referenceId="662" nodeId="66114"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2045 42.4436 864" rotation="0 158.636 0" referenceId="660" nodeId="66118"/>
+        <ReferenceNode name="americanElm_stage04" translation="2045 42.5409 892" rotation="0 22.5868 0" referenceId="664" nodeId="66122"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="2044 42.5759 903" rotation="0 65.3466 0" referenceId="657" nodeId="66126"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2038 42.4903 878" rotation="0 329.923 0" referenceId="660" nodeId="66130"/>
+        <ReferenceNode name="oak_stage05" translation="2047 42.6109 913" rotation="0 48.6071 0" referenceId="663" nodeId="66134"/>
+        <ReferenceNode name="aspen_stage04" translation="2032 42.6031 922" rotation="0 216.994 0" referenceId="662" nodeId="66140"/>
+        <ReferenceNode name="oak_stage05" translation="2044 42.6381 924" rotation="0 70.2395 0" referenceId="663" nodeId="66144"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2038 42.6304 926" rotation="0 159.615 0" referenceId="660" nodeId="66150"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="2036 42.6576 964" rotation="0 305.247 0" referenceId="658" nodeId="66154"/>
+        <ReferenceNode name="goldenRain_stage04" translation="2045 42.6965 986" rotation="0 48.7153 0" referenceId="659" nodeId="66158"/>
+        <ReferenceNode name="americanElm_stage04" translation="2038 42.6693 1023" rotation="0 170.501 0" referenceId="664" nodeId="66162"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="2042 42.6887 1010" rotation="0 270.712 0" referenceId="657" nodeId="66166"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="2044 42.6887 971" rotation="0 192.158 0" referenceId="658" nodeId="66170"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="2041 42.6926 1029" rotation="0 192.806 0" referenceId="657" nodeId="66174"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2045 42.716 1033" rotation="0 32.2932 0" referenceId="660" nodeId="66178"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2045 42.7354 1048" rotation="0 338.181 0" referenceId="660" nodeId="66182"/>
+        <ReferenceNode name="americanElm_stage04" translation="2034 42.6537 1043" rotation="0 12.0278 0" referenceId="664" nodeId="66186"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="2035 42.7315 1065" rotation="0 221.978 0" referenceId="657" nodeId="66190"/>
+        <ReferenceNode name="aspen_stage04" translation="2040 42.7471 1061" rotation="0 115.859 0" referenceId="662" nodeId="66194"/>
+        <ReferenceNode name="aspen_stage04" translation="2039 42.8093 1075" rotation="0 309.957 0" referenceId="662" nodeId="66198"/>
+        <ReferenceNode name="boxelder_stage03" translation="2044 42.8833 1084" rotation="0 142.744 0" referenceId="661" nodeId="66202"/>
+        <ReferenceNode name="boxelder_stage03" translation="2032 43.0428 1113" rotation="0 222.183 0" referenceId="661" nodeId="66206"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="2036 43.1089 1118" rotation="0 157.222 0" referenceId="657" nodeId="66210"/>
+        <ReferenceNode name="aspen_stage04" translation="2044 43.0506 1106" rotation="0 240.36 0" referenceId="662" nodeId="66214"/>
+        <ReferenceNode name="boxelder_stage03" translation="2033 43.3035 1146" rotation="0 322.742 0" referenceId="661" nodeId="66218"/>
+        <ReferenceNode name="aspen_stage04" translation="2036 43.6342 1260" rotation="0 352.872 0" referenceId="662" nodeId="66222"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="2031 43.3696 1157" rotation="0 268.228 0" referenceId="658" nodeId="66226"/>
+        <ReferenceNode name="boxelder_stage03" translation="2043 43.7704 1221" rotation="0 103.559 0" referenceId="661" nodeId="66230"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="2038 43.3696 1151" rotation="0 290.857 0" referenceId="657" nodeId="66234"/>
+        <ReferenceNode name="aspen_stage04" translation="2036 43.7354 1236" rotation="0 292.012 0" referenceId="662" nodeId="66238"/>
+        <ReferenceNode name="americanElm_stage04" translation="2045 43.7198 1201" rotation="0 25.7923 0" referenceId="664" nodeId="66242"/>
+        <ReferenceNode name="oak_stage05" translation="2047 43.6693 1191" rotation="0 172.206 0" referenceId="663" nodeId="66246"/>
+        <ReferenceNode name="goldenRain_stage04" translation="2038 43.6031 1266" rotation="0 219.783 0" referenceId="659" nodeId="66252"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="2043 43.4241 1156" rotation="0 122.022 0" referenceId="657" nodeId="66256"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="2047 43.4086 1152" rotation="0 27.7882 0" referenceId="657" nodeId="66260"/>
+        <ReferenceNode name="americanElm_stage04" translation="2030 43.2802 1301" rotation="0 2.49821 0" referenceId="664" nodeId="66264"/>
+        <ReferenceNode name="aspen_stage04" translation="2034 43.358 1295" rotation="0 193.782 0" referenceId="662" nodeId="66268"/>
+        <ReferenceNode name="aspen_stage04" translation="2047 43.3035 1138" rotation="0 334.973 0" referenceId="662" nodeId="66272"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="2040 43.6926 1199" rotation="0 190.816 0" referenceId="658" nodeId="66276"/>
+        <ReferenceNode name="goldenRain_stage04" translation="2035 43.0778 1328" rotation="0 84.9926 0" referenceId="659" nodeId="66280"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2030 42.821 1356" rotation="0 143.186 0" referenceId="660" nodeId="66284"/>
+        <ReferenceNode name="americanElm_stage04" translation="2036 42.9883 1338" rotation="0 79.168 0" referenceId="664" nodeId="66288"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2039 42.9183 1347" rotation="0 114.014 0" referenceId="660" nodeId="66292"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="2047 43.0272 1336" rotation="0 152.652 0" referenceId="658" nodeId="66296"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="2033 42.8677 1351" rotation="0 336.9 0" referenceId="658" nodeId="66300"/>
+        <ReferenceNode name="americanElm_stage04" translation="2037 42.642 1390" rotation="0 197.835 0" referenceId="664" nodeId="66304"/>
+        <ReferenceNode name="americanElm_stage04" translation="2047 42.6576 1385" rotation="0 42.8372 0" referenceId="664" nodeId="66308"/>
+        <ReferenceNode name="aspen_stage04" translation="2036 42.6381 1425" rotation="0 60.2012 0" referenceId="662" nodeId="66312"/>
+        <ReferenceNode name="aspen_stage04" translation="2030 42.6109 1404" rotation="0 251.464 0" referenceId="662" nodeId="66316"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2047 42.6226 1398" rotation="0 18.1455 0" referenceId="660" nodeId="66320"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2032 42.6537 1436" rotation="0 36.1143 0" referenceId="660" nodeId="66324"/>
+        <ReferenceNode name="aspen_stage04" translation="2037 42.677 1445" rotation="0 134.011 0" referenceId="662" nodeId="66328"/>
+        <ReferenceNode name="boxelder_stage03" translation="2044 42.8093 1539" rotation="0 247.259 0" referenceId="661" nodeId="66332"/>
+        <ReferenceNode name="goldenRain_stage04" translation="2040 42.8366 1566" rotation="0 241.608 0" referenceId="659" nodeId="66336"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="2047 42.8521 1564" rotation="0 154.179 0" referenceId="658" nodeId="66340"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="2035 42.8911 1605" rotation="0 141.039 0" referenceId="658" nodeId="66344"/>
+        <ReferenceNode name="goldenRain_stage04" translation="2043 42.9261 1617" rotation="0 203.201 0" referenceId="659" nodeId="66348"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="2044 42.9494 1630" rotation="0 52.4376 0" referenceId="658" nodeId="66352"/>
+        <ReferenceNode name="aspen_stage04" translation="2038 42.965 1648" rotation="0 107.273 0" referenceId="662" nodeId="66356"/>
+        <ReferenceNode name="boxelder_stage03" translation="2034 42.9728 1653" rotation="0 261.822 0" referenceId="661" nodeId="66360"/>
+        <ReferenceNode name="americanElm_stage04" translation="2044 42.9961 1659" rotation="0 172.611 0" referenceId="664" nodeId="66364"/>
+        <ReferenceNode name="boxelder_stage03" translation="2041 43.0117 1672" rotation="0 173.709 0" referenceId="661" nodeId="66368"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2039 43.0233 1683" rotation="0 45.0612 0" referenceId="660" nodeId="66372"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="2046 43.035 1679" rotation="0 78.2838 0" referenceId="658" nodeId="66376"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="2047 42.9728 1638" rotation="0 357.33 0" referenceId="657" nodeId="66380"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2042 43.0506 1696" rotation="0 322.604 0" referenceId="660" nodeId="66384"/>
+        <ReferenceNode name="aspen_stage04" translation="2040 43.0661 1708" rotation="0 244.917 0" referenceId="662" nodeId="66388"/>
+        <ReferenceNode name="boxelder_stage03" translation="2043 43.0778 1714" rotation="0 238.406 0" referenceId="661" nodeId="66392"/>
+        <ReferenceNode name="americanElm_stage04" translation="2034 43.1245 1753" rotation="0 336.022 0" referenceId="664" nodeId="66396"/>
+        <ReferenceNode name="oak_stage05" translation="2045 43.1245 1745" rotation="0 221.332 0" referenceId="663" nodeId="66400"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="-2044 42.8716 1533" rotation="0 197.699 0" referenceId="660" nodeId="66406"/>
+        <ReferenceNode name="americanElm_stage04" translation="-2035 42.9455 1550" rotation="0 341.732 0" referenceId="664" nodeId="66410"/>
+        <ReferenceNode name="aspen_stage04" translation="2039 43.1634 1789" rotation="0 86.5229 0" referenceId="662" nodeId="66414"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="2047 43.1751 1785" rotation="0 154.381 0" referenceId="658" nodeId="66418"/>
+        <ReferenceNode name="americanElm_stage04" translation="-2044 42.9027 1581" rotation="0 112.881 0" referenceId="664" nodeId="66422"/>
+        <ReferenceNode name="oak_stage05" translation="-2045 42.8949 1589" rotation="0 324.18 0" referenceId="663" nodeId="66426"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2047 43.2023 1808" rotation="0 348.548 0" referenceId="660" nodeId="66432"/>
+        <ReferenceNode name="goldenRain_stage04" translation="-2031 42.9572 1604" rotation="0 254.52 0" referenceId="659" nodeId="66436"/>
+        <ReferenceNode name="americanElm_stage04" translation="2036 43.2179 1834" rotation="0 315.483 0" referenceId="664" nodeId="66440"/>
+        <ReferenceNode name="goldenRain_stage04" translation="-2047 42.8872 1608" rotation="0 351.11 0" referenceId="659" nodeId="66444"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="-2036 42.9455 1622" rotation="0 26.3695 0" referenceId="658" nodeId="66448"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="-2048 42.8833 1618" rotation="0 323.551 0" referenceId="657" nodeId="66452"/>
+        <ReferenceNode name="boxelder_stage03" translation="2047 43.2451 1846" rotation="0 264.175 0" referenceId="661" nodeId="66456"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="2035 43.3035 1903" rotation="0 323.435 0" referenceId="658" nodeId="66460"/>
+        <ReferenceNode name="boxelder_stage03" translation="-2040 42.93 1648" rotation="0 242.178 0" referenceId="661" nodeId="66464"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="-2048 42.8872 1651" rotation="0 129.291 0" referenceId="658" nodeId="66468"/>
+        <ReferenceNode name="oak_stage05" translation="2036 43.3152 1910" rotation="0 249.013 0" referenceId="663" nodeId="66472"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="2037 43.2685 1876" rotation="0 256.17 0" referenceId="658" nodeId="66478"/>
+        <ReferenceNode name="americanElm_stage04" translation="-2044 42.9144 1665" rotation="0 182.068 0" referenceId="664" nodeId="66482"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="-2029 42.9611 1688" rotation="0 208.13 0" referenceId="658" nodeId="66486"/>
+        <ReferenceNode name="goldenRain_stage04" translation="-2037 42.9455 1686" rotation="0 322.418 0" referenceId="659" nodeId="66490"/>
+        <ReferenceNode name="aspen_stage04" translation="-2035 42.9494 1692" rotation="0 92.2736 0" referenceId="662" nodeId="66494"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="-2039 42.9377 1678" rotation="0 210.781 0" referenceId="657" nodeId="66498"/>
+        <ReferenceNode name="boxelder_stage03" translation="-2035 42.9494 1716" rotation="0 119.462 0" referenceId="661" nodeId="66502"/>
+        <ReferenceNode name="boxelder_stage03" translation="2035 43.358 1941" rotation="0 264.301 0" referenceId="661" nodeId="66506"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="2046 43.3735 1937" rotation="0 343.796 0" referenceId="657" nodeId="66510"/>
+        <ReferenceNode name="boxelder_stage03" translation="2036 43.3774 1952" rotation="0 356.448 0" referenceId="661" nodeId="66514"/>
+        <ReferenceNode name="aspen_stage04" translation="2041 43.3696 1941" rotation="0 24.3284 0" referenceId="662" nodeId="66518"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="2042 43.3813 1948" rotation="0 88.5033 0" referenceId="657" nodeId="66522"/>
+        <ReferenceNode name="boxelder_stage03" translation="-2047 42.9105 1736" rotation="0 288.916 0" referenceId="661" nodeId="66526"/>
+        <ReferenceNode name="aspen_stage04" translation="2042 43.4202 1973" rotation="0 157.373 0" referenceId="662" nodeId="66530"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="2033 43.4319 1984" rotation="0 126.647 0" referenceId="660" nodeId="66534"/>
+        <ReferenceNode name="americanElm_stage04" translation="2037 43.4553 1998" rotation="0 104.556 0" referenceId="664" nodeId="66538"/>
+        <ReferenceNode name="oak_stage05" translation="2047 43.3852 1943" rotation="0 29.9599 0" referenceId="663" nodeId="66542"/>
+        <ReferenceNode name="oak_stage05" translation="2040 43.393 1957" rotation="0 55.3158 0" referenceId="663" nodeId="66548"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="2044 43.4747 2005" rotation="0 263.052 0" referenceId="657" nodeId="66554"/>
+        <ReferenceNode name="boxelder_stage03" translation="2047 43.463 1991" rotation="0 75.733 0" referenceId="661" nodeId="66558"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="-2032 42.9611 1785" rotation="0 7.46761 0" referenceId="660" nodeId="66562"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="-2038 42.9455 1775" rotation="0 295.461 0" referenceId="658" nodeId="66566"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="-2045 42.93 1779" rotation="0 114.751 0" referenceId="660" nodeId="66570"/>
+        <ReferenceNode name="boxelder_stage03" translation="-2033 42.9611 1819" rotation="0 96.1651 0" referenceId="661" nodeId="66574"/>
+        <ReferenceNode name="boxelder_stage03" translation="-2041 42.9455 1829" rotation="0 13.4495 0" referenceId="661" nodeId="66578"/>
+        <ReferenceNode name="boxelder_stage03" translation="-2032 42.9611 1868" rotation="0 62.5104 0" referenceId="661" nodeId="66582"/>
+        <ReferenceNode name="northernCatalpa_stage04" translation="-2029 42.9611 1853" rotation="0 337.868 0" referenceId="660" nodeId="66586"/>
+        <ReferenceNode name="oak_stage05" translation="-2041 42.9494 1875" rotation="0 182.299 0" referenceId="663" nodeId="66590"/>
+        <ReferenceNode name="oak_stage05" translation="-2040 42.9455 1790" rotation="0 147.887 0" referenceId="663" nodeId="66596"/>
+        <ReferenceNode name="boxelder_stage03" translation="-2041 42.9494 1884" rotation="0 303.981 0" referenceId="661" nodeId="66602"/>
+        <ReferenceNode name="goldenRain_stage04" translation="-2031 42.9611 1919" rotation="0 347.654 0" referenceId="659" nodeId="66606"/>
+        <ReferenceNode name="americanElm_stage04" translation="-2039 42.9572 1911" rotation="0 18.1494 0" referenceId="664" nodeId="66610"/>
+        <ReferenceNode name="goldenRain_stage04" translation="-2041 42.9494 1925" rotation="0 226.499 0" referenceId="659" nodeId="66614"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="-2036 42.9611 1957" rotation="0 231.043 0" referenceId="657" nodeId="66618"/>
+        <ReferenceNode name="goldenRain_stage04" translation="-2033 42.9611 1967" rotation="0 206.063 0" referenceId="659" nodeId="66622"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="-2045 42.9455 1957" rotation="0 314.757 0" referenceId="658" nodeId="66626"/>
+        <ReferenceNode name="pinusSylvestris_stage04" translation="-2038 42.9572 1976" rotation="0 129.17 0" referenceId="658" nodeId="66630"/>
+        <ReferenceNode name="goldenRain_stage04" translation="-2033 42.9611 1987" rotation="0 230.892 0" referenceId="659" nodeId="66634"/>
+        <ReferenceNode name="americanElm_stage04" translation="-2045 42.9455 2012" rotation="0 50.86 0" referenceId="664" nodeId="66638"/>
+        <ReferenceNode name="pinusTabuliformis_stage04" translation="-2034 42.9611 2004" rotation="0 135.832 0" referenceId="657" nodeId="66642"/>
+        <ReferenceNode name="americanElm_stage04" translation="-2045 42.9455 2005" rotation="0 136.56 0" referenceId="664" nodeId="66646"/>
       </TransformGroup>
     </TransformGroup>
     <ReferenceNode name="animalTader_CLUSTER" translation="56.8308 43.4668 1600.26" rotation="0 90 0.000167508" referenceId="665" nodeId="43662"/>
@@ -15595,84 +15872,84 @@
       <Object type="terrainFoliage" name="F_slenderMountainMint" foliageTypeName="decoFoliage" channels="417" ppType="defaultFoliage" />
       <Object type="terrainFoliage" name="F_wildBergamot" foliageTypeName="decoFoliage" channels="449" ppType="defaultFoliage" />
       <Object type="terrainFoliage" name="F_prairyBlazingStar" foliageTypeName="decoFoliage" channels="481" ppType="defaultFoliage" />
-      <Object type="reference" name="americanElm_stage01" fileId="758" ppType="smallTrees" />
-      <Object type="reference" name="americanElm_stage02" fileId="759" ppType="defaultReference" />
-      <Object type="reference" name="americanElm_stage03" fileId="760" ppType="mediumTree" />
+      <Object type="reference" name="americanElm_stage01" fileId="759" ppType="smallTrees" />
+      <Object type="reference" name="americanElm_stage02" fileId="760" ppType="defaultReference" />
+      <Object type="reference" name="americanElm_stage03" fileId="761" ppType="mediumTree" />
       <Object type="reference" name="americanElm_stage04" fileId="664" ppType="parentTrees" />
-      <Object type="reference" name="americanElm_stage05" fileId="761" ppType="defaultReference" />
-      <Object type="reference" name="apple_stage03" fileId="762" ppType="mediumTree" />
-      <Object type="reference" name="aspen_stage01" fileId="763" ppType="smallTrees" />
-      <Object type="reference" name="aspen_stage02" fileId="764" ppType="defaultReference" />
-      <Object type="reference" name="aspen_stage03" fileId="765" ppType="mediumTree" />
+      <Object type="reference" name="americanElm_stage05" fileId="762" ppType="defaultReference" />
+      <Object type="reference" name="apple_stage03" fileId="763" ppType="mediumTree" />
+      <Object type="reference" name="aspen_stage01" fileId="764" ppType="smallTrees" />
+      <Object type="reference" name="aspen_stage02" fileId="765" ppType="defaultReference" />
+      <Object type="reference" name="aspen_stage03" fileId="766" ppType="mediumTree" />
       <Object type="reference" name="aspen_stage04" fileId="662" ppType="parentTrees" />
-      <Object type="reference" name="aspen_stage05" fileId="766" ppType="defaultReference" />
-      <Object type="reference" name="aspen_stage06_var01" fileId="767" ppType="defaultReference" />
-      <Object type="reference" name="aspen_stage06_var02" fileId="768" ppType="defaultReference" />
-      <Object type="reference" name="beech_stage01" fileId="769" ppType="smallTrees" />
-      <Object type="reference" name="beech_stage02" fileId="770" ppType="defaultReference" />
-      <Object type="reference" name="beech_stage02_var02" fileId="771" ppType="defaultReference" />
-      <Object type="reference" name="beech_stage02_var03" fileId="772" ppType="defaultReference" />
-      <Object type="reference" name="beech_stage03" fileId="773" ppType="mediumTree" />
-      <Object type="reference" name="beech_stage04" fileId="774" ppType="parentTrees" />
-      <Object type="reference" name="beech_stage05" fileId="775" ppType="defaultReference" />
-      <Object type="reference" name="beech_stage06_var01" fileId="776" ppType="defaultReference" />
-      <Object type="reference" name="beech_stage06_var02" fileId="777" ppType="defaultReference" />
-      <Object type="reference" name="betulaErmanii_stage01" fileId="778" ppType="defaultReference" />
-      <Object type="reference" name="betulaErmanii_stage02" fileId="779" ppType="defaultReference" />
-      <Object type="reference" name="betulaErmanii_stage03" fileId="780" ppType="mediumTree" />
-      <Object type="reference" name="betulaErmanii_stage04" fileId="781" ppType="parentTrees" />
-      <Object type="reference" name="boxelder_stage01" fileId="782" ppType="smallTrees" />
-      <Object type="reference" name="boxelder_stage02" fileId="783" ppType="defaultReference" />
+      <Object type="reference" name="aspen_stage05" fileId="767" ppType="defaultReference" />
+      <Object type="reference" name="aspen_stage06_var01" fileId="768" ppType="defaultReference" />
+      <Object type="reference" name="aspen_stage06_var02" fileId="769" ppType="defaultReference" />
+      <Object type="reference" name="beech_stage01" fileId="770" ppType="smallTrees" />
+      <Object type="reference" name="beech_stage02" fileId="771" ppType="defaultReference" />
+      <Object type="reference" name="beech_stage02_var02" fileId="772" ppType="defaultReference" />
+      <Object type="reference" name="beech_stage02_var03" fileId="773" ppType="defaultReference" />
+      <Object type="reference" name="beech_stage03" fileId="774" ppType="mediumTree" />
+      <Object type="reference" name="beech_stage04" fileId="775" ppType="parentTrees" />
+      <Object type="reference" name="beech_stage05" fileId="776" ppType="defaultReference" />
+      <Object type="reference" name="beech_stage06_var01" fileId="777" ppType="defaultReference" />
+      <Object type="reference" name="beech_stage06_var02" fileId="778" ppType="defaultReference" />
+      <Object type="reference" name="betulaErmanii_stage01" fileId="779" ppType="defaultReference" />
+      <Object type="reference" name="betulaErmanii_stage02" fileId="780" ppType="defaultReference" />
+      <Object type="reference" name="betulaErmanii_stage03" fileId="781" ppType="mediumTree" />
+      <Object type="reference" name="betulaErmanii_stage04" fileId="782" ppType="parentTrees" />
+      <Object type="reference" name="boxelder_stage01" fileId="783" ppType="smallTrees" />
+      <Object type="reference" name="boxelder_stage02" fileId="784" ppType="defaultReference" />
       <Object type="reference" name="boxelder_stage03" fileId="661" ppType="mediumTree" />
-      <Object type="reference" name="cherry_stage01" fileId="784" ppType="smallTrees" />
-      <Object type="reference" name="cherry_stage02" fileId="785" ppType="defaultReference" />
-      <Object type="reference" name="cherry_stage03" fileId="786" ppType="mediumTree" />
-      <Object type="reference" name="cherry_stage04" fileId="787" ppType="parentTrees" />
-      <Object type="reference" name="chineseElm_stage01" fileId="788" ppType="smallTrees" />
-      <Object type="reference" name="chineseElm_stage02" fileId="789" ppType="defaultReference" />
-      <Object type="reference" name="chineseElm_stage03" fileId="790" ppType="mediumTree" />
-      <Object type="reference" name="chineseElm_stage04" fileId="791" ppType="parentTrees" />
-      <Object type="reference" name="downyServiceBerry_stage01" fileId="792" ppType="defaultReference" />
-      <Object type="reference" name="downyServiceBerry_stage02" fileId="793" ppType="defaultReference" />
-      <Object type="reference" name="downyServiceBerry_stage03" fileId="794" ppType="mediumTree" />
-      <Object type="reference" name="goldenRain_stage01" fileId="795" ppType="smallTrees" />
-      <Object type="reference" name="goldenRain_stage02" fileId="796" ppType="defaultReference" />
-      <Object type="reference" name="goldenRain_stage03" fileId="797" ppType="defaultReference" />
+      <Object type="reference" name="cherry_stage01" fileId="785" ppType="smallTrees" />
+      <Object type="reference" name="cherry_stage02" fileId="786" ppType="defaultReference" />
+      <Object type="reference" name="cherry_stage03" fileId="787" ppType="mediumTree" />
+      <Object type="reference" name="cherry_stage04" fileId="788" ppType="parentTrees" />
+      <Object type="reference" name="chineseElm_stage01" fileId="789" ppType="smallTrees" />
+      <Object type="reference" name="chineseElm_stage02" fileId="790" ppType="defaultReference" />
+      <Object type="reference" name="chineseElm_stage03" fileId="791" ppType="mediumTree" />
+      <Object type="reference" name="chineseElm_stage04" fileId="792" ppType="parentTrees" />
+      <Object type="reference" name="downyServiceBerry_stage01" fileId="793" ppType="defaultReference" />
+      <Object type="reference" name="downyServiceBerry_stage02" fileId="794" ppType="defaultReference" />
+      <Object type="reference" name="downyServiceBerry_stage03" fileId="795" ppType="mediumTree" />
+      <Object type="reference" name="goldenRain_stage01" fileId="796" ppType="smallTrees" />
+      <Object type="reference" name="goldenRain_stage02" fileId="797" ppType="defaultReference" />
+      <Object type="reference" name="goldenRain_stage03" fileId="798" ppType="defaultReference" />
       <Object type="reference" name="goldenRain_stage04" fileId="659" ppType="parentTrees" />
-      <Object type="reference" name="japaneseZelkova_stage01" fileId="798" ppType="smallTrees" />
-      <Object type="reference" name="japaneseZelkova_stage02" fileId="799" ppType="defaultReference" />
-      <Object type="reference" name="japaneseZelkova_stage03" fileId="800" ppType="mediumTree" />
-      <Object type="reference" name="japaneseZelkova_stage04" fileId="801" ppType="parentTrees" />
-      <Object type="reference" name="lodgepolePine_stage01" fileId="802" ppType="smallTrees" />
-      <Object type="reference" name="lodgepolePine_stage02" fileId="803" ppType="mediumTree" />
+      <Object type="reference" name="japaneseZelkova_stage01" fileId="799" ppType="smallTrees" />
+      <Object type="reference" name="japaneseZelkova_stage02" fileId="800" ppType="defaultReference" />
+      <Object type="reference" name="japaneseZelkova_stage03" fileId="801" ppType="mediumTree" />
+      <Object type="reference" name="japaneseZelkova_stage04" fileId="802" ppType="parentTrees" />
+      <Object type="reference" name="lodgepolePine_stage01" fileId="803" ppType="smallTrees" />
+      <Object type="reference" name="lodgepolePine_stage02" fileId="804" ppType="mediumTree" />
       <Object type="reference" name="lodgepolePine_stage03" fileId="656" ppType="parentTrees" />
-      <Object type="reference" name="northernCatalpa_stage01" fileId="804" ppType="smallTrees" />
-      <Object type="reference" name="northernCatalpa_stage02" fileId="805" ppType="defaultReference" />
-      <Object type="reference" name="northernCatalpa_stage03" fileId="806" ppType="mediumTree" />
+      <Object type="reference" name="northernCatalpa_stage01" fileId="805" ppType="smallTrees" />
+      <Object type="reference" name="northernCatalpa_stage02" fileId="806" ppType="defaultReference" />
+      <Object type="reference" name="northernCatalpa_stage03" fileId="807" ppType="mediumTree" />
       <Object type="reference" name="northernCatalpa_stage04" fileId="660" ppType="parentTrees" />
-      <Object type="reference" name="oak_stage01" fileId="807" ppType="smallTrees" />
-      <Object type="reference" name="oak_stage02" fileId="808" ppType="defaultReference" />
-      <Object type="reference" name="oak_stage03" fileId="809" ppType="mediumTree" />
-      <Object type="reference" name="oak_stage04" fileId="810" ppType="parentTrees" />
+      <Object type="reference" name="oak_stage01" fileId="808" ppType="smallTrees" />
+      <Object type="reference" name="oak_stage02" fileId="809" ppType="defaultReference" />
+      <Object type="reference" name="oak_stage03" fileId="810" ppType="mediumTree" />
+      <Object type="reference" name="oak_stage04" fileId="811" ppType="parentTrees" />
       <Object type="reference" name="oak_stage05" fileId="663" ppType="defaultReference" />
-      <Object type="reference" name="pinusSylvestris_stage01" fileId="811" ppType="smallTrees" />
-      <Object type="reference" name="pinusSylvestris_stage02" fileId="812" ppType="defaultReference" />
-      <Object type="reference" name="pinusSylvestris_stage03" fileId="813" ppType="mediumTree" />
+      <Object type="reference" name="pinusSylvestris_stage01" fileId="812" ppType="smallTrees" />
+      <Object type="reference" name="pinusSylvestris_stage02" fileId="813" ppType="defaultReference" />
+      <Object type="reference" name="pinusSylvestris_stage03" fileId="814" ppType="mediumTree" />
       <Object type="reference" name="pinusSylvestris_stage04" fileId="658" ppType="parentTrees" />
-      <Object type="reference" name="pinusSylvestris_stage05" fileId="814" ppType="defaultReference" />
-      <Object type="reference" name="pinusTabuliformis_stage01" fileId="815" ppType="smallTrees" />
-      <Object type="reference" name="pinusTabuliformis_stage02" fileId="816" ppType="defaultReference" />
-      <Object type="reference" name="pinusTabuliformis_stage03" fileId="817" ppType="mediumTree" />
+      <Object type="reference" name="pinusSylvestris_stage05" fileId="815" ppType="defaultReference" />
+      <Object type="reference" name="pinusTabuliformis_stage01" fileId="816" ppType="smallTrees" />
+      <Object type="reference" name="pinusTabuliformis_stage02" fileId="817" ppType="defaultReference" />
+      <Object type="reference" name="pinusTabuliformis_stage03" fileId="818" ppType="mediumTree" />
       <Object type="reference" name="pinusTabuliformis_stage04" fileId="657" ppType="parentTrees" />
-      <Object type="reference" name="pinusTabuliformis_stage05" fileId="818" ppType="defaultReference" />
-      <Object type="reference" name="shagbarkHickory_stage01" fileId="819" ppType="smallTrees" />
-      <Object type="reference" name="shagbarkHickory_stage02" fileId="820" ppType="defaultReference" />
-      <Object type="reference" name="shagbarkHickory_stage03" fileId="821" ppType="mediumTree" />
-      <Object type="reference" name="shagbarkHickory_stage04" fileId="822" ppType="parentTrees" />
-      <Object type="reference" name="tiliaAmurensis_stage01" fileId="823" ppType="smallTrees" />
-      <Object type="reference" name="tiliaAmurensis_stage02" fileId="824" ppType="defaultReference" />
-      <Object type="reference" name="tiliaAmurensis_stage03" fileId="825" ppType="mediumTree" />
-      <Object type="reference" name="tiliaAmurensis_stage04" fileId="826" ppType="parentTrees" />
+      <Object type="reference" name="pinusTabuliformis_stage05" fileId="819" ppType="defaultReference" />
+      <Object type="reference" name="shagbarkHickory_stage01" fileId="820" ppType="smallTrees" />
+      <Object type="reference" name="shagbarkHickory_stage02" fileId="821" ppType="defaultReference" />
+      <Object type="reference" name="shagbarkHickory_stage03" fileId="822" ppType="mediumTree" />
+      <Object type="reference" name="shagbarkHickory_stage04" fileId="823" ppType="parentTrees" />
+      <Object type="reference" name="tiliaAmurensis_stage01" fileId="824" ppType="smallTrees" />
+      <Object type="reference" name="tiliaAmurensis_stage02" fileId="825" ppType="defaultReference" />
+      <Object type="reference" name="tiliaAmurensis_stage03" fileId="826" ppType="mediumTree" />
+      <Object type="reference" name="tiliaAmurensis_stage04" fileId="827" ppType="parentTrees" />
     </Objects>
     <Rules>
       <Rule name="ClearAll" isMainRule="true" isEnabled="false" objectMinDistance="0" slopeStart="0" slopeEnd="90" >
@@ -15823,9 +16100,9 @@
           <Arg name="width" type="int" value="1" />
         </Script>
       </Rule>
-      <Rule name="T_Forests" isMainRule="true" isEnabled="false" objectMinDistance="0" slopeStart="0" slopeEnd="90" >
+      <Rule name="T_Forests" isMainRule="true" isEnabled="true" objectMinDistance="0" slopeStart="0" slopeEnd="90" >
         <Script name="scatterInMask.lua" >
-          <Arg name="mask" type="mask" value="pg_island" />
+          <Arg name="mask" type="mask" value="PG_trees" />
         </Script>
         <Object id="1" childRule="" objectName="FOREST_GROUND" childMinCount="1" childMaxCount="10" childMinRadius="0" childMaxRadius="20" probability="1" />
         <Object id="2" childRule="" objectName="FOREST_GRASS" childMinCount="1" childMaxCount="10" childMinRadius="0" childMaxRadius="20" probability="1" />
@@ -16022,31 +16299,31 @@
         <Object id="2" childRule="" objectName="GRASS_DIRT" childMinCount="1" childMaxCount="10" childMinRadius="0" childMaxRadius="20" probability="32" />
         <Object id="3" childRule="" objectName="GRASSFRESH_CLOVERS" childMinCount="1" childMaxCount="10" childMinRadius="0" childMaxRadius="20" probability="32" />
       </Rule>
-      <Rule name="T_Forests_Detail" isMainRule="true" isEnabled="false" objectMinDistance="0" slopeStart="0" slopeEnd="90" >
+      <Rule name="T_Forests_Detail" isMainRule="true" isEnabled="true" objectMinDistance="0" slopeStart="0" slopeEnd="90" >
         <Script name="scatterInPerlinNoise.lua" >
           <Arg name="seed" type="int" value="0" />
           <Arg name="clampThreshold" type="int" value="0" />
           <Arg name="frequency" type="float" value="0.000000" />
           <Arg name="clamped" type="boolean" value="false" />
-          <Arg name="mask" type="mask" value="pg_island" />
+          <Arg name="mask" type="mask" value="PG_trees" />
         </Script>
         <Object id="1" childRule="" objectName="FOREST_ROOTS" childMinCount="1" childMaxCount="10" childMinRadius="0" childMaxRadius="20" probability="12" />
         <Object id="2" childRule="" objectName="FOREST_LEAVES" childMinCount="1" childMaxCount="10" childMinRadius="0" childMaxRadius="20" probability="32" />
         <Object id="3" childRule="" objectName="FOREST_NEEDELS" childMinCount="1" childMaxCount="10" childMinRadius="0" childMaxRadius="20" probability="32" />
         <Object id="4" childRule="" objectName="FOREST_STONES" childMinCount="1" childMaxCount="10" childMinRadius="0" childMaxRadius="20" probability="32" />
       </Rule>
-      <Rule name="T_Forests_Patches" isMainRule="true" isEnabled="false" objectMinDistance="0" slopeStart="0" slopeEnd="90" >
+      <Rule name="T_Forests_Patches" isMainRule="true" isEnabled="true" objectMinDistance="0" slopeStart="0" slopeEnd="90" >
         <Script name="scatterInPerlinNoise.lua" >
           <Arg name="seed" type="int" value="0" />
           <Arg name="clampThreshold" type="int" value="0" />
           <Arg name="frequency" type="float" value="0.000000" />
           <Arg name="clamped" type="boolean" value="false" />
-          <Arg name="mask" type="mask" value="pg_island" />
+          <Arg name="mask" type="mask" value="PG_trees" />
         </Script>
         <Object id="1" childRule="" objectName="GRASS_PATCHY" childMinCount="1" childMaxCount="10" childMinRadius="0" childMaxRadius="20" probability="12" />
         <Object id="2" childRule="" objectName="GRASS_DIRT" childMinCount="1" childMaxCount="10" childMinRadius="0" childMaxRadius="20" probability="32" />
       </Rule>
-      <Rule name="T_Roads" isMainRule="true" isEnabled="true" objectMinDistance="0" slopeStart="0" slopeEnd="90" >
+      <Rule name="T_Roads" isMainRule="true" isEnabled="false" objectMinDistance="0" slopeStart="0" slopeEnd="90" >
         <Script name="scatterInMask.lua" >
           <Arg name="mask" type="mask" value="PG_Roads" />
         </Script>
@@ -16162,7 +16439,7 @@
           <Arg name="clampThreshold" type="int" value="0" />
           <Arg name="frequency" type="float" value="0.000000" />
           <Arg name="clamped" type="boolean" value="false" />
-          <Arg name="mask" type="mask" value="PG_needleleaved" />
+          <Arg name="mask" type="mask" value="PG_trees" />
         </Script>
         <Object id="5" childRule="R_Forests_ChildTrees" objectName="pinusSylvestris_stage04" childMinCount="8" childMaxCount="20" childMinRadius="4" childMaxRadius="20" scaleMin="1" scaleMax="1" probability="2" />
         <Object id="6" childRule="R_Forests_ChildTrees" objectName="pinusTabuliformis_stage04" childMinCount="8" childMaxCount="20" childMinRadius="4" childMaxRadius="20" scaleMin="1" scaleMax="1" probability="1" />
@@ -16174,7 +16451,7 @@
           <Arg name="clampThreshold" type="int" value="0" />
           <Arg name="frequency" type="float" value="0.000000" />
           <Arg name="clamped" type="boolean" value="false" />
-          <Arg name="mask" type="mask" value="PG_needleleaved" />
+          <Arg name="mask" type="mask" value="PG_trees" />
         </Script>
         <Object id="1" childRule="" objectName="americanElm_stage01" childMinCount="1" childMaxCount="10" childMinRadius="0" childMaxRadius="20" scaleMin="1" scaleMax="1" probability="1" />
         <Object id="2" childRule="" objectName="americanElm_stage02" childMinCount="1" childMaxCount="10" childMinRadius="0" childMaxRadius="20" scaleMin="1" scaleMax="1" probability="2" />
@@ -16197,13 +16474,13 @@
         <Object id="19" childRule="" objectName="lodgepolePine_stage02" childMinCount="1" childMaxCount="10" childMinRadius="0" childMaxRadius="20" scaleMin="1" scaleMax="1" probability="6" />
         <Object id="20" childRule="" objectName="lodgepolePine_stage01" childMinCount="1" childMaxCount="10" childMinRadius="0" childMaxRadius="20" scaleMin="1" scaleMax="1" probability="4" />
       </Rule>
-      <Rule name="R_Forests_Trees (0)" isMainRule="true" isEnabled="false" objectMinDistance="0" slopeStart="0" slopeEnd="90" >
+      <Rule name="R_Forests_Trees (0)" isMainRule="true" isEnabled="true" objectMinDistance="0" slopeStart="0" slopeEnd="90" >
         <Script name="scatterInPerlinNoise.lua" >
           <Arg name="seed" type="int" value="0" />
           <Arg name="clampThreshold" type="int" value="0" />
           <Arg name="frequency" type="float" value="0.000000" />
           <Arg name="clamped" type="boolean" value="false" />
-          <Arg name="mask" type="mask" value="pg_island" />
+          <Arg name="mask" type="mask" value="PG_trees" />
         </Script>
         <Object id="1" childRule="R_Forests_ChildTrees" objectName="americanElm_stage04" childMinCount="8" childMaxCount="20" childMinRadius="4" childMaxRadius="20" scaleMin="1" scaleMax="1" probability="1" />
         <Object id="2" childRule="R_Forests_ChildTrees" objectName="aspen_stage04" childMinCount="8" childMaxCount="20" childMinRadius="4" childMaxRadius="20" scaleMin="1" scaleMax="1" probability="1" />
@@ -16243,26 +16520,26 @@
         <Object id="19" childRule="" objectName="oak_stage02" childMinCount="1" childMaxCount="10" childMinRadius="0" childMaxRadius="20" scaleMin="1" scaleMax="1" probability="1" />
         <Object id="20" childRule="" objectName="boxelder_stage01" childMinCount="1" childMaxCount="10" childMinRadius="0" childMaxRadius="20" scaleMin="1" scaleMax="1" probability="1" />
       </Rule>
-      <Rule name="F_Forests_Grass" isMainRule="true" isEnabled="false" objectMinDistance="0" slopeStart="0" slopeEnd="90" >
+      <Rule name="F_Forests_Grass" isMainRule="true" isEnabled="true" objectMinDistance="0" slopeStart="0" slopeEnd="90" >
         <Script name="scatterInPerlinNoise.lua" >
           <Arg name="seed" type="int" value="0" />
           <Arg name="clampThreshold" type="int" value="0" />
           <Arg name="frequency" type="float" value="0.000000" />
           <Arg name="clamped" type="boolean" value="false" />
-          <Arg name="mask" type="mask" value="pg_island" />
+          <Arg name="mask" type="mask" value="PG_trees" />
         </Script>
         <Object id="6" childRule="" objectName="F_ForestGrass" childMinCount="1" childMaxCount="10" childMinRadius="0" childMaxRadius="20" probability="4" />
         <Object id="7" childRule="" objectName="F_GrassSmall" childMinCount="1" childMaxCount="10" childMinRadius="0" childMaxRadius="20" probability="2" />
         <Object id="8" childRule="" objectName="F_GrassMedium" childMinCount="1" childMaxCount="10" childMinRadius="0" childMaxRadius="20" probability="1" />
         <Object id="12" childRule="" objectName="F_GrassDenseMix" childMinCount="1" childMaxCount="10" childMinRadius="0" childMaxRadius="20" probability="3" />
       </Rule>
-      <Rule name="F_Forests_Patches" isMainRule="true" isEnabled="false" objectMinDistance="0" slopeStart="0" slopeEnd="90" >
+      <Rule name="F_Forests_Patches" isMainRule="true" isEnabled="true" objectMinDistance="0" slopeStart="0" slopeEnd="90" >
         <Script name="scatterInPerlinNoise.lua" >
           <Arg name="seed" type="int" value="0" />
           <Arg name="clampThreshold" type="int" value="0" />
           <Arg name="frequency" type="float" value="0.000000" />
           <Arg name="clamped" type="boolean" value="false" />
-          <Arg name="mask" type="mask" value="PG_broadleaved" />
+          <Arg name="mask" type="mask" value="PG_trees" />
         </Script>
         <Object id="1" childRule="" objectName="F_ForestClover" childMinCount="1" childMaxCount="10" childMinRadius="0" childMaxRadius="20" probability="4" />
         <Object id="2" childRule="" objectName="F_ForestDryBranch" childMinCount="1" childMaxCount="10" childMinRadius="0" childMaxRadius="20" probability="4" />
