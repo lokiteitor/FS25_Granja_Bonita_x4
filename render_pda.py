@@ -63,7 +63,11 @@ COLOR_LIMITE_JUGABLE = (255, 255, 255)  # Línea límite del área jugable 2K
 # 3. RUTAS DE ARCHIVOS Y DETECCIÓN
 # ==========================================
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-MAPA_DIR = os.path.join(SCRIPT_DIR, "FS25_Granja_bonita")
+MAPA_CANDIDATOS = [
+    os.path.join(SCRIPT_DIR, "FS25_Granja_Bonita_V4"),
+    os.path.join(SCRIPT_DIR, "FS25_Granja_bonita"),
+]
+MAPA_DIR = next((c for c in MAPA_CANDIDATOS if os.path.isdir(c)), MAPA_CANDIDATOS[0])
 MAP_DIR = os.path.join(MAPA_DIR, "map")
 TEXTURES_JSON = os.path.join(MAPA_DIR, "info_layers", "textures.json")
 BG_TEXTURE_PATH = os.path.join(MAPA_DIR, "assets", "background", "background_texture.png")

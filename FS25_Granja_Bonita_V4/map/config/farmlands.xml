@@ -1,34 +1,34 @@
 <?xml version='1.0' encoding='utf-8'?>
 <map xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/farmlands.xsd">
   <farmlands infoLayer="farmlands" pricePerHa="12500">
-    <farmland id="1" priceScale="1" npcName="GRANDPA" />
-    <farmland id="2" priceScale="1" npcName="GRANDPA" />
-    <farmland id="3" priceScale="1" npcName="GRANDPA" />
-    <farmland id="4" priceScale="1" npcName="GRANDPA" />
-    <farmland id="5" priceScale="1" npcName="GRANDPA" />
-    <farmland id="6" priceScale="1" npcName="GRANDPA" />
-    <farmland id="7" priceScale="1" npcName="GRANDPA" />
-    <farmland id="8" priceScale="1" npcName="GRANDPA" />
-    <farmland id="9" priceScale="1" npcName="GRANDPA" />
-    <farmland id="10" priceScale="1" npcName="GRANDPA" />
-    <farmland id="11" priceScale="1" npcName="GRANDPA" />
-    <farmland id="12" priceScale="1" npcName="GRANDPA" />
-    <farmland id="13" priceScale="1" npcName="GRANDPA" />
-    <farmland id="14" priceScale="1" npcName="GRANDPA" />
-    <farmland id="15" priceScale="1" npcName="GRANDPA" />
-    <farmland id="16" priceScale="1" npcName="GRANDPA" defaultFarmProperty="true"/>
-    <farmland id="17" priceScale="1" npcName="GRANDPA" defaultFarmProperty="true"/>
-    <farmland id="18" priceScale="1" npcName="GRANDPA" />
-    <farmland id="19" priceScale="1" npcName="GRANDPA" />
-    <farmland id="20" priceScale="1" npcName="GRANDPA" />
-    <farmland id="21" priceScale="1" npcName="GRANDPA" />
-    <farmland id="22" priceScale="1" npcName="GRANDPA" />
-    <farmland id="23" priceScale="1" npcName="GRANDPA" />
-    <farmland id="24" priceScale="1" npcName="GRANDPA" />
-    <farmland id="25" priceScale="1" npcName="GRANDPA" />
-    <farmland id="26" priceScale="1" npcName="GRANDPA" />
-    <farmland id="27" priceScale="1" npcName="GRANDPA" />
-    <farmland id="28" priceScale="1" npcName="GRANDPA" />
+    <farmland id="1" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="2" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="3" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="4" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="5" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="6" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="7" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="8" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="9" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="10" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="11" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="12" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="13" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="14" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="15" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="16" priceScale="0.5" npcName="GRANDPA" defaultFarmProperty="true"/>
+    <farmland id="17" priceScale="0.5" npcName="GRANDPA" defaultFarmProperty="true"/>
+    <farmland id="18" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="19" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="20" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="21" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="22" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="23" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="24" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="25" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="26" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="27" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="28" priceScale="0.5" npcName="GRANDPA" />
     <farmland id="29" priceScale="1" npcName="HELPER" />
     <farmland id="30" priceScale="1" npcName="HELPER" defaultFarmProperty="true"/>
     <farmland id="31" priceScale="1" npcName="HELPER" />
@@ -132,28 +132,28 @@
     <farmland id="129" priceScale="1" npcName="FORESTER" />
     <farmland id="130" priceScale="1" npcName="FORESTER" />
     <farmland id="131" priceScale="1" npcName="FORESTER" />
-    <farmland id="132" priceScale="1" npcName="GRANDPA" />
-    <farmland id="133" priceScale="1" npcName="GRANDPA" />
-    <farmland id="134" priceScale="1" npcName="GRANDPA" />
-    <farmland id="135" priceScale="1" npcName="GRANDPA" />
-    <farmland id="136" priceScale="1" npcName="GRANDPA" />
-    <farmland id="137" priceScale="1" npcName="GRANDPA" />
-    <farmland id="138" priceScale="1" npcName="GRANDPA" />
-    <farmland id="139" priceScale="1" npcName="GRANDPA" />
-    <farmland id="140" priceScale="1" npcName="GRANDPA" />
-    <farmland id="141" priceScale="1" npcName="GRANDPA" />
-    <farmland id="142" priceScale="1" npcName="GRANDPA" />
-    <farmland id="143" priceScale="1" npcName="GRANDPA" />
-    <farmland id="144" priceScale="1" npcName="GRANDPA" />
-    <farmland id="145" priceScale="1" npcName="GRANDPA" />
-    <farmland id="146" priceScale="1" npcName="GRANDPA" />
-    <farmland id="147" priceScale="1" npcName="GRANDPA" />
-    <farmland id="148" priceScale="1" npcName="GRANDPA" />
-    <farmland id="149" priceScale="1" npcName="GRANDPA" />
-    <farmland id="150" priceScale="1" npcName="GRANDPA" />
-    <farmland id="151" priceScale="1" npcName="GRANDPA" />
-    <farmland id="152" priceScale="1" npcName="GRANDPA" />
-    <farmland id="153" priceScale="1" npcName="GRANDPA" />
-    <farmland id="154" priceScale="1" npcName="GRANDPA" />
+    <farmland id="132" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="133" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="134" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="135" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="136" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="137" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="138" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="139" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="140" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="141" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="142" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="143" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="144" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="145" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="146" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="147" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="148" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="149" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="150" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="151" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="152" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="153" priceScale="0.5" npcName="GRANDPA" />
+    <farmland id="154" priceScale="0.5" npcName="GRANDPA" />
   </farmlands>
 </map>
