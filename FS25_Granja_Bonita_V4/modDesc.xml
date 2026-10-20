@@ -30,8 +30,6 @@ Shopkategorie: Maps
         </map>
     </maps>
 	<dependencies>
-        <dependency>FS25_The_Mechet_Production_And_Industry_Pack</dependency>
-        <dependency>FS25_CarrefourPack</dependency>
     </dependencies>
 	
 
