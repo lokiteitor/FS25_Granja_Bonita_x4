@@ -1,14 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <placeables>
-    <placeable isPreplaced="true" uniqueId="preplaced_sellingStationProducts_d4837e2423a2042b2945f18aa901b230"/>
-    <placeable isPreplaced="true" uniqueId="preplaced_sellingStationVehicles_62b6b2c8dadf70c4cb99d2afcbe1e842"/>
-    <placeable isPreplaced="true" uniqueId="preplaced_animalTrader_3a3fe89f7cbc68cf9d248b994f6268a5"/>
-    <placeable isPreplaced="true" uniqueId="preplaced_buyingStationManure_26e11bad657c21bcc0983a0d3f8f941e"/>
+    <placeable isPreplaced="true" uniqueId="preplaced_gasStation_022899abb78491c1675b4b31128773dcb"/>
     <placeable isPreplaced="true" uniqueId="preplaced_buyingStationLiquidManure_7a4a6779b0a1fd4777acbe046e303e78"/>
-    <placeable isPreplaced="true" uniqueId="preplaced_gasStation_028ae35652089128e1ca9e95be3f5b67d"/>
     <placeable isPreplaced="true" uniqueId="preplaced_gasStation_12ccabe2022a39eac6af6167ee187c61a"/>
-    <placeable isPreplaced="true" uniqueId="preplaced_gasStation_241ccd2f5295d0f7d57cc05a0a84a02c7"/>
-    <placeable isPreplaced="true" uniqueId="preplaced_warehouseLogisticUS_004363e3a1cae21c5dca992ef8d3de23a"/>
-    <placeable isPreplaced="true" uniqueId="preplaced_gasStation_1cc1ed1d06f298e113c6074b67432548e"/>
-    <placeable isPreplaced="true" uniqueId="preplaced_gasStation_2a27f48f2f3156b1882a5440af4869c4f"/>
+    <placeable isPreplaced="true" uniqueId="preplaced_gasStation_028ae35652089128e1ca9e95be3f5b67d"/>
+    <placeable isPreplaced="true" uniqueId="preplaced_animalTrader_3a3fe89f7cbc68cf9d248b994f6268a5"/>
+    <placeable isPreplaced="true" uniqueId="preplaced_sellingStationVehicles_62b6b2c8dadf70c4cb99d2afcbe1e842"/>
+    <placeable isPreplaced="true" uniqueId="preplaced_sellingStationProducts_d4837e2423a2042b2945f18aa901b230"/>
+    <placeable isPreplaced="true" uniqueId="preplaced_buyingStationManure_26e11bad657c21bcc0983a0d3f8f941e"/>
 </placeables>
