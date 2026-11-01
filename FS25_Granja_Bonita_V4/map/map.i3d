@@ -163,7 +163,10 @@
     <File fileId="594" filename="$data/foliage/sunflower/sunflower.xml"/>
     <File fileId="586" filename="$data/foliage/waterPlants/waterPlants.xml"/>
     <File fileId="612" filename="$data/foliage/weed/weed.xml"/>
-    <File fileId="588" filename="$data/foliage/wheat/wheat.xml"/>
+    <File fileId="588" filename="foliage/wheat/wheat.xml"/>
+    <File fileId="9001" filename="foliage/blackbean/blackbean.xml"/>
+    <File fileId="9002" filename="foliage/napier/napier.xml"/>
+    <File fileId="9003" filename="foliage/peanut/peanut.xml"/>
     <File fileId="734" filename="$data/maps/mapAS/textures/buildings/hospital/hospital.i3d"/>
     <File fileId="739" filename="$data/maps/mapAS/textures/buildings/observationTower/observationTower.i3d"/>
     <File fileId="735" filename="$data/maps/mapAS/textures/buildings/school/school.i3d"/>
@@ -1351,6 +1354,9 @@
             <FoliageType name="greenBean" foliageXmlId="609"/>
             <FoliageType name="pea" foliageXmlId="610"/>
             <FoliageType name="spinach" foliageXmlId="611"/>
+            <FoliageType name="blackbean" foliageXmlId="9001"/>
+            <FoliageType name="napier" foliageXmlId="9002"/>
+            <FoliageType name="peanut" foliageXmlId="9003"/>
           </FoliageMultiLayer>
           <FoliageMultiLayer densityMapId="641" numChannels="4" numTypeIndexChannels="0">
             <FoliageType name="weed" foliageXmlId="612"/>
