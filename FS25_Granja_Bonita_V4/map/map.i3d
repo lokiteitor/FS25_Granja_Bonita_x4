@@ -892,7 +892,7 @@
 
   <Scene>
     <Light name="sun" translation="0 400 0" rotation="-39.5664 39.1063 0" objectMask="0x83ff0000" nodeId="52" type="directional" color="1 1 1" emitDiffuse="true" emitSpecular="true" castShadowMap="true" depthMapBias="0.001" depthMapSlopeScaleBias="2" depthMapSlopeClamp="0.001" depthMapResolution="2048" shadowFarDistance="1000" shadowExtrusionDistance="200" softShadowsLightSize="0.5" softShadowsLightDistance="15" softShadowsDepthBiasFactor="1" softShadowsMaxPenumbraSize="0.5" numShadowMapSplits="5" shadowMapSplitDistancesParameter="0.9" lastShadowMapSplitBboxMin="-2048,-128,-2048" lastShadowMapSplitBboxMax="2048,148,2048" range="10000" scattering="true"/>
-    <Camera name="persp" translation="1747.69 188.041 -1629.79" rotation="-86.1877 -22.1152 2.03035e-06" visibility="false" nodeId="53" fov="60" nearClip="0.01" farClip="6000" orthographicHeight="1500"/>
+    <Camera name="persp" translation="-1514.06 51.7085 -1413.98" rotation="-8.72357 7.71927 2.32896e-06" visibility="false" nodeId="53" fov="60" nearClip="0.01" farClip="6000" orthographicHeight="1500"/>
     <TerrainTransformGroup name="terrain" static="true" collisionFilterGroup="0x100" collisionFilterMask="0xfffff9c3" nodeId="55" heightMapId="1" patchSize="65" maxLODDistance="750" heightScale="255" unitsPerPixel="1" lodBlendStart="200" lodBlendEnd="300" lodTextureSize="4096" lodBlendStartDynamic="50" lodBlendEndDynamic="65" detailLodBlendDelta="5" materialId="17" castShadowMap="true" occNumLODs="1" occMaxLODDistance="300" occPatchSize="65" occLevel="2" occDistanceWeight="1" occMaxAdjacentFaces="10">
       <OccluderLods>
         <OccluderLod occLodLevel="0" occFaceCount="100" occMaxHausdorffDistance="7" occMaxHausdorffDistanceExtra="9" occMinHorizontalDistance="1" />
@@ -1320,7 +1320,7 @@
           <FoliageMultiLayer densityMapId="639" numChannels="4" numTypeIndexChannels="0">
             <FoliageType name="decoBush" foliageXmlId="581"/>
           </FoliageMultiLayer>
-          <FoliageMultiLayer densityMapId="640" numChannels="10" numTypeIndexChannels="5" compressionChannels="5">
+          <FoliageMultiLayer densityMapId="640" numChannels="11" numTypeIndexChannels="6" compressionChannels="6">
             <FoliageType name="decoFoliage" foliageXmlId="582"/>
             <FoliageType name="decoBushUS" foliageXmlId="583"/>
             <FoliageType name="meadow" foliageXmlId="584"/>
@@ -15347,15 +15347,15 @@
       <TransformGroup name="props" nodeId="56115"/>
       <TransformGroup name="aiSplines" nodeId="56116"/>
     </TransformGroup>
-    <TransformGroup name="preplaced_gasStation" lockedgroup="true" translation="-1478.72 43.1323 1540.52" nodeId="76107">
-      <TransformGroup name="placeable" nodeId="76108">
-        <TransformGroup name="gasStation" nodeId="76103">
-          <Shape name="gasStationTrigger" shapeId="32" static="true" trigger="true" collisionFilterGroup="0x20000000" collisionFilterMask="0x40000000" nodeId="76104" castsShadows="false" receiveShadows="false" nonRenderable="true" distanceBlending="false" materialIds="18"/>
-          <TransformGroup name="mapPosition" nodeId="76105"/>
+    <TransformGroup name="preplaced_gasStation" lockedgroup="true" translation="-1478.72 43.1323 1540.52" nodeId="56117">
+      <TransformGroup name="placeable" nodeId="56118">
+        <TransformGroup name="gasStation" nodeId="56119">
+          <Shape name="gasStationTrigger" shapeId="32" static="true" trigger="true" collisionFilterGroup="0x20000000" collisionFilterMask="0x40000000" nodeId="56120" castsShadows="false" receiveShadows="false" nonRenderable="true" distanceBlending="false" materialIds="18"/>
+          <TransformGroup name="mapPosition" nodeId="56121"/>
         </TransformGroup>
       </TransformGroup>
-      <TransformGroup name="props" nodeId="76109"/>
-      <TransformGroup name="aiSplines" nodeId="76110"/>
+      <TransformGroup name="props" nodeId="56122"/>
+      <TransformGroup name="aiSplines" nodeId="56123"/>
     </TransformGroup>
   </Scene>
 
@@ -15412,32 +15412,32 @@
       <Object type="terrainFoliage" name="F_hazelnutSmall" foliageTypeName="decoBush" channels="13" ppType="defaultFoliage" />
       <Object type="terrainFoliage" name="F_hazelnutMedium" foliageTypeName="decoBush" channels="14" ppType="defaultFoliage" />
       <Object type="terrainFoliage" name="F_hazelnutBig" foliageTypeName="decoBush" channels="15" ppType="defaultFoliage" />
-      <Object type="terrainFoliage" name="F_GrassSmall" foliageTypeName="decoFoliage" channels="289" ppType="defaultFoliage" />
-      <Object type="terrainFoliage" name="F_GrassMedium" foliageTypeName="decoFoliage" channels="321" ppType="defaultFoliage" />
-      <Object type="terrainFoliage" name="F_GrassDenseMix" foliageTypeName="decoFoliage" channels="33" ppType="defaultFoliage" />
+      <Object type="terrainFoliage" name="F_GrassSmall" foliageTypeName="decoFoliage" channels="577" ppType="defaultFoliage" />
+      <Object type="terrainFoliage" name="F_GrassMedium" foliageTypeName="decoFoliage" channels="641" ppType="defaultFoliage" />
+      <Object type="terrainFoliage" name="F_GrassDenseMix" foliageTypeName="decoFoliage" channels="65" ppType="defaultFoliage" />
       <Object type="terrainFoliage" name="F_AcreTerrainDetail" foliageTypeName="terrainDetail" channels="2" ppType="defaultFoliage" />
-      <Object type="terrainFoliage" name="F_Meadow" foliageTypeName="meadow" channels="67" ppType="defaultFoliage" />
-      <Object type="terrainFoliage" name="F_ForestDryBranch" foliageTypeName="forestPlants" channels="36" ppType="defaultFoliage" />
-      <Object type="terrainFoliage" name="F_ForestClover" foliageTypeName="forestPlants" channels="68" ppType="defaultFoliage" />
-      <Object type="terrainFoliage" name="F_ForestStarFlower" foliageTypeName="forestPlants" channels="100" ppType="defaultFoliage" />
-      <Object type="terrainFoliage" name="F_ForestBunchBerry" foliageTypeName="forestPlants" channels="132" ppType="defaultFoliage" />
-      <Object type="terrainFoliage" name="F_ForestSalmonBerry" foliageTypeName="forestPlants" channels="164" ppType="defaultFoliage" />
-      <Object type="terrainFoliage" name="F_ForestStarryFalse" foliageTypeName="forestPlants" channels="196" ppType="defaultFoliage" />
-      <Object type="terrainFoliage" name="F_ForestSwordFern" foliageTypeName="forestPlants" channels="228" ppType="defaultFoliage" />
-      <Object type="terrainFoliage" name="F_ForestDeerFern" foliageTypeName="forestPlants" channels="260" ppType="defaultFoliage" />
-      <Object type="terrainFoliage" name="F_ForestGrass" foliageTypeName="forestPlants" channels="292" ppType="defaultFoliage" />
-      <Object type="terrainFoliage" name="F_typhaLatifoliaMedium" foliageTypeName="waterPlants" channels="69" ppType="defaultFoliage" />
-      <Object type="terrainFoliage" name="F_miscanthusSmall" foliageTypeName="waterPlants" channels="133" ppType="defaultFoliage" />
-      <Object type="terrainFoliage" name="F_miscanthusMedium" foliageTypeName="waterPlants" channels="165" ppType="defaultFoliage" />
-      <Object type="terrainFoliage" name="F_miscanthusLarge" foliageTypeName="waterPlants" channels="197" ppType="defaultFoliage" />
-      <Object type="terrainFoliage" name="F_stipaSmall" foliageTypeName="waterPlants" channels="229" ppType="defaultFoliage" />
-      <Object type="terrainFoliage" name="F_stipaLarge" foliageTypeName="waterPlants" channels="261" ppType="defaultFoliage" />
-      <Object type="terrainFoliage" name="F_typhaSmall" foliageTypeName="waterPlants" channels="37" ppType="defaultFoliage" />
-      <Object type="terrainFoliage" name="F_typhaLarge" foliageTypeName="waterPlants" channels="101" ppType="defaultFoliage" />
-      <Object type="terrainFoliage" name="F_coneFlower" foliageTypeName="decoFoliage" channels="385" ppType="defaultFoliage" />
-      <Object type="terrainFoliage" name="F_slenderMountainMint" foliageTypeName="decoFoliage" channels="417" ppType="defaultFoliage" />
-      <Object type="terrainFoliage" name="F_wildBergamot" foliageTypeName="decoFoliage" channels="449" ppType="defaultFoliage" />
-      <Object type="terrainFoliage" name="F_prairyBlazingStar" foliageTypeName="decoFoliage" channels="481" ppType="defaultFoliage" />
+      <Object type="terrainFoliage" name="F_Meadow" foliageTypeName="meadow" channels="131" ppType="defaultFoliage" />
+      <Object type="terrainFoliage" name="F_ForestDryBranch" foliageTypeName="forestPlants" channels="68" ppType="defaultFoliage" />
+      <Object type="terrainFoliage" name="F_ForestClover" foliageTypeName="forestPlants" channels="132" ppType="defaultFoliage" />
+      <Object type="terrainFoliage" name="F_ForestStarFlower" foliageTypeName="forestPlants" channels="196" ppType="defaultFoliage" />
+      <Object type="terrainFoliage" name="F_ForestBunchBerry" foliageTypeName="forestPlants" channels="260" ppType="defaultFoliage" />
+      <Object type="terrainFoliage" name="F_ForestSalmonBerry" foliageTypeName="forestPlants" channels="324" ppType="defaultFoliage" />
+      <Object type="terrainFoliage" name="F_ForestStarryFalse" foliageTypeName="forestPlants" channels="388" ppType="defaultFoliage" />
+      <Object type="terrainFoliage" name="F_ForestSwordFern" foliageTypeName="forestPlants" channels="452" ppType="defaultFoliage" />
+      <Object type="terrainFoliage" name="F_ForestDeerFern" foliageTypeName="forestPlants" channels="516" ppType="defaultFoliage" />
+      <Object type="terrainFoliage" name="F_ForestGrass" foliageTypeName="forestPlants" channels="580" ppType="defaultFoliage" />
+      <Object type="terrainFoliage" name="F_typhaLatifoliaMedium" foliageTypeName="waterPlants" channels="133" ppType="defaultFoliage" />
+      <Object type="terrainFoliage" name="F_miscanthusSmall" foliageTypeName="waterPlants" channels="261" ppType="defaultFoliage" />
+      <Object type="terrainFoliage" name="F_miscanthusMedium" foliageTypeName="waterPlants" channels="325" ppType="defaultFoliage" />
+      <Object type="terrainFoliage" name="F_miscanthusLarge" foliageTypeName="waterPlants" channels="389" ppType="defaultFoliage" />
+      <Object type="terrainFoliage" name="F_stipaSmall" foliageTypeName="waterPlants" channels="453" ppType="defaultFoliage" />
+      <Object type="terrainFoliage" name="F_stipaLarge" foliageTypeName="waterPlants" channels="517" ppType="defaultFoliage" />
+      <Object type="terrainFoliage" name="F_typhaSmall" foliageTypeName="waterPlants" channels="69" ppType="defaultFoliage" />
+      <Object type="terrainFoliage" name="F_typhaLarge" foliageTypeName="waterPlants" channels="197" ppType="defaultFoliage" />
+      <Object type="terrainFoliage" name="F_coneFlower" foliageTypeName="decoFoliage" channels="769" ppType="defaultFoliage" />
+      <Object type="terrainFoliage" name="F_slenderMountainMint" foliageTypeName="decoFoliage" channels="833" ppType="defaultFoliage" />
+      <Object type="terrainFoliage" name="F_wildBergamot" foliageTypeName="decoFoliage" channels="897" ppType="defaultFoliage" />
+      <Object type="terrainFoliage" name="F_prairyBlazingStar" foliageTypeName="decoFoliage" channels="961" ppType="defaultFoliage" />
       <Object type="reference" name="americanElm_stage01" fileId="757" ppType="smallTrees" />
       <Object type="reference" name="americanElm_stage02" fileId="758" ppType="defaultReference" />
       <Object type="reference" name="americanElm_stage03" fileId="759" ppType="mediumTree" />
@@ -17121,14 +17121,14 @@
       <Attribute name="mapPositionIndex" type="string" value="1"/>
       <Attribute name="uniqueId" type="string" value="preplaced_gasStation_12ccabe2022a39eac6af6167ee187c61a"/>
     </UserAttribute>
-    <UserAttribute nodeId="76107">
+    <UserAttribute nodeId="56117">
       <Attribute name="aiSplines" type="string" value="2"/>
       <Attribute name="boughtWithFarmlandOverwrite" type="boolean" value="false"/>
       <Attribute name="onCreate" type="scriptCallback" value="Placeable.onCreate"/>
       <Attribute name="uniqueId" type="string" value="preplaced_gasStation_022899abb78491c1675b4b31128773dcb"/>
       <Attribute name="xmlFilename" type="string" value="$data/placeables/mapUS/sellingPoints/gasStation/gasStation01.xml"/>
     </UserAttribute>
-    <UserAttribute nodeId="76103">
+    <UserAttribute nodeId="56119">
       <Attribute name="mapPositionIndex" type="string" value="1"/>
       <Attribute name="uniqueId" type="string" value="preplaced_gasStation_022899abb78491c1675b4b31128773dcb"/>
     </UserAttribute>
